@@ -8,5 +8,6 @@
 		"dbUser":"",
 		"dbPassword":"",
 		"debug":true
-	}
+	},
+	"secret": "topsecreteproject"
 }

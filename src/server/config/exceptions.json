@@ -96,5 +96,12 @@
 		"message": "I'm sorry, something went wrong on our end. If it happens again send us feedback and we will get back to you asap.",
 		"http_code": "500",
 		"send_notification": "true"
+	},
+	"OnlyTrainerAllowed":{
+		"name": "OnlyTrainerAllowed",
+		"code": "5005",
+		"message": "Only trainers are allowd to add sports event.",
+		"http_code": "500",
+		"send_notification": "true"
 	}
 }
