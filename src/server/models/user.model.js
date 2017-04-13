@@ -22,7 +22,7 @@ module.exports = (mongoose) => {
         birthdate: { type: Date },
         gender: { type: String },
         registrationDate: { type: Date},
-        address: {AddressSchema},
+        address: AddressSchema,
         location: { type: Array},
         isActive: { type: Boolean, default:true },
         profilePic: { type: String},

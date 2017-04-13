@@ -6,7 +6,8 @@ module.exports = class UserController {
         app.post('/user', this.createUser);
         app.get('/user', this.list);
         app.put('/user/:userId', this.updateUser);
-    }
+        app.get('/user/:userId', this.userDetail);
+        app.put('/user/:userId/address', this.updateUserAddress);    }
 
 
     createUser(req, res) {
@@ -68,7 +69,7 @@ module.exports = class UserController {
             user.set('profilePic', profilePic);
 
         user.set('registrationDate', new Date());
-        user.set('isActive', false);
+        user.set('isActive', true);
 
         if (address)
             user.set('address', addressSchema);
@@ -196,5 +197,64 @@ module.exports = class UserController {
 
     }
 
+    userDetail(req, res){
+
+        let userId = req.params.userId;
+
+
+        let promise = global.MongoORM.User.findById(userId);
+        promise
+            .then(function(user){
+                res.send(user);
+            })
+            .catch(function(error){
+                let errors = [];
+                if(error.name == 'ValidationError'){
+                    Object.keys(error.errors).forEach(function(field){
+                        let eObj = error.errors[field].properties;
+                        if(eObj.hasOwnProperty("message"))
+                            errors.push(eObj['message']);
+                    });
+                } else if(error.name == 'MongoError'){
+                    errors.push(error);
+                } else
+                    errors.push('Internal server error.');
+                res.sendError(errors);
+            });
+
+    }
+
+    updateUserAddress(req, res){
+
+        let userId = req.params.userId,
+            address1  = req.body.address1,
+            address2  = req.body.address2,
+            city      = req.body.city,
+            state     = req.body.state,
+            country   = req.body.country,
+            zipcode   = req.body.zipcode,
+            phone     = req.body.phone;
+
+        global.MongoORM.User.findById(userId, function(error, user){
+            if(!error){
+                if(address1 != undefined)
+                    user.address['address1'] = address1;
+                if(address2 != undefined)
+                    user.address['address2'] = address2;
+                if(city != undefined)
+                    user.address['city'] = city;
+                if(state != undefined)
+                    user.address['state'] = state;
+                if(country != undefined)
+                    user.address['country'] = country;
+                if(zipcode != undefined)
+                    user.address['zipcode'] = zipcode;
+                if(phone != undefined)
+                    user.address['phone'] = phone;
+                user.save();
+                res.sendResponse(user)
+            } else res.sendError(error);
+        });
+    }
 
 };

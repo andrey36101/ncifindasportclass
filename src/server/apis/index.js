@@ -3,7 +3,8 @@
  */
 let byPassedEndpoints = [
     '/checkLogin',
-    '^/user'
+    '^/user',
+    '^/sports'
 ];
 let fs = require('fs');
 module.exports = class Modules {

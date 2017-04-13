@@ -20,7 +20,7 @@
         ownerId: { type: mongoose.Schema.Types.ObjectId }, // Trainer's User Id
         startDate: { type: Date},
         startTime: { type: String},
-        address: { AddressSchema },
+        address:  AddressSchema,
         location: { type: Array},
         prompPicture: { type: String},
         age: { type: Number},
