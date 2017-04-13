@@ -3,7 +3,9 @@ module.exports = class UserController {
     constructor(app) {
 
 
+        app.post('/user', this.createUser);
         app.get('/user', this.list);
+        app.put('/user/:userId', this.updateUser);
     }
 
 
@@ -117,32 +119,82 @@ module.exports = class UserController {
             });
     }
 
+    list(req, res) {
 
-list(req, res) {
+        let row = req.query.rows ? parseInt(req.query.rows) : 3;
+        let pageNo = req.query.pageNo ? parseInt(req.query.pageNo) : 0;
+        let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt';
+        let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';
+        let sort = {};
 
-    let row = req.query.rows ? parseInt(req.query.rows) : 3;
-    let pageNo = req.query.pageNo ? parseInt(req.query.pageNo) : 0;
-    let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt';
-    let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';
-    let sort = {};
-
-    sort[sortBy] = sortOrder;
-    global.MongoORM.User.find({})
-        .limit(row)
-        .skip(row * pageNo)
-        .sort(sort)
-        .exec(function (err, users) {
-            global.MongoORM.User.count({}).exec(function (error, count) {
-                if (!error) {
-                    res.send({
-                        users: users,
-                        page: pageNo,
-                        pages: Math.round(count / row),
-                        totalCount: count
-                    })
-                } else res.sendError(error);
-            })
-        });
+        sort[sortBy] = sortOrder;
+        global.MongoORM.User.find({})
+            .limit(row)
+            .skip(row * pageNo)
+            .sort(sort)
+            .exec(function (err, users) {
+                global.MongoORM.User.count({}).exec(function (error, count) {
+                    if (!error) {
+                        res.send({
+                            users: users,
+                            page: pageNo,
+                            pages: Math.round(count / row),
+                            totalCount: count
+                        })
+                    } else res.sendError(error);
+                })
+            });
     }
+
+    updateUser(req, res){
+
+        let userId = req.params.userId,
+            name = req.body.name,
+            birthdate = req.body.birthdate,
+            gender = req.body.gender,
+            location = req.body.location,
+            profilePic = req.body.profilePic;
+
+
+        let promise = global.MongoORM.User.findById(userId);
+        promise
+            .then(function(user){
+                if(user != null){
+
+                    if(name != undefined)
+                        user.name = name;
+                    if(birthdate != undefined)
+                        user.birthdate = birthdate;
+                    if(gender != undefined)
+                        user.gender = gender;
+                    if(location != undefined)
+                        user.location = location;
+                    if(profilePic != undefined)
+                        user.profilePic = profilePic;
+
+                    return user.save();
+                } else
+                    return res.sendError(new Exception('ObjectNotFound'));
+            })
+            .then(function(user){
+                res.send(user);
+            })
+            .catch(function(error){
+                let errors = [];
+                if(error.name == 'ValidationError'){
+                    Object.keys(error.errors).forEach(function(field){
+                        let eObj = error.errors[field].properties;
+                        if(eObj.hasOwnProperty("message"))
+                            errors.push(eObj['message']);
+                    });
+                } else if(error.name == 'MongoError'){
+                    errors.push(error);
+                } else
+                    errors.push('Internal server error.');
+                res.sendError(errors);
+            });
+
+    }
+
 
 };
