@@ -7,7 +7,8 @@ module.exports = class UserController {
         app.get('/user', this.list);
         app.put('/user/:userId', this.updateUser);
         app.get('/user/:userId', this.userDetail);
-        app.put('/user/:userId/address', this.updateUserAddress);    }
+        app.put('/user/:userId/address', this.updateUserAddress);
+    }
 
 
     createUser(req, res) {
@@ -237,20 +238,42 @@ module.exports = class UserController {
 
         global.MongoORM.User.findById(userId, function(error, user){
             if(!error){
-                if(address1 != undefined)
-                    user.address['address1'] = address1;
-                if(address2 != undefined)
-                    user.address['address2'] = address2;
-                if(city != undefined)
-                    user.address['city'] = city;
-                if(state != undefined)
-                    user.address['state'] = state;
-                if(country != undefined)
-                    user.address['country'] = country;
-                if(zipcode != undefined)
-                    user.address['zipcode'] = zipcode;
-                if(phone != undefined)
-                    user.address['phone'] = phone;
+
+                let address = {};
+                if(user.address == null){
+
+                    if(address1 != undefined)
+                        address['address1'] = address1;
+                    if(address2 != undefined)
+                        address['address2'] = address2;
+                    if(city != undefined)
+                        address['city'] = city;
+                    if(state != undefined)
+                        address['state'] = state;
+                    if(country != undefined)
+                        address['country'] = country;
+                    if(zipcode != undefined)
+                        address['zipcode'] = zipcode;
+                    if(phone != undefined)
+                        address['phone'] = phone;
+
+                    user['address'] = address;
+                } else {
+                    if (address1 != undefined)
+                        user.address['address1'] = address1;
+                    if (address2 != undefined)
+                        user.address['address2'] = address2;
+                    if (city != undefined)
+                        user.address['city'] = city;
+                    if (state != undefined)
+                        user.address['state'] = state;
+                    if (country != undefined)
+                        user.address['country'] = country;
+                    if (zipcode != undefined)
+                        user.address['zipcode'] = zipcode;
+                    if (phone != undefined)
+                        user.address['phone'] = phone;
+                }
                 user.save();
                 res.sendResponse(user)
             } else res.sendError(error);

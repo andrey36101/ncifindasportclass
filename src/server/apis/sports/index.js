@@ -5,6 +5,12 @@ module.exports = class SportController {
 
         app.post('/sports', this.createSports);
         app.get('/sports', this.list);
+        app.get('/sports/:sportId', this.sportDetail);
+        app.put('/sports/:sportId/address', this.updateUserAddress);
+        app.put('/sports/:sportId', this.updateSport);
+
+
+
 
     }
 
@@ -131,6 +137,7 @@ module.exports = class SportController {
     updateSport(req, res){
 
         let sportId = req.params.sportId,
+            name = req.body.name,
             description = req.body.description,
             ownerId  = req.body.ownerId,
             startDate = req.body.startDate,
@@ -139,7 +146,6 @@ module.exports = class SportController {
             age = req.body.age,
             price = req.body.price,
             tags = req.body.tags,
-            address = req.body.address,
             prompPicture = req.body.prompPicture;
 
 
@@ -150,15 +156,26 @@ module.exports = class SportController {
 
                     if(name != undefined)
                         sport.name = name;
-                    if(birthdate != undefined)
-                        sport.birthdate = birthdate;
-                    if(gender != undefined)
-                        sport.gender = gender;
+                    if(description != undefined)
+                        sport.description = description;
+                    if(ownerId != undefined)
+                        sport.ownerId = ownerId;
+                    if(startDate != undefined)
+                        sport.startDate = startDate;
+                    if(startTime != undefined)
+                        sport.startTime = startTime;
+                    if(age != undefined)
+                        sport.age = age;
                     if(location != undefined)
                         sport.location = location;
-                    if(profilePic != undefined)
-                        sport.profilePic = profilePic;
-
+                    if(price != undefined)
+                        sport.price = price;
+                    if(tags != undefined)
+                        sport.tags = tags;
+                    if(location != undefined)
+                        sport.location = location;
+                    if(prompPicture != undefined)
+                        sport.prompPicture = prompPicture;
                     return sport.save();
                 } else
                     return res.sendError(new Exception('ObjectNotFound'));
@@ -223,20 +240,41 @@ module.exports = class SportController {
 
         global.MongoORM.Sport.findById(sportId, function(error, sport){
             if(!error){
-                if(address1 != undefined)
-                    sport.address['address1'] = address1;
-                if(address2 != undefined)
-                    sport.address['address2'] = address2;
-                if(city != undefined)
-                    sport.address['city'] = city;
-                if(state != undefined)
-                    sport.address['state'] = state;
-                if(country != undefined)
-                    sport.address['country'] = country;
-                if(zipcode != undefined)
-                    sport.address['zipcode'] = zipcode;
-                if(phone != undefined)
-                    sport.address['phone'] = phone;
+                let address = {};
+                if(sport.address == null){
+                    if(address1 != undefined)
+                        address['address1'] = address1;
+                    if(address2 != undefined)
+                        address['address2'] = address2;
+                    if(city != undefined)
+                        address['city'] = city;
+                    if(state != undefined)
+                        address['state'] = state;
+                    if(country != undefined)
+                        address['country'] = country;
+                    if(zipcode != undefined)
+                        address['zipcode'] = zipcode;
+                    if(phone != undefined)
+                        address['phone'] = phone;
+
+                    sport['address'] = address;
+                } else {
+
+                    if(address1 != undefined)
+                        sport.address['address1'] = address1;
+                    if(address2 != undefined)
+                        sport.address['address2'] = address2;
+                    if(city != undefined)
+                        sport.address['city'] = city;
+                    if(state != undefined)
+                        sport.address['state'] = state;
+                    if(country != undefined)
+                        sport.address['country'] = country;
+                    if(zipcode != undefined)
+                        sport.address['zipcode'] = zipcode;
+                    if(phone != undefined)
+                        sport.address['phone'] = phone;
+                }
                 sport.save();
                 res.sendResponse(sport)
             } else res.sendError(error);
