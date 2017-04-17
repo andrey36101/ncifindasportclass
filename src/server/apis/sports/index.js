@@ -9,9 +9,6 @@ module.exports = class SportController {
         app.put('/sports/:sportId/address', this.updateUserAddress);
         app.put('/sports/:sportId', this.updateSport);
 
-
-
-
     }
 
 
