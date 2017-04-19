@@ -60,7 +60,7 @@ module.exports = class FeedbackController {
             .exec(function (err, feedbacks) {
                 global.MongoORM.Feedback.count({}).exec(function (error, count) {
                     if (!error) {
-                        res.send({
+                        res.sendResponse({
                             feedbacks: feedbacks,
                             page: pageNo,
                             pages: Math.round(count / row),

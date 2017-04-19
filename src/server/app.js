@@ -33,7 +33,7 @@ app.use((req, res, next)=>{
     }
 );
 
-app.post('/uploadfiles', global.upload.array('file'), function(req, res){
+app.post('/uploadfiles', GLOBAL.upload.array('file'), function(req, res){
 
     let attachedFiles = [];
     __lodash.forEach(req.files, function(value, key){

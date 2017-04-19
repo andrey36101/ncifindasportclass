@@ -1,8 +1,11 @@
+let jwt    = require('jsonwebtoken');
+
 module.exports = class UserController {
 
     constructor(app) {
 
-
+        this.app = app;
+        app.post('/login',this.doLogin);
         app.post('/user', this.createUser);
         app.get('/user', this.list);
         app.put('/user/:userId', this.updateUser);
@@ -101,23 +104,21 @@ module.exports = class UserController {
     doLogin(req, res) {
         let email = req.body.email;
         let password = req.body.password;
-        let promise = global.MongoORM.Client.find({email: email, password: Utils.md5(password)}, {
-            password: false,
-            paymentGateways: false
-        });
+        let promise = global.MongoORM.User.findOne({email: email, password: Utils.md5(password)});
         promise
             .then(function (success) {
-                console.log(success);
-                if (success.length > 0) {
-                    req.session.isLoggedIn = 'Y';
-                    req.session.userProfile = success;
-                    return res.send({status: "success", data: success});
-                } else
-                    return res.send({status: "failure", message: "Login failed"});
 
+                if (success != null) {
+                    let token = jwt.sign(success, global.config.secret, {
+                        expiresIn: 86400 // expires in 24 hours
+                    });
+                    return res.sendResponse({token:token});
+                } else
+                    return res.sendError({message: "Login failed"});
             })
             .catch(function (error) {
-                return res.send({status: "failure", message: "Login failed"});
+                console.log(error);
+                return res.sendError({ message: "Login failed"});
             });
     }
 
