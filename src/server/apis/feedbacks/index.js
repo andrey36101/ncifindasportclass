@@ -123,7 +123,9 @@ module.exports = class FeedbackController {
         let feedbackId = req.params.feedbackId;
 
 
-        let promise = global.MongoORM.Feedback.findById(feedbackId);
+        let promise = global.MongoORM.Feedback.findById(feedbackId)
+            .populate('userId',['name','email','address','location','gender','profilePic'])
+            .populate('trainerId',['name','email','address','location','gender','profilePic']);
         promise
             .then(function(feedback){
                 res.sendResponse(feedback);

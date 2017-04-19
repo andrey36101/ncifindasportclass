@@ -20,9 +20,11 @@ module.exports = class MessageController {
             recipientId = req.body.recipientId;
 
 
-        let promise,message = new global.MongoORM.Message();
+        let promise,message = new global.MongoORM.Message()
+            .populate('recipientId',['name','email','address','location','gender','profilePic'])
+            .populate('senderId',['name','email','address','location','gender','profilePic']);
 
-        if (message != undefined)
+        if (title != undefined)
             message.set('title', title);
 
         if (description != undefined)

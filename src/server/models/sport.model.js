@@ -1,4 +1,4 @@
-    module.exports = (mongoose) => {
+module.exports = (mongoose) => {
     /**
      * Sports Schema
      */
@@ -17,10 +17,10 @@
     SportSchema = new mongoose.Schema({
         name: { type: String,  required: [true,'Sport name is required'] },
         description: { type: String,  required: [true,'Description is required'] },
-        ownerId: { type: mongoose.Schema.Types.ObjectId }, // Trainer's User Id
+        ownerId : { type: mongoose.Schema.Types.ObjectId, ref: 'User' }, // Trainer's User Id
         startDate: { type: Date},
         startTime: { type: String},
-        address:  AddressSchema,
+        address: AddressSchema,
         location: { type: Array},
         prompPicture: { type: String},
         age: { type: Number},

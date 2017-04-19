@@ -56,7 +56,7 @@ module.exports = class SportController {
             sport.set('description', description);
 
         if (ownerId != undefined)
-            sport.set('password', ownerId);
+            sport.set('ownerId', ownerId);
 
         if (startDate != undefined)
             sport.set('startDate', birthdate);
@@ -202,7 +202,8 @@ module.exports = class SportController {
         let sportId = req.params.sportId;
 
 
-        let promise = global.MongoORM.Sport.findById(sportId);
+        let promise = global.MongoORM.Sport.findById(sportId)
+            .populate('ownerId',['name','email','address','location','gender','profilePic']);
         promise
             .then(function(sport){
                 res.send(sport);
