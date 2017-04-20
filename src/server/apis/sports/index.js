@@ -8,6 +8,7 @@ module.exports = class SportController {
         app.get('/sports/:sportId', this.sportDetail);
         app.put('/sports/:sportId/address', this.updateUserAddress);
         app.put('/sports/:sportId', this.updateSport);
+        app.delete('/sports/:sportId',this.deleteSport);
 
     }
 
@@ -276,6 +277,16 @@ module.exports = class SportController {
                 sport.save();
                 res.sendResponse(sport)
             } else res.sendError(error);
+        });
+    }
+
+    deleteSport(req,res){
+        let id = req.params.sportId;
+        global.MongoORM.Sport.findByIdAndRemove(id,function(error){
+            if(!error)
+                res.send({message:'Sport removed successfully'});
+            else
+                res.sendError(error);
         });
     }
 

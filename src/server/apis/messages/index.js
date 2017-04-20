@@ -7,6 +7,7 @@ module.exports = class MessageController {
         app.get('/messages', this.list);
         app.get('/messages/:messageId', this.messageDetail);
         app.put('/messages/:messageId', this.updateMessage);
+        app.delete('/messages/:messageId', this.deleteMessage);
 
     }
 
@@ -146,6 +147,16 @@ module.exports = class MessageController {
                 res.sendError(errors);
             });
 
+    }
+
+    deleteMessage(req,res){
+        let id = req.params.messageId;
+        global.MongoORM.Message.findByIdAndRemove(id,function(error){
+            if(!error)
+                res.send({message:'Message removed successfully'});
+            else
+                res.sendError(error);
+        });
     }
 
 };

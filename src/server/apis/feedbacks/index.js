@@ -7,6 +7,7 @@ module.exports = class FeedbackController {
         app.get('/feedback', this.list);
         app.get('/feedback/:feedbackId', this.feedbackDetail);
         app.put('/feedback/:feedbackId', this.updateFeedback);
+        app.delete('/feedback/:feedbackId', this.deleteFeedback)
 
     }
 
@@ -145,6 +146,16 @@ module.exports = class FeedbackController {
                 res.sendError(errors);
             });
 
+    }
+
+    deleteFeedback(req,res){
+        let id = req.params.feedbackId;
+        global.MongoORM.Feedback.findByIdAndRemove(id,function(error){
+            if(!error)
+                res.send({message:'Feedback removed successfully'});
+            else
+                res.sendError(error);
+        });
     }
 
 };

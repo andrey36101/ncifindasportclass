@@ -11,6 +11,9 @@ module.exports = class UserController {
         app.put('/user/:userId', this.updateUser);
         app.get('/user/:userId', this.userDetail);
         app.put('/user/:userId/address', this.updateUserAddress);
+        app.put('/user/:userId', this.deleteUser);
+        app.get('/checkLogin',this.checkLogin);
+
     }
 
 
@@ -99,6 +102,20 @@ module.exports = class UserController {
                 res.sendError(errors);
             })
 
+    }
+
+    checkLogin(req,res){
+        jwt.verify(token, global.config.secret, function(err, decoded) {
+            if (err) {
+                return res.status(403).send({
+                    code: 401,
+                    message: 'Not logged int'
+                });
+            } else {
+                req.user = decoded;
+                return res.sendResponse(req.user);
+            }
+        });
     }
 
     doLogin(req, res) {
@@ -278,6 +295,16 @@ module.exports = class UserController {
                 user.save();
                 res.sendResponse(user)
             } else res.sendError(error);
+        });
+    }
+
+    deleteUser(req,res){
+        let id = req.params.userId;
+        global.MongoORM.User.findByIdAndRemove(id,function(error){
+            if(!error)
+                res.send({message:'User removed successfully'});
+            else
+                res.sendError(error);
         });
     }
 
