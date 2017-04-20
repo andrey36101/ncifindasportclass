@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a04c9949-68cc-4f41-936b-c2e8658e8992" name="Default" comment="" />
+    <list default="true" id="a04c9949-68cc-4f41-936b-c2e8658e8992" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -86,6 +88,7 @@
         <option value="$PROJECT_DIR$/src/server/apis/messages/index.js" />
         <option value="$PROJECT_DIR$/src/server/apis/sports/index.js" />
         <option value="$PROJECT_DIR$/src/server/apis/users/index.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -427,7 +430,7 @@
       <workItem from="1492114160095" duration="1162000" />
       <workItem from="1492115420761" duration="4679000" />
       <workItem from="1492423210106" duration="2143000" />
-      <workItem from="1492685899478" duration="393000" />
+      <workItem from="1492685899478" duration="624000" />
     </task>
     <task id="LOCAL-00001" summary="initial project skeleton, mongodb, dependencies">
       <created>1489526928563</created>
@@ -552,7 +555,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16219000" />
+    <option name="totallyTimeSpent" value="16450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="-11" width="1559" height="912" extended-state="6" />
