@@ -27,3 +27,4 @@ src/app/*.js.map
 src/app/_services/*.js
 src/app/_services/*.js.map
 src/uploads/
+.idea/workspace.xml
