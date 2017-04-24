@@ -1,0 +1,19 @@
+// Mixins tools
+@import "mixins";
+@import "modules/direction";
+
+// Includes of Modules
+@import "modules";
+// Responsive Util
+@import "responsive";
+
+@import "../../../../node_modules/animate.less/animate";
+
+//Change your theme here 
+@theme-name:"default";
+@direction: ltr; // use `rtl` or `ltr
+
+.theme {
+    @import "themes/default/theme";
+}
+.theme();
