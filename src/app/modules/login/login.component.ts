@@ -3,6 +3,7 @@ import {AuthService} from "./auth.service";
 import {Router} from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import {NotificationService} from '../../common/notification.service';
+import {User} from "./user";
 
 
 @Component({
