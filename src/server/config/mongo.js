@@ -12,7 +12,7 @@ let mongo = {
 let mongodbUri = require('mongodb-uri');
 let options = {
     db: {native_parser: true, numberOfRetries: 100, retryMiliSeconds: 60000},
-    server: {auto_reconnect: true, poolSize: 10, socketOptions: {keepAlive: 1}},
+    server: {auto_reconnect: true, poolSize: 2, socketOptions: {keepAlive: 1}},
     debug: true
 };
 if (config.mongo.replset !== undefined) {

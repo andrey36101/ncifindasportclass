@@ -95,11 +95,17 @@ module.exports = class UserController {
                         if (eObj.hasOwnProperty("message"))
                             errors.push(eObj['message']);
                     });
+                    errors = errors.toString();
                 } else if (error.name == 'MongoError') {
                     errors.push(error);
+                    if(error.code ==11000){
+                        let regex = /index\:\ (?:.*\.)?\$?(?:([_a-z0-9]*)(?:_\d*)|([_a-z0-9]*))\s*dup key/i, match =  error.errmsg.match(regex);
+                        let indexName = match[1] || match[2];
+                        errors = indexName + ' already exist';
+                    }
                 } else
                     errors.push('Internal server error.');
-                res.sendError(errors);
+                res.sendError({message:errors});
             })
 
     }
@@ -107,13 +113,10 @@ module.exports = class UserController {
     checkLogin(req,res){
 
         var token = req.body.token || req.params.token || req.headers['x-access-token'];
-
         jwt.verify(token, global.config.secret, function(err, decoded) {
             if (err) {
-                return res.status(403).send({
-                    code: 401,
-                    message: 'Not logged int'
-                });
+                console.log(err);
+                return res.sendError(new Exception('SessionExpired'));
             } else {
                 req.user = decoded;
                 return res.sendResponse(req.user);
@@ -127,12 +130,13 @@ module.exports = class UserController {
         let promise = global.MongoORM.User.findOne({email: email, password: Utils.md5(password)});
         promise
             .then(function (success) {
-
-                if (success != null) {
-                    let token = jwt.sign(success, global.config.secret, {
+                let user = JSON.parse(JSON.stringify(success));
+                delete user.password;
+                if (user != null) {
+                    let token = jwt.sign(user, global.config.secret, {
                         expiresIn: 86400 // expires in 24 hours
                     });
-                    return res.sendResponse({token:token});
+                    return res.sendResponse({token:token,user:user});
                 } else
                     return res.sendError({message: "Login failed"});
             })

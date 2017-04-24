@@ -12,11 +12,15 @@ import {AuthService} from '../../modules/login/auth.service'
 export class HeaderComponent implements OnInit{
     constructor(private authService: AuthService,private route:Router) {}
     logOut():void{
-        this.authService.logOut().then(res=>{localStorage.removeItem('currentUser');this.route.navigate(['login'])});
+        this.authService.logOut().then(res=>{
+            this.route.navigate(['login'])
+        });
     }
     userName:string;
     ngOnInit() :void {
-        let currentUserData = JSON.parse(localStorage.currentUser);
+        let currentUserData = JSON.parse(localStorage.getItem('userProfile'));
+
+        console.log(currentUserData);
         this.userName=currentUserData.name;
     }
 }

@@ -14,9 +14,10 @@ export class AuthService {
     }
     private headers = new Headers({'Content-Type': 'application/json'});
     isLoggedIn():Observable<any> {
-        return this.http.post(`/checkLogin`,{})
+        let token = localStorage.getItem('token');
+        return this.http.post(`/checkLogin`,JSON.stringify({token:token}),{headers: this.headers})
             .map((r:Response)=>r)
-           .take(1)
+            .take(1)
             .catch(this.handleError);
     }
     doLogin(email,password):Promise<any> {
@@ -26,24 +27,36 @@ export class AuthService {
             .then(res => res)
             .catch(this.handleError);
     }
-    logOut():Promise<any> {
+    doRegister(user):Promise<any> {
         return this.http
-            .get('/logout', {}, {headers: this.headers})
+            .post('/user', JSON.stringify(user), {headers: this.headers})
             .toPromise()
             .then(res => res)
             .catch(this.handleError);
     }
 
+    logOut():Promise<any> {
+        return new Promise<boolean>((resolve, reject) => {
+            localStorage.removeItem('token');
+            localStorage.removeItem('userProfile');
+            resolve(true);
+        });
+
+    }
+
     private handleError (error: Response | any) {
-        // In a real world app, we might use a remote logging infrastructure
+
         let errMsg: string;
         if (error instanceof Response) {
             const body = error.json() || '';
-            const err = body.error || JSON.stringify(body);
+            console.log('body',body);
+            const err = body.Error.message || JSON.stringify(body);
             errMsg = `${error.status} - ${error.statusText || ''} ${err}`;
         } else {
-            errMsg = error.message ? error.message : error.toString();
+            errMsg = error.Error.message ? error.Error.message : error.toString();
         }
+        console.log(errMsg);
+
         return Observable.throw(errMsg);
 
     }
