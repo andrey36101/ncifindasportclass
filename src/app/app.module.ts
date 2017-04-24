@@ -10,6 +10,7 @@ import {NotificationService} from './common/notification.service';
 
 @Component({
     selector: 'app',
+    styles: [String(require('./styles/app.css'))],
     template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {

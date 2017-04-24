@@ -12,7 +12,7 @@ module.exports = class UserController {
         app.get('/user/:userId', this.userDetail);
         app.put('/user/:userId/address', this.updateUserAddress);
         app.put('/user/:userId', this.deleteUser);
-        app.get('/checkLogin',this.checkLogin);
+        app.post('/checkLogin',this.checkLogin);
 
     }
 
@@ -105,6 +105,9 @@ module.exports = class UserController {
     }
 
     checkLogin(req,res){
+
+        var token = req.body.token || req.params.token || req.headers['x-access-token'];
+
         jwt.verify(token, global.config.secret, function(err, decoded) {
             if (err) {
                 return res.status(403).send({
