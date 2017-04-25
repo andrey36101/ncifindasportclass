@@ -2,7 +2,7 @@
 <nav class="page-sidebar" data-pages="sidebar" id="page-sidebar">
 	<!-- BEGIN SIDEBAR MENU HEADER-->
 	<div class="sidebar-header">
-		<img src="/assets/images/logo-white.png" alt="logo" class="brand" data-src="/assets/images/logo_white.png"   height="22">
+		<img src="/assets/images/logo.png" alt="logo" class="brand" data-src="/assets/images/logo_white.png"   height="22">
 		<div class="sidebar-header-controls pull-right">
 			<button type="button" class="btn btn-xs sidebar-slide-toggle btn-link m-l-20" id="hide-side-menu"><i class="fa fa-close fs-16"></i>
 			</button>
@@ -15,10 +15,14 @@
 		<ul class="menu-items">
 			<li ui-sref-active="active" class="m-t-30 ">
 				<a [routerLink]="['/dashboard']">
-					<span class="title">Dashboard</span>
+					<span class="title">Sports</span>
 				</a>
 			</li>
-
+			<li >
+				<a [routerLink]="['/plans']" class="detailed">
+					<span class="title">Messages</span>
+				</a>
+			</li>
 
 		</ul>
 		<div class="clearfix"></div>

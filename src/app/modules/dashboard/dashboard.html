@@ -1,21 +1,83 @@
+<div class="container-fluid sm-padding-10">
+    <div class="col-md-3">
 
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-title">Search</div>
+            </div>
+            <div class="panel-body">
+                <form novalidate id="search-form" role="form">
+                    <div class="form-group">
+                        <input type="text" name="regName" id="regName" tabindex="1" class="form-control" placeholder="Search by name" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="regEmail" id="regEmail" tabindex="1" class="form-control" placeholder="Email Address" value="">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="regPassword" id="regPassword" tabindex="2" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="regConfirmPassword" id="regConfirmPassword" tabindex="2" class="form-control" placeholder="Confirm Password">
+                    </div>
 
-<div class="jumbotron">
-    <div class="container-fluid container-fixed-lg sm-p-l-20 sm-p-r-20">
-        <div class="inner" style="transform: translateY(0px); opacity: 1;">
-            <ul class="breadcrumb pull-left">
-                <li>
-                    <p>Dashboard</p>
-                </li>
-
-            </ul>
-
-
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-6">
+                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Search">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
 
         </div>
     </div>
-</div>
-<div class="container-fluid padding-25 sm-padding-10">
+    <div class="col-md-9">
 
-    <h1>Dashboard</h1>
+
+        <div class="panel panel-default hover-stroke">
+            <div class="panel-body no-padding">
+                <div class="container-sm-height">
+                    <div class="row row-sm-height">
+                        <div class="col-sm-12 col-sm-height padding-10 col-top">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Sports</th>
+                                    <th></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let sport of sports">
+                                    <td style="width: 250px;">
+                                        <img class="placeholder-thumbnail" src="assets/images/placeholder.png" />
+                                    </td>
+                                    <td>
+                                        <h4>{{sport.name}}</h4>
+                                        <small>{{sport.description}}</small>
+                                    </td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <ul class="pagination">
+                                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" >
+                                    <a  (click)="setPagination(page)">{{page}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div *ngIf="pager.totalItems <=0"  class="row row-sm-height">
+                        <div class="col-sm-1 col-sm-height col-middle bg-master-lighter">
+                            <h4 class="text-center text-white no-margin">
+                                <i class="fa fa-warning "></i>
+                                No sport class found.
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

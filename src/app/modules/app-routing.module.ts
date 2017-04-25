@@ -10,7 +10,7 @@ import {HeaderComponent} from '../components/layout/header.component';
 import {SidebarComponent} from '../components/layout/sidebar.component';
 import {LoggedInGuard} from './login/logged-in.guard';
 
-
+import {PagerService} from '../common/pager.service';
 var routes:Routes = [
     {
         path: 'login',
@@ -33,7 +33,8 @@ var routes:Routes = [
 @NgModule({
     declarations: [RootComponent,HeaderComponent,SidebarComponent],
     imports: [HttpModule,RouterModule.forRoot(routes), LoginModule, DashboardModule],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers:[PagerService]
 })
 export class AppRoutingModule {
 

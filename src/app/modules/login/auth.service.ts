@@ -15,21 +15,21 @@ export class AuthService {
     private headers = new Headers({'Content-Type': 'application/json'});
     isLoggedIn():Observable<any> {
         let token = localStorage.getItem('token');
-        return this.http.post(`/checkLogin`,JSON.stringify({token:token}),{headers: this.headers})
+        return this.http.post(`/api/checkLogin`,JSON.stringify({token:token}),{headers: this.headers})
             .map((r:Response)=>r)
             .take(1)
             .catch(this.handleError);
     }
     doLogin(email,password):Promise<any> {
         return this.http
-            .post('/login', JSON.stringify({email: email,password:password}), {headers: this.headers})
+            .post('/api/login', JSON.stringify({email: email,password:password}), {headers: this.headers})
             .toPromise()
             .then(res => res)
             .catch(this.handleError);
     }
     doRegister(user):Promise<any> {
         return this.http
-            .post('/user', JSON.stringify(user), {headers: this.headers})
+            .post('/api/user', JSON.stringify(user), {headers: this.headers})
             .toPromise()
             .then(res => res)
             .catch(this.handleError);
