@@ -19,7 +19,7 @@ var routes:Routes = [
     {
         path: '',
         pathMatch:'full',
-        redirectTo:'/dashboard',
+        redirectTo:'/sports',
         canActivate:[LoggedInGuard]
     },
     {

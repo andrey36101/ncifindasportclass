@@ -4,7 +4,7 @@ import {SportService} from "./sport.service";
 import { BrowserModule }  from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 var routes = [{
-    path: 'dashboard',
+    path: 'sports',
     component: DashboardComponent
 }];
 

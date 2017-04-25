@@ -2,8 +2,8 @@ import {Component, OnInit} from "@angular/core";
 import {AuthService} from "./auth.service";
 import {Router} from "@angular/router";
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { User } from './user.interface';
 import {NotificationService} from '../../common/notification.service';
-import {User} from "./user";
 
 
 @Component({
@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     constructor(private authService: AuthService, private route: Router,private _fb: FormBuilder,public notificationService:NotificationService) {
         authService.isLoggedIn().subscribe(r=>{
             if(r.json().Status=="success")
-                route.navigate(['dashboard']);
+                route.navigate(['sports']);
         });
     }
 
@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
                 this.notificationService.notifyMsg('You are logged in successfully','success');
                 localStorage.setItem('token', res.json().Data.token);
                 localStorage.setItem('userProfile', JSON.stringify(res.json().Data.user));
-                this.route.navigate(['dashboard']);
+                this.route.navigate(['sports']);
             }
         }).catch(e =>{
             this.notificationService.notifyMsg(e,'error');
