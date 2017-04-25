@@ -1,0 +1,610 @@
+{
+	"variables": [],
+	"info": {
+		"name": "SportsClassSearch",
+		"_postman_id": "c97fc79e-454c-e62d-6827-95c79e7e347a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Feedback",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Feedback",
+					"request": {
+						"url": "http://localhost:8080/feedback",
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\":\"Nice trainer\",\n\t\"ratting\":5,\n\t\"trainerId\":\"58caa3238664432062aea426\",\n\t\"userId\":\"58ca54b437a8ac1437d1cd5f\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List Feebacks",
+					"request": {
+						"url": "http://localhost:8080/feedback",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Feedback Detail",
+					"request": {
+						"url": "http://localhost:8080/feedback/58cacb26daabd62824e2f89c",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Feedback",
+					"request": {
+						"url": "http://localhost:8080/feedback/58cacb26daabd62824e2f89c",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"content\":\"Very nice trainer\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Feedback",
+					"request": {
+						"url": "http://localhost:8080/feedback/58cacb26daabd62824e2f89c",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Messages",
+			"description": "",
+			"item": [
+				{
+					"name": "Send Message",
+					"request": {
+						"url": "http://localhost:8080/messages",
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\n\t\"title\":\"Test Message\",\n\t\"description\":\"how are you?\",\n\t\"senderId\":\"58caa3238664432062aea426\",\n\t\"recipientId\":\"58ca54b437a8ac1437d1cd5f\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List Messages",
+					"request": {
+						"url": "http://localhost:8080/messages",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message Detail",
+					"request": {
+						"url": "http://localhost:8080/sports/58caa51431613f2133ce06bb",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Message",
+					"request": {
+						"url": "http://localhost:8080/messages/58caae7b555ada238ca557ee",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"title\":\"First Message\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Message Detail",
+					"request": {
+						"url": "http://localhost:8080/sports/58caa51431613f2133ce06bb",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Sports",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Sports",
+					"request": {
+						"url": "http://localhost:8080/sports",
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"gender\":\"male\",\n\t\"location\":[150.644,-34.397],\n\t\"name\":\"Baseball\",\n\t\"description\":\"baseball description\",\n\t\"ownerId\":\"58caa3238664432062aea426\",\n\t\"age\":18,\n\t\"price\":100,\n\t\"tags\":[\"baseball\"],\n\t\"prompPicture\":\"mytest.jpg\",\n\t\"address\": {\n\t\t\"address1\":\"address street 1\",\n\t\t\"address2\":\"address street 2\",\n\t\t\"city\":\"Wales\",\n\t\t\"state\":\"New South Wales\",\n\t\t\"zipcode\":\"1234\",\n\t\t\"country\":\"Australia\",\n\t\t\"phone\":\"+353412542222\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List Sports",
+					"request": {
+						"url": "http://localhost:8080/sports",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Sports Detail",
+					"request": {
+						"url": "http://localhost:8080/sports/58caaa7889ac37226fb9e4d7",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sport's Address",
+					"request": {
+						"url": "http://localhost:8080/sports/58caa47f6add8120dcc852f8/address",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address1\":\"street 1\",\n\t\"zipcode\":\"23456\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Sport",
+					"request": {
+						"url": "http://localhost:8080/sports/58caaa7889ac37226fb9e4d7",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Base Ball\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Sports Detail",
+					"request": {
+						"url": "http://localhost:8080/sports/58caaa7889ac37226fb9e4d7",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"description": "",
+			"item": [
+				{
+					"name": "Singup User",
+					"request": {
+						"url": "http://localhost:8080/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"andrei@gmail.com\",\n\t\"name\":\"Andrei Ivanov\",\n\t\"password\":\"andrei\",\n\t\"gender\":\"male\",\n\t\"location\":[150.644,-34.397],\n\t\"type\":\"customer\",\n\t\"profilePic\":\"mytest.png\",\n\t\"address\": {\n\t\t\"address1\":\"address street 1\",\n\t\t\"address2\":\"address street 2\",\n\t\t\"city\":\"Wales\",\n\t\t\"state\":\"New South Wales\",\n\t\t\"zipcode\":\"1234\",\n\t\t\"country\":\"Australia\",\n\t\t\"phone\":\"+412543322222\"\n\t}\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List Users",
+					"request": {
+						"url": "http://localhost:8080/user",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"url": "http://localhost:8080/user/58c97e18497a771059e999fb",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Andrei\",\n\t\"gender\":\"Male\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Detail",
+					"request": {
+						"url": "http://localhost:8080/user",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"userName\":\"andrei\",\n\t\"password\":\"admin\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Address",
+					"request": {
+						"url": "http://localhost:8080/user/58ca54b437a8ac1437d1cd5f/address",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address1\":\"street 1\",\n\t\"zipcode\":\"23456\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"url": "http://localhost:8080/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Linux; U; Android 4.0.3; en-in; SonyEricssonMT11i",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"andrei@gmail.com\",\n\t\"password\":\"andrei\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User Detail",
+					"request": {
+						"url": "http://localhost:8080/user",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyTmFtZSI6ImtyaXNobmFsIiwicGFzc3dvcmQiOiJhZG1pbiIsImlhdCI6MTQ4OTUxNTQwNiwiZXhwIjoxNDg5NjAxODA2fQ.e4bL9hX9MSmBS6hutLKejuRlY25dxWtnJ5zAoDvYWTs",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
