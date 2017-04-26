@@ -1,0 +1,62 @@
+<div class="container-fluid sm-padding-10">
+    <div class="col-md-3">
+
+        <div class="panel">
+            <div class="panel-heading">
+                <div class="panel-title">Messages</div>
+            </div>
+            <div class="panel-body">
+                <div  data-toggle="buttons">
+                    <label class="btn btn-default btn-sm btn-block text-left active">
+                        <input type="radio" name="options" id="option1"  checked> All
+                    </label>
+                    <label class="btn btn-default btn-sm btn-block text-left">
+                        <input type="radio" name="options" id="option2"> Today
+                    </label>
+                    <label class="btn btn-default btn-sm btn-block text-left">
+                        <input type="radio" name="options" id="option3"> Tomorrow
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9">
+
+
+        <div class="panel panel-default hover-stroke">
+            <div class="panel-body no-padding">
+                <div class="container-sm-height">
+                    <div class="row row-sm-height">
+                        <div class="col-sm-12 col-sm-height padding-10 col-top">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th>Sender</th>
+                                    <th>Tittle</th>
+                                    <th>Description</th>
+                                    <th>Date</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr *ngFor="let message of messages">
+                                    <td>{{message.senderId.name}}</td>
+                                    <td>{{message.title}}</td>
+                                    <td>{{message.description}}</td>
+                                    <td>{{message.createdAt | date: 'dd/MM/yyyy'}}</td>
+
+                                </tr>
+
+                                </tbody>
+                            </table>
+                            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                    <a (click)="setPagination(page)">{{page}}</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

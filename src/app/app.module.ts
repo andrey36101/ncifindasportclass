@@ -7,6 +7,8 @@ import {HttpModule} from "@angular/http";
 import {ModalModule} from 'angular2-modal';
 import {BootstrapModalModule} from 'angular2-modal/plugins/bootstrap';
 import {NotificationService} from './common/notification.service';
+import { DropdownModule } from 'ng2-bootstrap';
+
 
 @Component({
     selector: 'app',
@@ -23,7 +25,8 @@ export class AppComponent {
         BrowserModule,
         AppRoutingModule,
         ModalModule.forRoot(),
-        BootstrapModalModule
+        BootstrapModalModule,
+        DropdownModule.forRoot()
     ],
     exports: [],
     providers: [{

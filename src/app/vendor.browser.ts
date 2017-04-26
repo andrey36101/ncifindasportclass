@@ -14,6 +14,9 @@ import 'rxjs/add/operator/mergeMap';
 
 // Web dependencies
 import 'jquery';
+import 'bootstrap/dist/js/bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'ng2-bootstrap';
 import 'lodash';
 
 import 'angular2-modal';

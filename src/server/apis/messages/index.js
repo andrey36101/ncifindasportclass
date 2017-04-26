@@ -3,11 +3,11 @@ module.exports = class MessageController {
     constructor(app) {
 
 
-        app.post('/messages', this.createMessages);
-        app.get('/messages', this.list);
-        app.get('/messages/:messageId', this.messageDetail);
-        app.put('/messages/:messageId', this.updateMessage);
-        app.delete('/messages/:messageId', this.deleteMessage);
+        app.post('/api/messages', this.createMessages);
+        app.get('/api/messages', this.list);
+        app.get('/api/messages/:messageId', this.messageDetail);
+        app.put('/api/messages/:messageId', this.updateMessage);
+        app.delete('/api/messages/:messageId', this.deleteMessage);
 
     }
 
@@ -58,6 +58,7 @@ module.exports = class MessageController {
 
         sort[sortBy] = sortOrder;
         global.MongoORM.Message.find({})
+            .populate('senderId',['name','email','address','location','gender','profilePic'])
             .limit(row)
             .skip(row * pageNo)
             .sort(sort)

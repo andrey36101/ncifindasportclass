@@ -2,38 +2,26 @@
 <div class="header">
     <div class="pull-left">
         <div class="header-inner">
-            <a id="show-side-menu" href="javascript:void(0)" class="m-r-15"><span class="fa fa-bars text-master-light fa-2x m-l-10"></span></a>
+            <a id="show-side-menu" href="javascript:void(0)" class="m-r-15"><span
+                    class="fa fa-bars text-master-light fa-2x m-l-10"></span></a>
             <h5 class="pull-right no-margin semi-bold">Sport Class Search</h5>
         </div>
     </div>
     <div class=" pull-right">
-
-        <div class="visible-lg visible-md m-t-10">
-            <div class="dropdown pull-right" (click)="logOut()">
-                <button class="profile-dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="thumbnail-wrapper d32 circular inline m-t-5">
-                    {{userName}}
-                </span>
-                </button>
-                <ul class="dropdown-menu profile-dropdown" role="menu" >
-                    <li><a href="#"><i class="pg-settings_small"></i> Settings</a>
-                    </li>
-                    <li><a href="#"><i class="pg-outdent"></i> Feedback</a>
-                    </li>
-                    <li><a href="#"><i class="pg-signals"></i> Help</a>
-                    </li>
-                    <li class="bg-master-lighter">
-                        <a href="#" class="clearfix">
-                            <span class="pull-left">Logout</span>
-                            <span class="pull-right"><i class="pg-power"></i></span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <div class="visible-lg visible-md m-t-20">
+            <span dropdown>
+              <a href id="simple-dropdown" dropdownToggle>
+                Welcome, {{userName}}
+              </a>
+              <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
+                <li>
+                  <a class="dropdown-item" href="javascript:void(0);">My Profile</a>
+                </li>
+                  <li class="divider dropdown-divider"></li>
+                  <li role="menuitem"><a class="dropdown-item" (click)="logOut()" href="javascript:void(0);">Logout</a></li>
+              </ul>
+            </span>
         </div>
-
     </div>
-
-
 </div>
 <!-- END HEADER -->
