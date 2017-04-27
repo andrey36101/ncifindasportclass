@@ -22,10 +22,17 @@ export class DashboardComponent implements OnInit{
     pagedItems: any[];
     public searchForm: FormGroup;
     public messageForm: FormGroup;
+    public feedbackForm: FormGroup;
+    public feedbackSubmitted: boolean;
     public msgSent: boolean;
     public submitted: boolean;
+    public ratting: number;
+
     filter: any = {};
     @ViewChild('messageModal') public messageModal:ModalDirective;
+
+    @ViewChild('feedbackModal') public feedbackModal:ModalDirective;
+
     lastMessages: any[];
     trainer: any = {};
     currentUserData: any = {};
@@ -53,6 +60,10 @@ export class DashboardComponent implements OnInit{
         this.messageForm = this._fb.group({
             title: ['', [<any>Validators.required]],
             description: ['', [<any>Validators.required]],
+        });
+
+        this.feedbackForm = this._fb.group({
+            content: ['', [<any>Validators.required]]
         });
 
     }
@@ -144,6 +155,44 @@ export class DashboardComponent implements OnInit{
             }).catch(e =>{
                 this.notificationService.notifyMsg(e,'error');
             });
+        }
+    }
+
+    public showFeedbackModal(trainer):void {
+        console.log(trainer);
+
+        if(trainer == undefined){
+            this.notificationService.notifyMsg("Trainer profile not available",'error');
+            return;
+
+        }
+        this.trainer = trainer;
+        this.feedbackModal.show();
+
+    }
+    saveFeedback(feedbackData:any,isValid):void{
+
+        this.feedbackSubmitted = true;
+        if(isValid){
+            feedbackData["userId"] = this.currentUserData._id;
+            feedbackData["trainerId"] = this.trainer._id;
+            console.log(feedbackData,ratting);
+            // this.messageService.createMessage(feedbackData).then(res =>{
+            //     if(res.error){
+            //         throw res.error;
+            //     }
+            //     if(res.json().Status=="success") {
+            //         this.notificationService.notifyMsg('Your feedback saved.','success');
+            //         this.trainer = {};
+            //         this.feedbackModal.hide();
+            this.feedbackSubmitted = false;
+            // }
+            this.feedbackForm = this._fb.group({
+                content: ['', [<any>Validators.required]],
+            });
+            // }).catch(e =>{
+            //     this.notificationService.notifyMsg(e,'error');
+            // });
         }
     }
 }

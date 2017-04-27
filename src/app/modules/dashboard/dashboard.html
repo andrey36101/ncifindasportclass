@@ -109,7 +109,7 @@
                                             <div class="grid-title">
                                                 <h4>{{sport.name}}</h4>
                                                 <div class="tools">
-                                                    <button><i class="fa fa-star-half-full"></i></button>
+                                                    <button (click)="showFeedbackModal(sport.ownerId)" ><i class="fa fa-star-half-full"></i></button>
                                                     <button (click)="showMessagedModal(sport.ownerId)"><i
                                                             class="fa fa-envelope"></i></button>
                                                 </div>
@@ -120,11 +120,8 @@
                                                 <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd, yyyy'}}</h5>
                                             </div>
                                         </div>
-
                                     </td>
-
                                 </tr>
-
                                 </tbody>
                             </table>
                             <ul class="pagination">
@@ -160,28 +157,30 @@
                 </button>
             </div>
             <div class="modal-body">
-                <table class="table" *ngIf="lastMessages?.length>0">
-                    <thead>
-                    <tr>
-                        <th>Last conversation with {{trainer.name}}</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr *ngFor="let msg of lastMessages">
-                        <td>
-                            <h4>{{msg.title}}</h4>
-                            <p>{{msg.description}}</p>
-                            <p><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</p>
-                            <p *ngIf="msg.senderId"><i class="fa fa-user"></i> {{msg.senderId._id==currentUserData._id?'You':msg.senderId.name}}</p>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <div *ngIf="lastMessages?.length<=0" class="row row-sm-height">
-                    <h4 class="text-center text-white no-margin">
-                        <i class="fa fa-warning "></i>
-                        No conversation found.
-                    </h4>
+                <div class="table-responsive">
+                    <table class="table" *ngIf="lastMessages?.length>0">
+                        <thead>
+                        <tr>
+                            <th>Last conversation with {{trainer.name}}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let msg of lastMessages">
+                            <td>
+                                <h4>{{msg.title}}</h4>
+                                <p>{{msg.description}}</p>
+                                <p><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</p>
+                                <p *ngIf="msg.senderId"><i class="fa fa-user"></i> {{msg.senderId._id==currentUserData._id?'You':msg.senderId.name}}</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="lastMessages?.length<=0" class="row row-sm-height">
+                        <h4 class="text-center text-white no-margin">
+                            <i class="fa fa-warning "></i>
+                            No conversation found.
+                        </h4>
+                    </div>
                 </div>
                 <form id="message-form" [formGroup]="messageForm" novalidate
                       (ngSubmit)="sendMessage(messageForm.value, messageForm.valid)" role="form">
@@ -206,6 +205,49 @@
                             <div class="col-sm-6 col-sm-offset-6">
                                 <input type="submit" name="message-submit" id="message-submit" tabindex="4"
                                        class="form-control btn btn-register" value="Send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div bsModal #feedbackModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Feedback</h4>
+                <button type="button" class="close pull-right" aria-label="Close" (click)="this.feedbackModal.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="feedback-form" [formGroup]="feedbackForm" novalidate (ngSubmit)="saveFeedback(feedbackForm.value, feedbackForm.valid)" role="form">
+                    <div class="form-group">
+                        <div data-toggle="buttons-radio" class="btn-group">
+                            <button (click)="ratting=1" [ngClass]="{'active' : ratting==1}" class="btn btn-white">1</button>
+                            <button (click)="ratting=2" [ngClass]="{'active' : ratting==2}" class="btn btn-white">2</button>
+                            <button (click)="ratting=3" [ngClass]="{'active' : ratting==3}" class="btn btn-white">3</button>
+                            <button (click)="ratting=4" [ngClass]="{'active' : ratting==4}" class="btn btn-white">4</button>
+                            <button (click)="ratting=5" [ngClass]="{'active' : ratting==5}" class="btn btn-white">5</button>
+                        </div>
+                    </div>
+                    {{ratting}}
+                    <div class="form-group">
+                        <textarea tabindex="9" name="content" id="content" formControlName="content" class="form-control"
+                                  placeholder="Your feedback"></textarea>
+                        <small [hidden]="feedbackForm.controls.content.valid || (feedbackForm.controls.content.pristine && !feedbackSubmitted)" class="text-danger">
+                            Content required.
+                        </small>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-6">
+                                <input type="submit" name="feedback-submit" id="feedback-submit" tabindex="4"
+                                       class="form-control btn btn-register" value="Save">
                             </div>
                         </div>
                     </div>
