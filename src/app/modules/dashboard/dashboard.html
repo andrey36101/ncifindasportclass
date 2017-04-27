@@ -6,26 +6,32 @@
                 <div class="panel-title">Search</div>
             </div>
             <div class="panel-body">
-                <form novalidate id="search-form" [formGroup]="searchForm" novalidate (ngSubmit)="search(searchForm.value, searchForm.valid)" role="form">
+                <form novalidate id="search-form" [formGroup]="searchForm" novalidate
+                      (ngSubmit)="search(searchForm.value, searchForm.valid)" role="form">
                     <div class="form-group">
-                        <input type="text" name="tags" id="tags" formControlName="tags" tabindex="1" class="form-control" placeholder="Search keywords" value="">
+                        <input type="text" name="tags" id="tags" formControlName="tags" tabindex="1"
+                               class="form-control" placeholder="Search keywords" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="name" id="name"  formControlName="name" tabindex="1" class="form-control" placeholder="Search by name" value="">
+                        <input type="text" name="name" id="name" formControlName="name" tabindex="1"
+                               class="form-control" placeholder="Search by name" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="country" id="country" formControlName="country" tabindex="1" class="form-control" placeholder="Search by country" value="">
+                        <input type="text" name="country" id="country" formControlName="country" tabindex="1"
+                               class="form-control" placeholder="Search by country" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="state" id="state" formControlName="state" tabindex="1" class="form-control" placeholder="Search by state" value="">
+                        <input type="text" name="state" id="state" formControlName="state" tabindex="1"
+                               class="form-control" placeholder="Search by state" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="state" id="city" formControlName="city" tabindex="1" class="form-control" placeholder="Search by city" value="">
+                        <input type="text" name="state" id="city" formControlName="city" tabindex="1"
+                               class="form-control" placeholder="Search by city" value="">
                     </div>
                     <div class="form-group row">
                         <label for="age" class="col-sm-4 control-label">Age</label>
                         <div class="col-sm-8">
-                            <select id="selAge" name="age" formControlName="age" class="form-control">
+                            <select id="age" name="age" formControlName="age" class="form-control">
                                 <option>0</option>
                                 <option>10</option>
                                 <option>15</option>
@@ -67,7 +73,8 @@
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-6 col-sm-offset-6">
-                                <input type="submit" name="register-submit" id="register-submit" tabindex="4" class="form-control btn btn-register" value="Search">
+                                <input type="submit" name="register-submit" id="register-submit" tabindex="4"
+                                       class="form-control btn btn-register" value="Search">
                             </div>
                         </div>
                     </div>
@@ -94,20 +101,23 @@
                                 <tbody>
                                 <tr *ngFor="let sport of sports">
                                     <td style="width: 250px;">
-                                        <img class="placeholder-thumbnail" src="{{prompPicture || 'assets/images/placeholder.png'}}" />
+                                        <img class="placeholder-thumbnail"
+                                             src="{{prompPicture || 'assets/images/placeholder.png'}}"/>
                                     </td>
                                     <td>
                                         <div class="grid simple ">
                                             <div class="grid-title">
                                                 <h4>{{sport.name}}</h4>
                                                 <div class="tools">
-                                                    <button  ><i class="fa fa-star-half-full"></i></button>
-                                                    <button (click)="showMessagedModal(sport.ownerId)"><i class="fa fa-envelope"></i></button>
+                                                    <button><i class="fa fa-star-half-full"></i></button>
+                                                    <button (click)="showMessagedModal(sport.ownerId)"><i
+                                                            class="fa fa-envelope"></i></button>
                                                 </div>
                                             </div>
                                             <div class="grid-body">
+                                                <p *ngIf="sport.address" ><i class="fa fa-map-marker"></i> <span *ngIf="sport.address.address1">{{sport.address.address1}}, </span><span *ngIf="sport.address.address2">{{sport.address.address2}}, </span><span *ngIf="sport.address.city">{{sport.address.city}}, </span><span *ngIf="sport.address.state">{{sport.address.state}}, </span><span *ngIf="sport.address.country">{{sport.address.country}} </span> <span *ngIf="sport.address.zipcode">{{sport.address.zipcode}}</span></p>
                                                 <p>{{sport.description}}</p>
-                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt | date:'MMM dd, yyyy'}}</h5>
+                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd, yyyy'}}</h5>
                                             </div>
                                         </div>
 
@@ -118,13 +128,13 @@
                                 </tbody>
                             </table>
                             <ul class="pagination">
-                                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}" >
-                                    <a  (click)="setPagination(page)">{{page}}</a>
+                                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                                    <a (click)="setPagination(page)">{{page}}</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
-                    <div *ngIf="sports?.length<=0"  class="row row-sm-height">
+                    <div *ngIf="sports?.length<=0" class="row row-sm-height">
                         <div class="col-sm-1 col-sm-height col-middle bg-master-lighter">
                             <h4 class="text-center text-white no-margin">
                                 <i class="fa fa-warning "></i>
@@ -139,9 +149,8 @@
 </div>
 
 
-
-
-<div bsModal #messageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+<div bsModal #messageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
@@ -162,29 +171,41 @@
                         <td>
                             <h4>{{msg.title}}</h4>
                             <p>{{msg.description}}</p>
-                            <h5><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</h5>
+                            <p><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</p>
+                            <p *ngIf="msg.senderId"><i class="fa fa-user"></i> {{msg.senderId._id==currentUserData._id?'You':msg.senderId.name}}</p>
                         </td>
                     </tr>
                     </tbody>
                 </table>
-                <div *ngIf="lastMessages?.length<=0"  class="row row-sm-height">
+                <div *ngIf="lastMessages?.length<=0" class="row row-sm-height">
                     <h4 class="text-center text-white no-margin">
                         <i class="fa fa-warning "></i>
                         No conversation found.
                     </h4>
                 </div>
-                <form novalidate id="message-form" novalidate  role="form">
+                <form id="message-form" [formGroup]="messageForm" novalidate
+                      (ngSubmit)="sendMessage(messageForm.value, messageForm.valid)" role="form">
                     <div class="form-group">
-                        <input type="text" name="subject" id="subject" tabindex="1" class="form-control" placeholder="Your message title" value="">
+                        <input type="text" name="title" id="title" formControlName="title" tabindex="8" class="form-control"
+                               placeholder="Your message title" value="">
+                        <small [hidden]="messageForm.controls.title.valid || (messageForm.controls.title.pristine && !msgSent)" class="text-danger">
+                            Message title required.
+                        </small>
                     </div>
                     <div class="form-group">
 
-                        <textarea name="description" id="description" class="form-control" placeholder="You message"></textarea>
+                        <textarea tabindex="9" name="description" id="description" formControlName="description" class="form-control"
+                                  placeholder="You message"></textarea>
+                        <small [hidden]="messageForm.controls.description.valid || (messageForm.controls.description.pristine && !msgSent)" class="text-danger">
+                            Description required.
+                        </small>
+
                     </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-6 col-sm-offset-6">
-                                <input type="submit" name="message-submit" id="message-submit" tabindex="4" class="form-control btn btn-register" value="Send">
+                                <input type="submit" name="message-submit" id="message-submit" tabindex="4"
+                                       class="form-control btn btn-register" value="Send">
                             </div>
                         </div>
                     </div>

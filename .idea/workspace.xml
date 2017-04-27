@@ -2,612 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a04c9949-68cc-4f41-936b-c2e8658e8992" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion-group.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion-group.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion-group.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/accordion.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/accordion/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/alert.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/alert.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/alert.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/alert.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/alert.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/alert.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/alert/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/button-checkbox.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/button-checkbox.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/button-checkbox.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/button-radio.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/button-radio.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/button-radio.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/buttons.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/buttons.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/buttons.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/buttons/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/carousel.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/carousel.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/carousel.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/carousel.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/carousel.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/carousel.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/slide.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/slide.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/slide.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/carousel/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/collapse.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/collapse.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/collapse.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/collapse.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/collapse.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/collapse.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/collapse/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/common.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/common.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/common.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/date-formatter.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/date-formatter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker-inner.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker-inner.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker-inner.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/datepicker.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/daypicker.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/daypicker.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/daypicker.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/monthpicker.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/monthpicker.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/monthpicker.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/yearpicker.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/yearpicker.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/datepicker/yearpicker.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown-menu.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown-menu.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown-menu.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown-toggle.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown-toggle.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown-toggle.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.interfaces.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.interfaces.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.service.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/dropdown.service.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/dropdown/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/index.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/index.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal-backdrop.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal-backdrop.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal-backdrop.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal-options.class.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal-options.class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal-options.class.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/modal.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/modal/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/ng2-bootstrap-config.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/ng2-bootstrap-config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/ng2-bootstrap-config.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pager.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pager.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pager.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pagination.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pagination.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pagination.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pagination.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pagination.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/pagination.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/pagination/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/position.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/position.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/position.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/bar.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/bar.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/bar.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progress.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progress.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progress.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progressbar.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progressbar.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progressbar.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progressbar.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progressbar.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/progressbar.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/progressbar/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/rating.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/rating.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/rating.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/rating.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/rating.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/rating.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/rating/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tab-heading.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tab-heading.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tab-heading.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tab.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tab.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tab.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tabs.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tabs.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tabs.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tabset.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tabset.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/tabset.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tabs/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/timepicker.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/timepicker.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/timepicker.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/timepicker.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/timepicker.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/timepicker.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/timepicker/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip-container.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip-container.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip-container.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip-options.class.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip-options.class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip-options.class.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/tooltip/tooltip.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/latin-map.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/latin-map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/latin-map.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/title.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-container.component.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-container.component.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-container.component.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-match.class.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-match.class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-options.class.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-options.class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-utils.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead-utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead.directive.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead.directive.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead.directive.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead.module.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead.module.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/typeahead/typeahead.module.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/components-helper.service.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/components-helper.service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/components-helper.service.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/facade/browser.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/facade/browser.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/facade/browser.metadata.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/utils.class.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/components/utils/utils.class.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/docs/getting-started/ng-cli.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/ender.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/af.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ar-ly.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ar-ma.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ar-sa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ar-tn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/az.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/be.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/bn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/bo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/bs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/cv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/cy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/de-at.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/dv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/en-ie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/en-nz.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/eo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/es-do.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fr-ch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/fy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/gd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/hy-am.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/is.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/jv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ka.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/kk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/km.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ky.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/lb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/lo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/me.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/mi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/mk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/mr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ms-my.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ms.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/my.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ne.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/nn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/pa-in.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/se.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/si.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sr-cyrl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ss.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/sw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/ta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/te.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/tl-ph.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/tlh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/tzl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/tzm-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/tzm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/uz.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/x-pseudo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/zh-hk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/locale/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/min/locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/min/locales.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/min/moment-with-locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/min/moment-with-locales.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/min/moment.min.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/moment.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/moment.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/package.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/check-overflow.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/date-from-array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/from-anything.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/from-array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/from-object.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/from-string-and-array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/from-string-and-format.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/from-string.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/local.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/parsing-flags.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/utc.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/create/valid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/abs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/add-subtract.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/as.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/bubble.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/constructor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/create.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/duration.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/get.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/humanize.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/iso-string.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/duration/prototype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/format/format.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/base-config.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/constructor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/en.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/formats.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/invalid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/lists.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/locale.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/locales.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/ordinal.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/pre-post-format.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/prototype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/relative.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/locale/set.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/add-subtract.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/calendar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/clone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/compare.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/constructor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/creation-data.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/diff.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/format.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/from.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/get-set.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/locale.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/min-max.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/moment.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/now.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/prototype.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/start-end-of.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/to-type.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/to.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/moment/valid.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/parse/regex.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/parse/token.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/aliases.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/constants.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/day-of-month.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/day-of-week.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/day-of-year.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/hour.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/millisecond.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/minute.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/month.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/offset.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/priorities.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/quarter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/second.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/timestamp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/timezone.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/units.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/week-calendar-utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/week-year.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/week.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/units/year.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/abs-ceil.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/abs-floor.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/abs-round.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/compare-arrays.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/defaults.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/deprecate.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/extend.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/has-own-prop.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/hooks.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/index-of.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/is-array.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/is-date.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/is-function.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/is-object-empty.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/is-object.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/is-undefined.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/keys.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/map.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/some.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/to-int.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/lib/utils/zero-fill.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/af.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ar-ly.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ar-ma.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ar-sa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ar-tn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ar.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/az.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/be.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/bg.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/bn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/bo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/bs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/cs.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/cv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/cy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/da.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/de-at.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/de.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/dv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/el.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/en-au.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/en-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/en-gb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/en-ie.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/en-nz.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/eo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/es-do.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/es.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/et.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/eu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fa.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fr-ca.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fr-ch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/fy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/gd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/gl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/he.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/hi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/hr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/hu.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/hy-am.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/id.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/is.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/it.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ja.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/jv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ka.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/kk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/km.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ko.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ky.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/lb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/lo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/lt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/lv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/me.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/mi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/mk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ml.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/mr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ms-my.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ms.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/my.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/nb.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ne.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/nl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/nn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/pa-in.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/pl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/pt-br.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/pt.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ro.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ru.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/se.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/si.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sq.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sr-cyrl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ss.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sv.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/sw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/ta.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/te.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/th.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/tl-ph.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/tlh.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/tr.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/tzl.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/tzm-latn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/tzm.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/uk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/uz.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/vi.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/x-pseudo.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/zh-cn.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/zh-hk.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/locale/zh-tw.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/node_modules/moment/src/moment.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/LICENSE" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/README.md" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/bundles/ng2-bootstrap.umd.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/ng2-bootstrap.d.ts" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/ng2-bootstrap.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/ng2-bootstrap.js" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/ng2-bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/ng2-bootstrap.metadata.json" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/ng2-bootstrap.metadata.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/ng2-bootstrap/package.json" afterPath="$PROJECT_DIR$/node_modules/ng2-bootstrap/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/app.module.ts" afterPath="$PROJECT_DIR$/src/app/app.module.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.component.ts" afterPath="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.component.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html" afterPath="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.module.ts" afterPath="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/dashboard/sport.service.ts" afterPath="$PROJECT_DIR$/src/app/modules/dashboard/sport.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/message/message-list.component.ts" afterPath="$PROJECT_DIR$/src/app/modules/message/message-list.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/message/message.service.ts" afterPath="$PROJECT_DIR$/src/app/modules/message/message.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/less/modules.less" afterPath="$PROJECT_DIR$/src/app/styles/less/modules.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/less/modules/portlets.less" afterPath="$PROJECT_DIR$/src/app/styles/less/modules/portlets.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/less/themes/default/var.less" afterPath="$PROJECT_DIR$/src/app/styles/less/themes/default/var.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/apis/feedbacks/index.js" afterPath="$PROJECT_DIR$/src/server/apis/feedbacks/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/apis/messages/index.js" afterPath="$PROJECT_DIR$/src/server/apis/messages/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/apis/sports/index.js" afterPath="$PROJECT_DIR$/src/server/apis/sports/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/apis/users/index.js" afterPath="$PROJECT_DIR$/src/server/apis/users/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/config/express.js" afterPath="$PROJECT_DIR$/src/server/config/express.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/message/message-list.html" afterPath="$PROJECT_DIR$/src/app/modules/message/message-list.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/modules/message/message.module.ts" afterPath="$PROJECT_DIR$/src/app/modules/message/message.module.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/styles/app.css" afterPath="$PROJECT_DIR$/src/app/styles/app.css" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -625,21 +26,58 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/server/apis/index.js">
+      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="8" column="17" lean-forward="false" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="321">
+              <caret line="184" column="22" lean-forward="true" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
+              <folding>
+                <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+                <element signature="e#8934#8941#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message-list.component.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/message/message-list.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1338">
+              <caret line="119" column="1" lean-forward="false" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+              <folding>
+                <element signature="e#0#76#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message-list.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/message/message-list.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="447">
+              <caret line="147" column="6" lean-forward="false" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="6" />
+              <folding>
+                <element signature="e#4306#4313#1" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="message.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/app/modules/message/message.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="324">
+              <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="express.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/server/config/express.js">
+      <file leaf-file-name="app.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/app/styles/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+            <state relative-caret-position="1455">
+              <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -684,20 +122,14 @@
         <option value="$PROJECT_DIR$/src/app/components/layout/root.component.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/login/auth.service.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/login/login.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/styles/app.css" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/app/components/layout/views/header.html" />
         <option value="$PROJECT_DIR$/src/app/components/layout/views/sidebar.html" />
         <option value="$PROJECT_DIR$/src/app/modules/app-routing.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/message/message-list.html" />
-        <option value="$PROJECT_DIR$/src/app/modules/message/message.module.ts" />
         <option value="$PROJECT_DIR$/src/app/vendor.browser.ts" />
         <option value="$PROJECT_DIR$/src/app/app.module.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.component.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html" />
         <option value="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.module.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/dashboard/sport.service.ts" />
-        <option value="$PROJECT_DIR$/src/app/modules/message/message-list.component.ts" />
         <option value="$PROJECT_DIR$/src/app/modules/message/message.service.ts" />
         <option value="$PROJECT_DIR$/src/app/styles/less/modules.less" />
         <option value="$PROJECT_DIR$/src/app/styles/less/modules/portlets.less" />
@@ -707,6 +139,12 @@
         <option value="$PROJECT_DIR$/src/server/apis/sports/index.js" />
         <option value="$PROJECT_DIR$/src/server/apis/users/index.js" />
         <option value="$PROJECT_DIR$/src/server/config/express.js" />
+        <option value="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html" />
+        <option value="$PROJECT_DIR$/src/app/modules/message/message-list.component.ts" />
+        <option value="$PROJECT_DIR$/src/app/modules/message/message-list.html" />
+        <option value="$PROJECT_DIR$/src/app/modules/message/message.module.ts" />
+        <option value="$PROJECT_DIR$/src/app/styles/app.css" />
       </list>
     </option>
   </component>
@@ -801,11 +239,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -823,29 +257,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="apis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ncifindasportclass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ncifindasportclass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -863,37 +279,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ncifindasportclass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ncifindasportclass" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
+              <option name="myItemId" value="message" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1016,7 +410,7 @@
       <workItem from="1492423210106" duration="2143000" />
       <workItem from="1492685899478" duration="624000" />
       <workItem from="1493038465378" duration="1126000" />
-      <workItem from="1493054606047" duration="7084000" />
+      <workItem from="1493054606047" duration="9173000" />
     </task>
     <task id="LOCAL-00001" summary="initial project skeleton, mongodb, dependencies">
       <created>1489526928563</created>
@@ -1141,13 +535,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="27659000" />
+    <option name="totallyTimeSpent" value="29748000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="42" y="-11" width="1559" height="912" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27103403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27103403" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1453,14 +848,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/styles/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="42" column="20" lean-forward="true" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/components/layout/header.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -1474,7 +861,7 @@
         <state relative-caret-position="288">
           <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1495,32 +882,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/message/message.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="15" lean-forward="true" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/message/message-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="40" column="27" lean-forward="false" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/vendor.browser.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#15#50#0" expanded="true" />
-            <element signature="e#228#259#0" expanded="true" />
-            <element signature="e#318#334#0" expanded="true" />
+            <element signature="e#15#50#0" expanded="false" />
+            <element signature="e#228#259#0" expanded="false" />
+            <element signature="e#318#334#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1530,27 +899,6 @@
         <state relative-caret-position="474">
           <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/dashboard/dashboard.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="36" column="26" lean-forward="true" selection-start-line="36" selection-start-column="26" selection-end-line="36" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="194" column="6" lean-forward="false" selection-start-line="194" selection-start-column="6" selection-end-line="194" selection-end-column="6" />
-          <folding>
-            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#8098#8105#1" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1575,16 +923,8 @@
         <state relative-caret-position="1278">
           <caret line="71" column="1" lean-forward="false" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
           <folding>
-            <element signature="e#0#54#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/app/modules/message/message-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1593,7 +933,7 @@
         <state relative-caret-position="1080">
           <caret line="60" column="1" lean-forward="false" selection-start-line="60" selection-start-column="1" selection-end-line="60" selection-end-column="1" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#59#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1646,6 +986,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/dashboard/dashboard.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="148" column="1" lean-forward="false" selection-start-line="148" selection-start-column="1" selection-end-line="148" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/config/express.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/apis/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
@@ -1654,10 +1012,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/config/express.js">
+    <entry file="file://$PROJECT_DIR$/src/app/modules/dashboard/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="102" column="36" lean-forward="false" selection-start-line="102" selection-start-column="36" selection-end-line="102" selection-end-column="36" />
+        <state relative-caret-position="321">
+          <caret line="184" column="22" lean-forward="true" selection-start-line="184" selection-start-column="22" selection-end-line="184" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#1;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#8934#8941#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/message/message-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="447">
+          <caret line="147" column="6" lean-forward="false" selection-start-line="147" selection-start-column="6" selection-end-line="147" selection-end-column="6" />
+          <folding>
+            <element signature="e#4306#4313#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/message/message-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1338">
+          <caret line="119" column="1" lean-forward="false" selection-start-line="119" selection-start-column="1" selection-end-line="119" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#76#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/modules/message/message.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/app/styles/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1455">
+          <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
           <folding />
         </state>
       </provider>

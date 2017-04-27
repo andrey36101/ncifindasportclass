@@ -35,15 +35,21 @@
                                     <th>Tittle</th>
                                     <th>Description</th>
                                     <th>Date</th>
+                                    <th>Reply</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 <tr *ngFor="let message of messages">
-                                    <td>{{message.senderId.name}}</td>
-                                    <td>{{message.title}}</td>
-                                    <td>{{message.description}}</td>
-                                    <td>{{message.createdAt | date: 'dd/MM/yyyy'}}</td>
+                                    <td>
+                                        <span *ngIf="message.senderId">
+                                            {{message.senderId.name}}
+                                        </span>
 
+                                    </td>
+                                    <td>{{message.title}}</td>
+                                    <td class="msg-col" >{{message.description}}</td>
+                                    <td>{{message.createdAt | date: 'MMM dd, yyyy'}}</td>
+                                    <td><button *ngIf="message.senderId" (click)="replyToMessage(message.senderId)" > <i class="fa fa-mail-reply"></i></button></td>
                                 </tr>
 
                                 </tbody>
@@ -55,7 +61,87 @@
                             </ul>
                         </div>
                     </div>
+
+
+                    <div *ngIf="messages?.length<=0" class="row row-sm-height">
+                        <div class="col-sm-1 col-sm-height col-middle bg-master-lighter">
+                            <h4 class="text-center text-white no-margin">
+                                <i class="fa fa-warning "></i>
+                            </h4>
+                        </div>
+                        <div class="col-sm-11 col-sm-height padding-10 col-top">
+                            <h4 class="no-margin p-l-10">
+                                No messages found.
+                            </h4>
+                        </div>
+                    </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #messageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Private message with {{recipient.name}}</h4>
+                <button type="button" class="close pull-right" (click)="this.messageModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table" *ngIf="lastMessages?.length>0">
+                    <thead>
+                    <tr>
+                        <th>Last conversation with {{recipient.name}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let msg of lastMessages">
+                        <td>
+                            <h4>{{msg.title}}</h4>
+                            <p>{{msg.description}}</p>
+                            <p><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</p>
+                            <p *ngIf="msg.senderId"><i class="fa fa-user"></i> {{msg.senderId._id==currentUserData._id?'You':msg.senderId.name}}</p>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="lastMessages?.length<=0" class="row row-sm-height">
+                    <h4 class="text-center text-white no-margin">
+                        <i class="fa fa-warning "></i>
+                        No conversation found.
+                    </h4>
+                </div>
+                <form id="message-form" [formGroup]="messageForm" novalidate
+                      (ngSubmit)="sendMessage(messageForm.value, messageForm.valid)" role="form">
+                    <div class="form-group">
+                        <input type="text" name="title" id="title" formControlName="title" tabindex="1" class="form-control"
+                               placeholder="Your message title" value="">
+                        <small [hidden]="messageForm.controls.title.valid || (messageForm.controls.title.pristine && !msgSent)" class="text-danger">
+                            Message title required.
+                        </small>
+                    </div>
+                    <div class="form-group">
+
+                        <textarea name="description" id="description" formControlName="description" class="form-control"
+                                  placeholder="You message"></textarea>
+                        <small [hidden]="messageForm.controls.description.valid || (messageForm.controls.description.pristine && !msgSent)" class="text-danger">
+                            Description required.
+                        </small>
+
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-6">
+                                <input type="submit" name="message-submit" id="message-submit" tabindex="4"
+                                       class="form-control btn btn-register" value="Send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

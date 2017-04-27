@@ -21,11 +21,14 @@ export class DashboardComponent implements OnInit{
     // paged items
     pagedItems: any[];
     public searchForm: FormGroup;
+    public messageForm: FormGroup;
+    public msgSent: boolean;
     public submitted: boolean;
     filter: any = {};
     @ViewChild('messageModal') public messageModal:ModalDirective;
     lastMessages: any[];
     trainer: any = {};
+    currentUserData: any = {};
 
     constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private sportService: SportService,private pagerService: PagerService,private _fb: FormBuilder,public notificationService:NotificationService,private messageService:MessageService) {
         overlay.defaultViewContainer = vcRef;
@@ -35,7 +38,8 @@ export class DashboardComponent implements OnInit{
 
     ngOnInit(): void {
         this.getSports(0);
-
+        this.currentUserData = JSON.parse(localStorage.getItem('userProfile'));
+        console.log(this.currentUserData,'currentUserData');
         this.searchForm = this._fb.group({
             tags: [''],
             name: [''],
@@ -45,11 +49,15 @@ export class DashboardComponent implements OnInit{
             age: [0],
             price: [0]
         });
+
+        this.messageForm = this._fb.group({
+            title: ['', [<any>Validators.required]],
+            description: ['', [<any>Validators.required]],
+        });
+
     }
 
-    testFunction():void{
-        console.log('andrei');
-    }
+
 
     getSports(pageNo):void{
         let options={"pageno":pageNo};
@@ -99,14 +107,43 @@ export class DashboardComponent implements OnInit{
             return;
 
         }
+
         this.trainer = trainer;
         this.lastMessages = [];
 
-        let options={"pageno":0,"rows":10};
-        this.messageService.getMessages(options).then(message =>{
+        let options={"pageno":0,"rows":10,'sortOrder':'asc'};
+        let filter = {senderId:this.currentUserData._id,recipientId:trainer._id};
+        this.messageService.getMessages(options,filter).then(message =>{
             this.lastMessages = message.json().messages;
+            console.log(this.lastMessages);
             this.messageModal.show();
         });
 
+    }
+
+    sendMessage(messageData:any,isValid):void{
+
+        this.msgSent = true;
+        if(isValid){
+            messageData["senderId"] = this.currentUserData._id;
+            messageData["recipientId"] = this.trainer._id;
+            this.messageService.createMessage(messageData).then(res =>{
+                if(res.error){
+                    throw res.error;
+                }
+                if(res.json().Status=="success") {
+                    this.notificationService.notifyMsg('Your private message sent to trainer','success');
+                    this.trainer = {};
+                    this.messageModal.hide();
+                    this.msgSent = false;
+                }
+                this.messageForm = this._fb.group({
+                    title: ['', [<any>Validators.required]],
+                    description: ['', [<any>Validators.required]],
+                });
+            }).catch(e =>{
+                this.notificationService.notifyMsg(e,'error');
+            });
+        }
     }
 }
