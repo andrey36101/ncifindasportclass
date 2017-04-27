@@ -3,11 +3,11 @@ module.exports = class FeedbackController {
     constructor(app) {
 
 
-        app.post('/feedback', this.createFeedback);
-        app.get('/feedback', this.list);
-        app.get('/feedback/:feedbackId', this.feedbackDetail);
-        app.put('/feedback/:feedbackId', this.updateFeedback);
-        app.delete('/feedback/:feedbackId', this.deleteFeedback)
+        app.post('/api/feedback', this.createFeedback);
+        app.get('/api/feedback', this.list);
+        app.get('/api/feedback/:feedbackId', this.feedbackDetail);
+        app.put('/api/feedback/:feedbackId', this.updateFeedback);
+        app.delete('/api/feedback/:feedbackId', this.deleteFeedback)
 
     }
 
@@ -47,7 +47,7 @@ module.exports = class FeedbackController {
 
     list(req, res) {
 
-        let row = req.query.rows ? parseInt(req.query.rows) : 3;
+        let row = req.query.rows ? parseInt(req.query.rows) : 10;
         let pageNo = req.query.pageNo ? parseInt(req.query.pageNo) : 0;
         let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt';
         let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';

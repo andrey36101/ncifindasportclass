@@ -6,23 +6,64 @@
                 <div class="panel-title">Search</div>
             </div>
             <div class="panel-body">
-                <form novalidate id="search-form" role="form">
+                <form novalidate id="search-form" [formGroup]="searchForm" novalidate (ngSubmit)="search(searchForm.value, searchForm.valid)" role="form">
                     <div class="form-group">
-                        <input type="text" name="regName" id="regName" tabindex="1" class="form-control" placeholder="Search by name" value="">
+                        <input type="text" name="tags" id="tags" formControlName="tags" tabindex="1" class="form-control" placeholder="Search keywords" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="country" id="country" tabindex="1" class="form-control" placeholder="Search by country" value="">
+                        <input type="text" name="name" id="name"  formControlName="name" tabindex="1" class="form-control" placeholder="Search by name" value="">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="area" id="area" tabindex="1" class="form-control" placeholder="Search by area" value="">
+                        <input type="text" name="country" id="country" formControlName="country" tabindex="1" class="form-control" placeholder="Search by country" value="">
                     </div>
                     <div class="form-group">
-                        <select class="form-control">
-                            <option>Age : 10</option>
-                            <option>Age : 20</option>
-                        </select>
+                        <input type="text" name="state" id="state" formControlName="state" tabindex="1" class="form-control" placeholder="Search by state" value="">
                     </div>
-
+                    <div class="form-group">
+                        <input type="text" name="state" id="city" formControlName="city" tabindex="1" class="form-control" placeholder="Search by city" value="">
+                    </div>
+                    <div class="form-group row">
+                        <label for="age" class="col-sm-4 control-label">Age</label>
+                        <div class="col-sm-8">
+                            <select id="selAge" name="age" formControlName="age" class="form-control">
+                                <option>0</option>
+                                <option>10</option>
+                                <option>15</option>
+                                <option>20</option>
+                                <option>25</option>
+                                <option>30</option>
+                                <option>35</option>
+                                <option>40</option>
+                                <option>45</option>
+                                <option>50</option>
+                                <option>55</option>
+                                <option>60</option>
+                                <option>65</option>
+                                <option>70</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="price" class="col-sm-4 control-label">Max Price</label>
+                        <div class="col-sm-8">
+                            <select id="price" formControlName="price" name="price" class="form-control">
+                                <option [value]="0">0</option>
+                                <option [value]="10">$10</option>
+                                <option [value]="20">$20</option>
+                                <option [value]="30">$30</option>
+                                <option [value]="40">$40</option>
+                                <option [value]="50">$50</option>
+                                <option [value]="60">$60</option>
+                                <option [value]="70">$70</option>
+                                <option [value]="80">$80</option>
+                                <option [value]="90">$90</option>
+                                <option [value]="100">$100</option>
+                                <option [value]="150">$150</option>
+                                <option [value]="200">$200</option>
+                                <option [value]="250">$250</option>
+                            </select>
+                        </div>
+                    </div>
                     <div class="form-group">
                         <div class="row">
                             <div class="col-sm-6 col-sm-offset-6">
@@ -53,11 +94,23 @@
                                 <tbody>
                                 <tr *ngFor="let sport of sports">
                                     <td style="width: 250px;">
-                                        <img class="placeholder-thumbnail" src="assets/images/placeholder.png" />
+                                        <img class="placeholder-thumbnail" src="{{prompPicture || 'assets/images/placeholder.png'}}" />
                                     </td>
                                     <td>
-                                        <h4>{{sport.name}}</h4>
-                                        <small>{{sport.description}}</small>
+                                        <div class="grid simple ">
+                                            <div class="grid-title">
+                                                <h4>{{sport.name}}</h4>
+                                                <div class="tools">
+                                                    <button  ><i class="fa fa-star-half-full"></i></button>
+                                                    <button (click)="showMessagedModal(sport.ownerId)"><i class="fa fa-envelope"></i></button>
+                                                </div>
+                                            </div>
+                                            <div class="grid-body">
+                                                <p>{{sport.description}}</p>
+                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt | date:'MMM dd, yyyy'}}</h5>
+                                            </div>
+                                        </div>
+
                                     </td>
 
                                 </tr>
@@ -71,7 +124,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div *ngIf="pager.totalItems <=0"  class="row row-sm-height">
+                    <div *ngIf="sports?.length<=0"  class="row row-sm-height">
                         <div class="col-sm-1 col-sm-height col-middle bg-master-lighter">
                             <h4 class="text-center text-white no-margin">
                                 <i class="fa fa-warning "></i>
@@ -80,6 +133,62 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div bsModal #messageModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Private message with {{trainer.name}}</h4>
+                <button type="button" class="close pull-right" (click)="this.messageModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table" *ngIf="lastMessages?.length>0">
+                    <thead>
+                    <tr>
+                        <th>Last conversation with {{trainer.name}}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let msg of lastMessages">
+                        <td>
+                            <h4>{{msg.title}}</h4>
+                            <p>{{msg.description}}</p>
+                            <h5><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</h5>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div *ngIf="lastMessages?.length<=0"  class="row row-sm-height">
+                    <h4 class="text-center text-white no-margin">
+                        <i class="fa fa-warning "></i>
+                        No conversation found.
+                    </h4>
+                </div>
+                <form novalidate id="message-form" novalidate  role="form">
+                    <div class="form-group">
+                        <input type="text" name="subject" id="subject" tabindex="1" class="form-control" placeholder="Your message title" value="">
+                    </div>
+                    <div class="form-group">
+
+                        <textarea name="description" id="description" class="form-control" placeholder="You message"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-6 col-sm-offset-6">
+                                <input type="submit" name="message-submit" id="message-submit" tabindex="4" class="form-control btn btn-register" value="Send">
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

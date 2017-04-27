@@ -12,7 +12,7 @@ import { DropdownModule } from 'ng2-bootstrap';
 
 @Component({
     selector: 'app',
-    styles: [String(require('./styles/app.css'))],
+    styles: [String(require('./styles/less/main.less')),String(require('./styles/app.css'))],
     template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {

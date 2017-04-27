@@ -5,14 +5,14 @@ module.exports = class UserController {
     constructor(app) {
 
         this.app = app;
-        app.post('/login',this.doLogin);
-        app.post('/user', this.createUser);
-        app.get('/user', this.list);
-        app.put('/user/:userId', this.updateUser);
-        app.get('/user/:userId', this.userDetail);
-        app.put('/user/:userId/address', this.updateUserAddress);
-        app.put('/user/:userId', this.deleteUser);
-        app.post('/checkLogin',this.checkLogin);
+        app.post('/api/login',this.doLogin);
+        app.post('/api/user', this.createUser);
+        app.get('/api/user', this.list);
+        app.put('/api/user/:userId', this.updateUser);
+        app.get('/api/user/:userId', this.userDetail);
+        app.put('/api/user/:userId/address', this.updateUserAddress);
+        app.put('/api/user/:userId', this.deleteUser);
+        app.post('/api/checkLogin',this.checkLogin);
 
     }
 
@@ -148,7 +148,7 @@ module.exports = class UserController {
 
     list(req, res) {
 
-        let row = req.query.rows ? parseInt(req.query.rows) : 3;
+        let row = req.query.rows ? parseInt(req.query.rows) : 10;
         let pageNo = req.query.pageNo ? parseInt(req.query.pageNo) : 0;
         let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt';
         let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';

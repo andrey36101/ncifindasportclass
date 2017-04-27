@@ -3,12 +3,12 @@ module.exports = class SportController {
     constructor(app) {
 
 
-        app.post('/sports', this.createSports);
-        app.get('/sports', this.list);
-        app.get('/sports/:sportId', this.sportDetail);
-        app.put('/sports/:sportId/address', this.updateUserAddress);
-        app.put('/sports/:sportId', this.updateSport);
-        app.delete('/sports/:sportId',this.deleteSport);
+        app.post('/api/sports', this.createSports);
+        app.get('/api/sports', this.list);
+        app.get('/api/sports/:sportId', this.sportDetail);
+        app.put('/api/sports/:sportId/address', this.updateUserAddress);
+        app.put('/api/sports/:sportId', this.updateSport);
+        app.delete('/api/sports/:sportId',this.deleteSport);
 
     }
 
@@ -107,19 +107,69 @@ module.exports = class SportController {
 
     list(req, res) {
 
-        let row = req.query.rows ? parseInt(req.query.rows) : 3;
+        let row = req.query.rows ? parseInt(req.query.rows) : 10;
         let pageNo = req.query.pageNo ? parseInt(req.query.pageNo) : 0;
         let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt';
         let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';
+
+        let filter = {};
+
+        let name = req.query.name,
+            description = req.query.description,
+            ownerId  = req.query.ownerId ,
+            startDate = req.query.startDate,
+            address = req.query.address,
+            age = req.query.age,
+            price = req.query.price,
+            tags = req.query.tags,
+            address1 = req.query.address1,
+            address2 = req.query.address2,
+            city = req.query.city,
+            state = req.query.state,
+            zipcode = req.query.zipcode,
+            country = req.query.country,
+            phone = req.query.phone;
+
+        if(name!=undefined)
+            filter['name'] =  new RegExp(name.trim(), 'gi');
+        if(description!=undefined)
+            filter['description'] = new RegExp(description.trim(), 'gi');
+        if(ownerId !=undefined)
+            filter['ownerId '] = ownerId ;
+        if(startDate!=undefined)
+            filter['startDate'] = startDate;
+        if(age!=undefined)
+            filter['age'] = { $lte: parseInt(age)};
+        if(price!=undefined)
+            filter['price'] = { $lte: parseInt(price)};
+        if(tags!=undefined)
+            filter['tags'] = { "$in" : tags.split(",")};
+
+        if(address1!=undefined)
+            filter["address.address1"] = new RegExp(address1.trim(),'i');
+        if(address2!=undefined)
+            filter["address.address2"] = new RegExp(address2.trim(),'i');;
+        if(city!=undefined)
+            filter["address.city"] = new RegExp(city.trim(),'i');
+        if(state!=undefined)
+            filter["address.state"] = new RegExp(state.trim(),'i');
+        if(zipcode!=undefined)
+            filter["address.zipcode"] = new RegExp(zipcode.trim(),'i');
+        if(country!=undefined)
+            filter["address.country"] = new RegExp(country.trim(),'i');
+        if(phone!=undefined)
+            filter["address.phone"] = phone;
+
         let sort = {};
 
         sort[sortBy] = sortOrder;
-        global.MongoORM.Sport.find({})
+        global.MongoORM.Sport.find(filter)
+            .populate('ownerId',['name','email','address','location','gender','profilePic'])
             .limit(row)
             .skip(row * pageNo)
             .sort(sort)
             .exec(function (err, sports) {
-                global.MongoORM.Sport.count({}).exec(function (error, count) {
+                global.MongoORM.Sport.count(filter).exec(function (error, count) {
                     if (!error) {
                         res.send({
                             sports: sports,

@@ -14,9 +14,9 @@ import {NotificationService} from '../../common/notification.service';
     template: require('./message-list.html')
 })
 export class MessageComponent implements OnInit{
-    constructor(private couponService:MessageService,private route: ActivatedRoute,private router: Router,private pagerService: PagerService,private overlay: Overlay,private vcRef: ViewContainerRef,public modal: Modal, private changeRef:ChangeDetectorRef,public notificationService:NotificationService){
+    constructor(private messageService:MessageService,private route: ActivatedRoute,private router: Router,private pagerService: PagerService,private overlay: Overlay,private vcRef: ViewContainerRef,public modal: Modal, private changeRef:ChangeDetectorRef,public notificationService:NotificationService){
         overlay.defaultViewContainer = vcRef;
-        this.couponService.messageAdded.subscribe(coupon => this.messageAdded(this.pager.PageNo));
+        this.messageService.messageAdded.subscribe(coupon => this.messageAdded(this.pager.PageNo));
     }
     messages:any[];
     pager: any = {};
@@ -32,7 +32,7 @@ export class MessageComponent implements OnInit{
 
     getMessages(pageNo):void{
         let options={"pageno":pageNo};
-        this.couponService.getMessages(options).then(message =>{
+        this.messageService.getMessages(options).then(message =>{
             this.messages = message.json().messages;
             this.setPage(message.json().page+1,message.json().totalCount);
         });

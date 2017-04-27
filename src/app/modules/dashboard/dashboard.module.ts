@@ -3,6 +3,9 @@ import {DashboardComponent} from "./dashboard.component";
 import {SportService} from "./sport.service";
 import { BrowserModule }  from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ModalModule } from 'ng2-bootstrap';
+
 var routes = [{
     path: 'sports',
     component: DashboardComponent
@@ -10,7 +13,7 @@ var routes = [{
 
 @NgModule({
     declarations: [DashboardComponent],
-    imports: [BrowserModule,CommonModule],
+    imports: [BrowserModule,CommonModule,FormsModule,ReactiveFormsModule, ModalModule.forRoot()],
     exports: [DashboardComponent],
     providers:[SportService]
 })

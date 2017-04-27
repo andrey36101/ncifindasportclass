@@ -50,7 +50,7 @@ module.exports = class MessageController {
 
     list(req, res) {
 
-        let row = req.query.rows ? parseInt(req.query.rows) : 3;
+        let row = req.query.rows ? parseInt(req.query.rows) : 10;
         let pageNo = req.query.pageNo ? parseInt(req.query.pageNo) : 0;
         let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt';
         let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';

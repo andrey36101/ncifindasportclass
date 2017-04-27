@@ -1,5 +1,5 @@
 import {Injectable,EventEmitter} from "@angular/core";
-import {Http,Headers, Response} from "@angular/http";
+import {Http,Headers, Response, URLSearchParams} from "@angular/http";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -19,8 +19,15 @@ export class MessageService {
     }
 
 
-    getMessages(options):Promise<any> {
+    getMessages(options,filter:any={}):Promise<any> {
         let apiRequestUrl=this.messageUrl;
+
+        let params: URLSearchParams = new URLSearchParams();
+        let searchParams = Object.keys(filter);
+
+        for(let index in searchParams){
+            params.set(searchParams[index], filter[searchParams[index]]);
+        }
         if(Object.keys(options).length > 0){
 
             let queryString="";
@@ -32,7 +39,7 @@ export class MessageService {
 
         }
         return this.http
-            .get(apiRequestUrl,{headers: this.headers})
+            .get(apiRequestUrl,{headers: this.headers,search:params})
             .toPromise()
             .then(res => res)
             .catch(this.handleError);

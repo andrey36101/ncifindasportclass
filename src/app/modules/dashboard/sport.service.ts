@@ -1,5 +1,5 @@
 import { Injectable ,EventEmitter}    from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 import {Promise} from 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -7,13 +7,21 @@ export class SportService {
     private headers = new Headers();
     private sportUrl = 'api/sports';  // URL to web api
 
-    constructor(private http: Http) {this.planAdded= new EventEmitter();
+    constructor(private http: Http) {this.sportAdded= new EventEmitter();
         this.headers.append('Content-Type', 'application/json');
         this.headers.append('token',localStorage.token);
 
     }
-    getSports(options): Promise<Sport[]> {
+    getSports(options,filter:any = {}): Promise<Sport[]> {
         let apiRequestUrl=this.sportUrl;
+
+        let params: URLSearchParams = new URLSearchParams();
+        let searchParams = Object.keys(filter);
+
+        for(let index in searchParams){
+            params.set(searchParams[index], filter[searchParams[index]]);
+        }
+
         if(Object.keys(options).length > 0){
             let queryString="";
             queryString+=options.rows?"rows="+options.rows:"";
@@ -23,7 +31,7 @@ export class SportService {
             apiRequestUrl=queryString?this.sportUrl+'?'+queryString:this.sportUrl;
         }
 
-        return this.http.get(apiRequestUrl, {headers: this.headers})
+        return this.http.get(apiRequestUrl, {headers: this.headers,search:params})
             .toPromise()
             .then(response => response.json() as sport[])
             .catch(this.handleError);
