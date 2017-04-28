@@ -23,7 +23,8 @@ module.exports = class SportController {
             startDate = req.body.startDate,
             startTime = req.body.startTime,
             location = req.body.location,
-            age = req.body.age,
+            maxAge = req.body.maxAge,
+            minAge = req.body.minAge,
             price = req.body.price,
             tags = req.body.tags,
             address = req.body.address,
@@ -71,8 +72,11 @@ module.exports = class SportController {
         if (location != undefined)
             sport.set('location', location);
 
-        if (age != undefined)
-            sport.set('age', age);
+        if (minAge != undefined)
+            sport.set('minAge', minAge);
+
+        if (maxAge != undefined)
+            sport.set('maxAge', maxAge);
 
         if (price != undefined)
             sport.set('price', price);
@@ -141,8 +145,11 @@ module.exports = class SportController {
             filter['ownerId'] = ObjectId(ownerId) ;
         if(startDate!=undefined)
             filter['startDate'] = startDate;
-        if(age!=undefined)
-            filter['age'] = { $lte: parseInt(age)};
+        if(age!=undefined){
+            filter['minAge'] = { $gte: parseInt(age)};
+            filter['maxAge'] = { $lte: parseInt(age)};
+        }
+
         if(price!=undefined)
             filter['price'] = { $lte: parseInt(price)};
         if(tags!=undefined)
@@ -194,7 +201,8 @@ module.exports = class SportController {
             startDate = req.body.startDate,
             startTime = req.body.startTime,
             location = req.body.location,
-            age = req.body.age,
+            minAge = req.body.minAge,
+            maxAge = req.body.maxAge,
             price = req.body.price,
             tags = req.body.tags,
             prompPicture = req.body.prompPicture;
@@ -215,8 +223,10 @@ module.exports = class SportController {
                         sport.startDate = startDate;
                     if(startTime != undefined)
                         sport.startTime = startTime;
-                    if(age != undefined)
-                        sport.age = age;
+                    if(minAge != undefined)
+                        sport.minAge = minAge;
+                    if(maxAge != undefined)
+                        sport.maxAge = maxAge;
                     if(location != undefined)
                         sport.location = location;
                     if(price != undefined)

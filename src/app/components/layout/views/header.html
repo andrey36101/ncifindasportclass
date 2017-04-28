@@ -1,4 +1,4 @@
-
+<!-- START HEADER -->
 <div class="header">
     <div class="pull-left">
         <div class="header-inner">
@@ -9,11 +9,12 @@
     </div>
     <div class=" pull-right">
         <div class="visible-lg visible-md m-t-20">
-            <span dropdown>
+            <span *ngIf="isLoggedIn==true" dropdown>
               <a href id="simple-dropdown" dropdownToggle>
-                  Welcome, {{user.name}}
+                  Welcome, {{userName}}
                   <div class="profile-pic">
-                      <img src="{{user.profilePic==undefined?'assets/images/a0.jpg':'/uploads/'+user.profilePic}}" alt="" width="35" height="35">
+                      <!--<img *ngIf="user.profilePic" src="assets/images/a0.jpg" alt="" width="35" height="35">-->
+                      <img src="{{user.profilePic==undefined?'assets/images/profile-pic.png':'/uploads/'+user.profilePic}}" alt="" width="35" height="35">
                   </div>
               </a>
               <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
@@ -24,6 +25,8 @@
                   <li role="menuitem"><a class="dropdown-item" (click)="logOut()" href="javascript:void(0);">Logout</a></li>
               </ul>
             </span>
+            <a [routerLink]="['/login']" *ngIf="isLoggedIn==false" >Login / Register</a>
         </div>
     </div>
 </div>
+<!-- END HEADER -->

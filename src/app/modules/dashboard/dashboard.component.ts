@@ -33,7 +33,8 @@ export class DashboardComponent implements OnInit{
     public msgSent: boolean;
     public submitted: boolean;
     public sportSubmitted: boolean;
-    public ratting: number;
+    public isLoggedIn: boolean = false;
+    public rating: number;
     attachedFiles: any[];
     selectedSport: any = {};
     filter: any = {};
@@ -43,7 +44,10 @@ export class DashboardComponent implements OnInit{
 
     @ViewChild('addSportModal') public addSportModal:ModalDirective;
 
+    @ViewChild('rattingModal') public rattingModal:ModalDirective;
+
     lastMessages: any[];
+    feedbackList: any[];
     trainer: any = {};
     currentUserData: any = {};
     sportModalTitle: string = "Add Sport";
@@ -56,7 +60,13 @@ export class DashboardComponent implements OnInit{
 
     ngOnInit(): void {
         this.getSports(0);
-        this.currentUserData = JSON.parse(localStorage.getItem('userProfile'));
+        this.currentUserData = (JSON.parse(localStorage.getItem('userProfile')) || {});
+
+        if(Object.keys(this.currentUserData).length > 0){
+            this.isLoggedIn = true;
+        } else{
+            this.isLoggedIn = false;
+        }
 
         this.searchForm = this._fb.group({
             tags: [''],
@@ -83,7 +93,8 @@ export class DashboardComponent implements OnInit{
             sportName: ['', [<any>Validators.required]],
             sportDescription: ['', [<any>Validators.required]],
             sportPrice: ['', [<any>Validators.required]],
-            sportAge: ['', [<any>Validators.required]],
+            sportMinAge: ['', [<any>Validators.required]],
+            sportMaxAge:['', [<any>Validators.required]],
             address: this._fb.group({
                 address1: ['', <any>Validators.required],
                 address2: ['', <any>Validators.required],
@@ -204,7 +215,8 @@ export class DashboardComponent implements OnInit{
         if(isValid){
             feedbackData["userId"] = this.currentUserData._id;
             feedbackData["trainerId"] = this.trainer._id;
-
+            feedbackData["rating"] = this.rating;
+            console.log(feedbackData);
             this.feedbackService.createFeedback(feedbackData).then(res =>{
                 if(res.error){
                     throw res.error;
@@ -231,6 +243,17 @@ export class DashboardComponent implements OnInit{
 
     }
 
+    public showRattingModal(trainer):void {
+        console.log(trainer);
+        let options={"pageno":0,"rows":10,'sortOrder':'asc'};
+        this.feedbackService.getFeedbacks(options).then(feedbacks =>{
+            console.log(feedbacks.Data.feedbacks);
+            this.feedbackList = feedbacks.Data.feedbacks;
+            this.rattingModal.show();
+        });
+
+    }
+
     saveSport(sportData:any,isValid):void{
 
 
@@ -246,8 +269,10 @@ export class DashboardComponent implements OnInit{
             sport["description"] = sportData.sportDescription;
         if(sportData.sportPrice != undefined)
             sport["price"] = sportData.sportPrice;
-        if(sportData.sportAge != undefined)
-            sport["age"] = sportData.sportAge;
+        if(sportData.sportMinAge != undefined)
+            sport["minAge"] = sportData.sportMinAge;
+        if(sportData.sportMaxAge != undefined)
+            sport["maxAge"] = sportData.sportMaxAge;
 
         let addressData = {};
         if(sportData.address){
@@ -305,7 +330,8 @@ export class DashboardComponent implements OnInit{
             sportName: [sport.name, [<any>Validators.required]],
             sportDescription: [sport.description, [<any>Validators.required]],
             sportPrice: [sport.price, [<any>Validators.required]],
-            sportAge: [sport.age, [<any>Validators.required]],
+            sportMinAge: [sport.minAge, [<any>Validators.required]],
+            sportMaxAge:[sport.maxAge, [<any>Validators.required]],
             address: this._fb.group({
                 address1: [address.address1, <any>Validators.required],
                 address2: [address.address2, <any>Validators.required],

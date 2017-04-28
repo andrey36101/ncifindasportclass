@@ -34,7 +34,15 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                <!--<div class="form-group">-->
+                                <!--<div class="row">-->
+                                <!--<div class="col-lg-12">-->
+                                <!--<div class="text-center">-->
+                                <!--<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--</div>-->
+                                <!--</div>-->
                             </form>
                             <form *ngSwitchCase="'register'" [formGroup]="regForm" novalidate (ngSubmit)="save(regForm.value, regForm.valid)" id="register-form" role="form">
                                 <div class="form-group">
@@ -67,7 +75,7 @@
                                         <input id="customer" type="radio" name="type" formControlName="type" value="customer" checked="checked">
                                         <label for="customer">Customer</label>
                                         <input id="trainer" type="radio" name="type" formControlName="type" value="trainer">
-                                        <label for="trainer">Female</label>
+                                        <label for="trainer">Trainer</label>
                                     </div>
                                     <small [hidden]="regForm.controls.type.valid || (regForm.controls.type.pristine && !submitted)" class="text-danger">
                                         User type required.

@@ -28,7 +28,7 @@ export class FeedbackService {
             queryString+=options.pageno?"pageNo="+options.pageno:"";
             queryString+=options.sortby?"sortBy="+options.sortby:"";
             queryString+=options.sortorder?"sortOrder="+options.sortorder:"";
-            apiRequestUrl=queryString?this.sportUrl+'?'+queryString:this.sportUrl;
+            apiRequestUrl=queryString?this.feedbackUrl+'?'+queryString:this.feedbackUrl;
         }
 
         return this.http.get(apiRequestUrl, {headers: this.headers,search:params})

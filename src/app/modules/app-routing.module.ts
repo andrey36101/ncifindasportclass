@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {RouterModule,Routes} from '@angular/router';
 import {HttpModule} from '@angular/http';
-
+import { CommonModule } from '@angular/common';
+import { BrowserModule } from '@angular/platform-browser';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {MessageModule} from './message/message.module';
@@ -15,6 +16,11 @@ import { DropdownModule } from 'ng2-bootstrap';
 import {PagerService} from '../common/pager.service';
 var routes:Routes = [
     {
+        path: '',
+        component: RootComponent,
+        children: [...DashboardModule.ROUTES]
+    },
+    {
         path: 'login',
         loadChildren: './login/login.module#LoginModule'
     },
@@ -22,12 +28,6 @@ var routes:Routes = [
         path: '',
         pathMatch:'full',
         redirectTo:'/sports',
-        canActivate:[LoggedInGuard]
-    },
-    {
-        path: '',
-        component: RootComponent,
-        children: [...DashboardModule.ROUTES],
         canActivate:[LoggedInGuard]
     },
     {
@@ -45,7 +45,7 @@ var routes:Routes = [
 ];
 @NgModule({
     declarations: [RootComponent,HeaderComponent,SidebarComponent],
-    imports: [DropdownModule.forRoot(),HttpModule,RouterModule.forRoot(routes), LoginModule, DashboardModule, MessageModule,ProfileModule],
+    imports: [CommonModule,DropdownModule.forRoot(),HttpModule,RouterModule.forRoot(routes), LoginModule, DashboardModule, MessageModule,ProfileModule],
     exports: [RouterModule],
     providers:[PagerService]
 })

@@ -14,7 +14,7 @@
 				{
 					"name": "Add Feedback",
 					"request": {
-						"url": "http://localhost:8080/feedback",
+						"url": "http://localhost:8080/api/feedback",
 						"method": "POST",
 						"header": [
 							{
@@ -39,7 +39,7 @@
 				{
 					"name": "List Feebacks",
 					"request": {
-						"url": "http://localhost:8080/feedback",
+						"url": "http://localhost:8080/api/feedback",
 						"method": "GET",
 						"header": [
 							{
@@ -64,7 +64,7 @@
 				{
 					"name": "Get Feedback Detail",
 					"request": {
-						"url": "http://localhost:8080/feedback/58cacb26daabd62824e2f89c",
+						"url": "http://localhost:8080/api/feedback/58cacb26daabd62824e2f89c",
 						"method": "GET",
 						"header": [
 							{
@@ -89,7 +89,7 @@
 				{
 					"name": "Update Feedback",
 					"request": {
-						"url": "http://localhost:8080/feedback/58cacb26daabd62824e2f89c",
+						"url": "http://localhost:8080/api/feedback/58cacb26daabd62824e2f89c",
 						"method": "PUT",
 						"header": [
 							{
@@ -114,7 +114,7 @@
 				{
 					"name": "Delete Feedback",
 					"request": {
-						"url": "http://localhost:8080/feedback/58cacb26daabd62824e2f89c",
+						"url": "http://localhost:8080/api/feedback/58cacb26daabd62824e2f89c",
 						"method": "DELETE",
 						"header": [
 							{
@@ -145,7 +145,7 @@
 				{
 					"name": "Send Message",
 					"request": {
-						"url": "http://localhost:8080/messages",
+						"url": "http://localhost:8080/api/messages",
 						"method": "POST",
 						"header": [
 							{
@@ -170,7 +170,7 @@
 				{
 					"name": "List Messages",
 					"request": {
-						"url": "http://localhost:8080/messages",
+						"url": "http://localhost:8080/api/messages",
 						"method": "GET",
 						"header": [
 							{
@@ -195,7 +195,7 @@
 				{
 					"name": "Get Message Detail",
 					"request": {
-						"url": "http://localhost:8080/sports/58caa51431613f2133ce06bb",
+						"url": "http://localhost:8080/api/messages/58caa51431613f2133ce06bb",
 						"method": "GET",
 						"header": [
 							{
@@ -220,7 +220,7 @@
 				{
 					"name": "Update Message",
 					"request": {
-						"url": "http://localhost:8080/messages/58caae7b555ada238ca557ee",
+						"url": "http://localhost:8080/api/messages/58caae7b555ada238ca557ee",
 						"method": "PUT",
 						"header": [
 							{
@@ -245,7 +245,7 @@
 				{
 					"name": "Delete Message Detail",
 					"request": {
-						"url": "http://localhost:8080/sports/58caa51431613f2133ce06bb",
+						"url": "http://localhost:8080/api/messages/58caa51431613f2133ce06bb",
 						"method": "DELETE",
 						"header": [
 							{
@@ -276,7 +276,7 @@
 				{
 					"name": "Add Sports",
 					"request": {
-						"url": "http://localhost:8080/sports",
+						"url": "http://localhost:8080/api/sports",
 						"method": "POST",
 						"header": [
 							{
@@ -292,7 +292,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"gender\":\"male\",\n\t\"location\":[150.644,-34.397],\n\t\"name\":\"Baseball\",\n\t\"description\":\"baseball description\",\n\t\"ownerId\":\"58caa3238664432062aea426\",\n\t\"age\":18,\n\t\"price\":100,\n\t\"tags\":[\"baseball\"],\n\t\"prompPicture\":\"mytest.jpg\",\n\t\"address\": {\n\t\t\"address1\":\"address street 1\",\n\t\t\"address2\":\"address street 2\",\n\t\t\"city\":\"Wales\",\n\t\t\"state\":\"New South Wales\",\n\t\t\"zipcode\":\"1234\",\n\t\t\"country\":\"Australia\",\n\t\t\"phone\":\"+353412542222\"\n\t}\n}"
+							"raw": "{\n\t\"gender\":\"male\",\n\t\"location\":[150.644,-34.397],\n\t\"name\":\"Baseball\",\n\t\"description\":\"baseball description\",\n\t\"ownerId\":\"58caa3238664432062aea426\",\n\t\"age\":18,\n\t\"price\":100,\n\t\"tags\":[\"baseball\"],\n\t\"prompPicture\":\"mytest.jpg\",\n\t\"address\": {\n\t\t\"address1\":\"address street 1\",\n\t\t\"address2\":\"address street 2\",\n\t\t\"city\":\"Wales\",\n\t\t\"state\":\"New South Wales\",\n\t\t\"zipcode\":\"1234\",\n\t\t\"country\":\"Australia\",\n\t\t\"phone\":\"+412543322222\"\n\t}\n}"
 						},
 						"description": ""
 					},
@@ -301,7 +301,7 @@
 				{
 					"name": "List Sports",
 					"request": {
-						"url": "http://localhost:8080/sports",
+						"url": "http://localhost:8080/api/sports",
 						"method": "GET",
 						"header": [
 							{
@@ -326,7 +326,7 @@
 				{
 					"name": "Get Sports Detail",
 					"request": {
-						"url": "http://localhost:8080/sports/58caaa7889ac37226fb9e4d7",
+						"url": "http://localhost:8080/api/sports/58caaa7889ac37226fb9e4d7",
 						"method": "GET",
 						"header": [
 							{
@@ -351,7 +351,7 @@
 				{
 					"name": "Update Sport's Address",
 					"request": {
-						"url": "http://localhost:8080/sports/58caa47f6add8120dcc852f8/address",
+						"url": "http://localhost:8080/api/sports/58caa47f6add8120dcc852f8/address",
 						"method": "PUT",
 						"header": [
 							{
@@ -376,7 +376,7 @@
 				{
 					"name": "Update Sport",
 					"request": {
-						"url": "http://localhost:8080/sports/58caaa7889ac37226fb9e4d7",
+						"url": "http://localhost:8080/api/sports/58caaa7889ac37226fb9e4d7",
 						"method": "PUT",
 						"header": [
 							{
@@ -401,7 +401,7 @@
 				{
 					"name": "Delete Sports Detail",
 					"request": {
-						"url": "http://localhost:8080/sports/58caaa7889ac37226fb9e4d7",
+						"url": "http://localhost:8080/api/sports/58caaa7889ac37226fb9e4d7",
 						"method": "DELETE",
 						"header": [
 							{
@@ -432,7 +432,7 @@
 				{
 					"name": "Singup User",
 					"request": {
-						"url": "http://localhost:8080/user",
+						"url": "http://localhost:8080/api/user",
 						"method": "POST",
 						"header": [
 							{
@@ -457,7 +457,7 @@
 				{
 					"name": "List Users",
 					"request": {
-						"url": "http://localhost:8080/user",
+						"url": "http://localhost:8080/api/user",
 						"method": "GET",
 						"header": [
 							{
@@ -482,7 +482,7 @@
 				{
 					"name": "Update User Profile",
 					"request": {
-						"url": "http://localhost:8080/user/58c97e18497a771059e999fb",
+						"url": "http://localhost:8080/api/user/58c97e18497a771059e999fb",
 						"method": "PUT",
 						"header": [
 							{
@@ -498,7 +498,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"name\":\"Andrei\",\n\t\"gender\":\"Male\"\n}"
+							"raw": "{\n\t\"name\":\"andrei\",\n\t\"gender\":\"Male\"\n}"
 						},
 						"description": ""
 					},
@@ -507,7 +507,7 @@
 				{
 					"name": "Get User Detail",
 					"request": {
-						"url": "http://localhost:8080/user",
+						"url": "http://localhost:8080/api/user",
 						"method": "GET",
 						"header": [
 							{
@@ -532,7 +532,7 @@
 				{
 					"name": "Update User Address",
 					"request": {
-						"url": "http://localhost:8080/user/58ca54b437a8ac1437d1cd5f/address",
+						"url": "http://localhost:8080/api/user/58ca54b437a8ac1437d1cd5f/address",
 						"method": "PUT",
 						"header": [
 							{
@@ -557,7 +557,7 @@
 				{
 					"name": "User Login",
 					"request": {
-						"url": "http://localhost:8080/login",
+						"url": "http://localhost:8080/api/login",
 						"method": "POST",
 						"header": [
 							{
@@ -582,7 +582,7 @@
 				{
 					"name": "Delete User Detail",
 					"request": {
-						"url": "http://localhost:8080/user",
+						"url": "http://localhost:8080/api/user",
 						"method": "DELETE",
 						"header": [
 							{
@@ -599,6 +599,26 @@
 						"body": {
 							"mode": "raw",
 							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Check Login api",
+					"request": {
+						"url": "http://localhost:8080/api/checkLogin",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"token\":\"e1yJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1OGNhYTMyMzg2NjQ0MzIwNjJhZWE0MjYiLCJ1cGRhdGVkQXQiOiIyMDE3LTAzLTE2VDE0OjM3OjIzLjY4OVoiLCJjcmVhdGVkQXQiOiIyMDE3LTAzLTE2VDE0OjM3OjIzLjY4OVoiLCJhZGRyZXNzIjp7ImFkZHJlc3MxIjoiYWRkcmVzcyBzdHJlZXQgMSIsImFkZHJlc3MyIjoiYWRkcmVzcyBzdHJlZXQgMiIsImNpdHkiOiJXYWxlcyIsInN0YXRlIjoiTmV3IFNvdXRoIFdhbGVzIiwiemlwY29kZSI6IjEyMzQiLCJjb3VudHJ5IjoiQXVzdHJhbGlhIiwicGhvbmUiOiIrNDEyNTQzMzIyMjIyIiwiX2lkIjoiNThjYWEzMjM4NjY0NDMyMDYyYWVhNDI3In0sInJlZ2lzdHJhdGlvbkRhdGUiOiIyMDE3LTAzLTE2VDE0OjM3OjIzLjY4MFoiLCJwcm9maWxlUGljIjoibXl0ZXN0LnBuZyIsInR5cGUiOiJ0cmFpbmVyIiwiZ2VuZGVyIjoibWFsZSIsImVtYWlsIjoia3Jpc2huYWwuamFkYXZAZ21haWwuY29tIiwibmFtZSI6IktyaXNobmFsIEphZGF2IiwiX192IjowLCJpc0FjdGl2ZSI6dHJ1ZSwibG9jYXRpb24iOlsxNTAuNjQ0LC0zNC4zOTddLCJpYXQiOjE0OTA1MTc2NTEsImV4cCI6MTQ5MDYwNDA1MX0.HOGMAqmvrbq-DWjbgImaPQI8nV9X14CmNcyQGifHl9s\"\n}"
 						},
 						"description": ""
 					},

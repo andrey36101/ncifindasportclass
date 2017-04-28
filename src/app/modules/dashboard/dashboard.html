@@ -1,7 +1,7 @@
 <div class="container-fluid sm-padding-10">
     <div class="col-md-3">
 
-        <div class="panel" *ngIf="currentUserData.type=='trainer'">
+        <div class="panel" *ngIf="currentUserData.type=='trainer' && isLoggedIn==true">
             <div class="panel-heading">
                 <div class="panel-title">My Sports</div>
             </div>
@@ -132,8 +132,10 @@
                                         <div class="grid simple ">
                                             <div class="grid-title">
                                                 <h4>{{sport.name}}</h4>
-                                                <div class="tools">
-                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id" (click)="editSportModal(sport)"><i
+                                                <div class="tools" *ngIf="isLoggedIn==true">
+                                                    <button (click)="showRattingModal(sport)"><i
+                                                            class="fa fa-star-half-full"></i></button>
+                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id" (click)="editSportModal(sport.ownerId)"><i
                                                             class="fa fa-edit"></i></button>
                                                     <button (click)="showFeedbackModal(sport.ownerId)"><i
                                                             class="fa fa-star-half-full"></i></button>
@@ -150,9 +152,8 @@
                                                         *ngIf="sport.address.country">{{sport.address.country}} </span>
                                                     <span *ngIf="sport.address.zipcode">{{sport.address.zipcode}}</span>
                                                 </p>
-                                                <p>{{sport.description}}</p>
-                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd,
-                                                    yyyy'}}</h5>
+                                                <p>{{sport.description | slice:0:250}}</p>
+                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd, yyyy'}}</h5>
                                             </div>
                                         </div>
                                     </td>
@@ -254,7 +255,6 @@
     </div>
 </div>
 
-
 <div bsModal #feedbackModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
      aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
@@ -270,19 +270,19 @@
                       (ngSubmit)="saveFeedback(feedbackForm.value, feedbackForm.valid)" role="form">
                     <div class="form-group">
                         <div data-toggle="buttons-radio" class="btn-group">
-                            <button (click)="ratting=1" [ngClass]="{'btn-primary' : ratting==1}" class="btn btn-white">
+                            <button (click)="rating=1" [ngClass]="{'btn-primary' : rating==1}" class="btn btn-white">
                                 1
                             </button>
-                            <button (click)="ratting=2" [ngClass]="{'btn-primary' : ratting==2}" class="btn btn-white">
+                            <button (click)="rating=2" [ngClass]="{'btn-primary' : rating==2}" class="btn btn-white">
                                 2
                             </button>
-                            <button (click)="ratting=3" [ngClass]="{'btn-primary' : ratting==3}" class="btn btn-white">
+                            <button (click)="rating=3" [ngClass]="{'btn-primary' : rating==3}" class="btn btn-white">
                                 3
                             </button>
-                            <button (click)="ratting=4" [ngClass]="{'btn-primary' : ratting==4}" class="btn btn-white">
+                            <button (click)="rating=4" [ngClass]="{'btn-primary' : rating==4}" class="btn btn-white">
                                 4
                             </button>
-                            <button (click)="ratting=5" [ngClass]="{'btn-primary' : ratting==5}" class="btn btn-white">
+                            <button (click)="rating=5" [ngClass]="{'btn-primary' : rating==5}" class="btn btn-white">
                                 5
                             </button>
                         </div>
@@ -349,18 +349,26 @@
                                 </small>
                             </div>
                             <div class="form-group">
-                                <input type="text" name="sportAge" id="sportAge" formControlName="sportAge"
+                                <input type="text" name="sportMinAge" id="sportMinAge" formControlName="sportMinAge"
                                        tabindex="23"
-                                       class="form-control"
-                                       placeholder="Age group for the class" value="">
-                                <small [hidden]="addSportForm.controls.sportAge.valid || (addSportForm.controls.sportAge.pristine && !sportSubmitted)"
+                                       class="col-sm-5 form-control"
+                                       placeholder="Minumum age group for the class" value="">
+                                <small [hidden]="addSportForm.controls.sportMinAge.valid || (addSportForm.controls.sportMinAge.pristine && !sportSubmitted)"
                                        class="text-danger">
                                     Age required.
+                                </small>
+                                <input type="text" name="sportMaxAge" id="sportMaxAge" formControlName="sportMaxAge"
+                                       tabindex="24"
+                                       class="col-sm-5 form-control"
+                                       placeholder="Maximum in age group" value="">
+                                <small [hidden]="addSportForm.controls.sportMaxAge.valid || (addSportForm.controls.sportMaxAge.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Maximum for age group required.
                                 </small>
                             </div>
                             <div class="form-group">
                                 <input type="text" name="sportPrice" id="sportPrice" formControlName="sportPrice"
-                                       tabindex="24" class="form-control"
+                                       tabindex="25" class="form-control"
                                        placeholder="Sport class price" value="">
                                 <small [hidden]="addSportForm.controls.sportPrice.valid || (addSportForm.controls.sportPrice.pristine && !sportSubmitted)"
                                        class="text-danger">
@@ -369,7 +377,7 @@
                             </div>
                             <div class="form-group" formGroupName="address">
                                 <input type="text" name="address1" id="address1" formControlName="address1"
-                                       tabindex="25"
+                                       tabindex="26"
                                        class="form-control"
                                        placeholder="Sport class address line 1" value="">
                                 <small [hidden]="addSportForm.controls.address.controls.address1.valid || (addSportForm.controls.address.controls.address1.pristine && !sportSubmitted)"
@@ -379,7 +387,7 @@
                             </div>
                             <div class="form-group" formGroupName="address">
                                 <input type="text" name="address2" id="address2" formControlName="address2"
-                                       tabindex="26"
+                                       tabindex="27"
                                        class="form-control"
                                        placeholder="Sport class address line 2" value="">
                                 <small [hidden]="addSportForm.controls.address.controls.address2.valid || (addSportForm.controls.address.controls.address2.pristine && !sportSubmitted)"
@@ -389,7 +397,7 @@
                             </div>
                             <div class="form-group" formGroupName="address">
                                 <input type="text" name="address1" id="sportCity" formControlName="sportCity"
-                                       tabindex="27" class="form-control"
+                                       tabindex="28" class="form-control"
                                        placeholder="City.." value="">
                                 <small [hidden]="addSportForm.controls.address.controls.sportCity.valid || (addSportForm.controls.address.controls.sportCity.pristine && !sportSubmitted)"
                                        class="text-danger">
@@ -398,7 +406,7 @@
                             </div>
                             <div class="form-group" formGroupName="address">
                                 <input type="text" name="sportState" id="sportState" formControlName="sportState"
-                                       tabindex="28" class="form-control"
+                                       tabindex="29" class="form-control"
                                        placeholder="State.." value="">
                                 <small [hidden]="addSportForm.controls.address.controls.sportState.valid || (addSportForm.controls.address.controls.sportState.pristine && !sportSubmitted)"
                                        class="text-danger">
@@ -407,7 +415,7 @@
                             </div>
                             <div class="form-group" formGroupName="address">
                                 <input type="text" name="sportCountry" id="sportCountry" formControlName="sportCountry"
-                                       tabindex="29" class="form-control"
+                                       tabindex="30" class="form-control"
                                        placeholder="Country.." value="">
                                 <small [hidden]="addSportForm.controls.address.controls.sportCountry.valid || (addSportForm.controls.address.controls.sportCountry.pristine && !sportSubmitted)"
                                        class="text-danger">
@@ -436,6 +444,46 @@
                                 </div>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #rattingModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Average rating </h4>
+                <button type="button" class="close pull-right" (click)="this.rattingModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table" *ngIf="feedbackList?.length>0">
+                        <thead>
+                        <tr>
+                            <th>Feedback</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let feedback of feedbackList">
+                            <td>
+                                <h4>{{feedback.content}}</h4>
+                                <p>{{feedback.rating}}</p>
+                                <p *ngIf="feedback.userId"><i class="fa fa-user"></i>{{feedback.userId.name}}</p>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div *ngIf="feedbackList?.length<=0" class="row row-sm-height">
+                        <h4 class="text-center text-white no-margin">
+                            <i class="fa fa-warning "></i>
+                            No ratting found.
+                        </h4>
                     </div>
                 </div>
             </div>

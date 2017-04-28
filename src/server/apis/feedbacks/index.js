@@ -16,7 +16,7 @@ module.exports = class FeedbackController {
 
 
         let content = req.body.content,
-            ratting = req.body.ratting,
+            rating = req.body.rating,
             trainerId  = req.body.trainerId,
             userId = req.body.userId;
 
@@ -25,8 +25,8 @@ module.exports = class FeedbackController {
         if (content != undefined)
             feedback.set('content', content);
 
-        if (ratting != undefined)
-            feedback.set('ratting', ratting);
+        if (rating != undefined)
+            feedback.set('rating', rating);
 
         if (trainerId != undefined)
             feedback.set('trainerId', trainerId);
@@ -76,7 +76,7 @@ module.exports = class FeedbackController {
 
         let feedbackId = req.params.feedbackId,
             content = req.body.content,
-            ratting = req.body.ratting,
+            rating = req.body.rating,
             trainerId  = req.body.trainerId,
             userId = req.body.userId;
 
@@ -88,8 +88,8 @@ module.exports = class FeedbackController {
 
                     if(content != undefined)
                         feedback.content = content;
-                    if(ratting != undefined)
-                        feedback.ratting = ratting;
+                    if(rating != undefined)
+                        feedback.rating = rating;
                     if(trainerId != undefined)
                         feedback.trainerId = trainerId;
                     if(userId != undefined)

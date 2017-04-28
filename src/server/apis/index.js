@@ -4,11 +4,13 @@
 let byPassedEndpoints = [
     '/api/checkLogin',
     '^/api/user',
-    '^/api/sports',
-    '^/api/messages',
-    '^/api/feedback',
-    '^/api/login'
+    '^/api/login',
+    '^/api/sports'
 ];
+// '^/api/sports',
+//     '^/api/messages',
+//     '^/api/feedback',
+//     '^/api/login'
 let fs = require('fs');
 module.exports = class Modules {
     constructor(app) {

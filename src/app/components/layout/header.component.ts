@@ -18,11 +18,19 @@ export class HeaderComponent implements OnInit{
     }
     userName:string;
     user:any = {};
+    public isLoggedIn:boolean = false;
     ngOnInit() :void {
         let currentUserData = JSON.parse(localStorage.getItem('userProfile'));
 
+        if(currentUserData != undefined){
+            this.userName=currentUserData.name;
+            this.user = currentUserData;
+            this.isLoggedIn = true;
+        } else {
+            this.userName='Guest';
+            this.user = {};
+            this.isLoggedIn = false;
+        }
 
-        this.userName=currentUserData.name;
-        this.user = currentUserData;
     }
 }
