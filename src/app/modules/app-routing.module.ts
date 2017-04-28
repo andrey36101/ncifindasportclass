@@ -5,6 +5,7 @@ import {HttpModule} from '@angular/http';
 import {LoginModule} from './login/login.module';
 import {DashboardModule} from './dashboard/dashboard.module';
 import {MessageModule} from './message/message.module';
+import {ProfileModule} from './profile/profile.module';
 import {RootComponent} from '../components/layout/root.component';
 import {HeaderComponent} from '../components/layout/header.component';
 import {SidebarComponent} from '../components/layout/sidebar.component';
@@ -35,11 +36,16 @@ var routes:Routes = [
         children: [...MessageModule.ROUTES],
         canActivate:[LoggedInGuard]
     },
-
+    {
+        path: 'profile',
+        component: RootComponent,
+        children: [...ProfileModule.ROUTES],
+        canActivate:[LoggedInGuard]
+    }
 ];
 @NgModule({
     declarations: [RootComponent,HeaderComponent,SidebarComponent],
-    imports: [DropdownModule.forRoot(),HttpModule,RouterModule.forRoot(routes), LoginModule, DashboardModule, MessageModule],
+    imports: [DropdownModule.forRoot(),HttpModule,RouterModule.forRoot(routes), LoginModule, DashboardModule, MessageModule,ProfileModule],
     exports: [RouterModule],
     providers:[PagerService]
 })

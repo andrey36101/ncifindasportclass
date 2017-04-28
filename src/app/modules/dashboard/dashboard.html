@@ -1,6 +1,28 @@
 <div class="container-fluid sm-padding-10">
     <div class="col-md-3">
 
+        <div class="panel" *ngIf="currentUserData.type=='trainer'">
+            <div class="panel-heading">
+                <div class="panel-title">My Sports</div>
+            </div>
+            <div class="panel-body">
+                <div data-toggle="buttons">
+
+                    <button class="btn btn-default btn-sm btn-block" name="add-sport" id="add-sport"
+                            (click)="showAddSportModal()"> Add New Sport
+                    </button>
+
+                    <button class="btn btn-default btn-sm btn-block" name="all-sport" id="all-sport"
+                            (click)="showAddSportModal()"> All Sports
+                    </button>
+
+                    <button class="btn btn-default btn-sm btn-block" name="my-sport" id="my-sport"
+                            (click)="showAddSportModal()"> My Sports
+                    </button>
+                </div>
+            </div>
+        </div>
+
         <div class="panel">
             <div class="panel-heading">
                 <div class="panel-title">Search</div>
@@ -109,15 +131,24 @@
                                             <div class="grid-title">
                                                 <h4>{{sport.name}}</h4>
                                                 <div class="tools">
-                                                    <button (click)="showFeedbackModal(sport.ownerId)" ><i class="fa fa-star-half-full"></i></button>
+                                                    <button (click)="showFeedbackModal(sport.ownerId)"><i
+                                                            class="fa fa-star-half-full"></i></button>
                                                     <button (click)="showMessagedModal(sport.ownerId)"><i
                                                             class="fa fa-envelope"></i></button>
                                                 </div>
                                             </div>
                                             <div class="grid-body">
-                                                <p *ngIf="sport.address" ><i class="fa fa-map-marker"></i> <span *ngIf="sport.address.address1">{{sport.address.address1}}, </span><span *ngIf="sport.address.address2">{{sport.address.address2}}, </span><span *ngIf="sport.address.city">{{sport.address.city}}, </span><span *ngIf="sport.address.state">{{sport.address.state}}, </span><span *ngIf="sport.address.country">{{sport.address.country}} </span> <span *ngIf="sport.address.zipcode">{{sport.address.zipcode}}</span></p>
+                                                <p *ngIf="sport.address"><i class="fa fa-map-marker"></i> <span
+                                                        *ngIf="sport.address.address1">{{sport.address.address1}}, </span><span
+                                                        *ngIf="sport.address.address2">{{sport.address.address2}}, </span><span
+                                                        *ngIf="sport.address.city">{{sport.address.city}}, </span><span
+                                                        *ngIf="sport.address.state">{{sport.address.state}}, </span><span
+                                                        *ngIf="sport.address.country">{{sport.address.country}} </span>
+                                                    <span *ngIf="sport.address.zipcode">{{sport.address.zipcode}}</span>
+                                                </p>
                                                 <p>{{sport.description}}</p>
-                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd, yyyy'}}</h5>
+                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd,
+                                                    yyyy'}}</h5>
                                             </div>
                                         </div>
                                     </td>
@@ -170,7 +201,8 @@
                                 <h4>{{msg.title}}</h4>
                                 <p>{{msg.description}}</p>
                                 <p><i class="fa fa-calendar-o"></i> {{msg.createdDt | date:'MMM dd, yyyy'}}</p>
-                                <p *ngIf="msg.senderId"><i class="fa fa-user"></i> {{msg.senderId._id==currentUserData._id?'You':msg.senderId.name}}</p>
+                                <p *ngIf="msg.senderId"><i class="fa fa-user"></i>
+                                    {{msg.senderId._id==currentUserData._id?'You':msg.senderId.name}}</p>
                             </td>
                         </tr>
                         </tbody>
@@ -185,17 +217,21 @@
                 <form id="message-form" [formGroup]="messageForm" novalidate
                       (ngSubmit)="sendMessage(messageForm.value, messageForm.valid)" role="form">
                     <div class="form-group">
-                        <input type="text" name="title" id="title" formControlName="title" tabindex="8" class="form-control"
+                        <input type="text" name="title" id="title" formControlName="title" tabindex="8"
+                               class="form-control"
                                placeholder="Your message title" value="">
-                        <small [hidden]="messageForm.controls.title.valid || (messageForm.controls.title.pristine && !msgSent)" class="text-danger">
+                        <small [hidden]="messageForm.controls.title.valid || (messageForm.controls.title.pristine && !msgSent)"
+                               class="text-danger">
                             Message title required.
                         </small>
                     </div>
                     <div class="form-group">
 
-                        <textarea tabindex="9" name="description" id="description" formControlName="description" class="form-control"
+                        <textarea tabindex="9" name="description" id="description" formControlName="description"
+                                  class="form-control"
                                   placeholder="You message"></textarea>
-                        <small [hidden]="messageForm.controls.description.valid || (messageForm.controls.description.pristine && !msgSent)" class="text-danger">
+                        <small [hidden]="messageForm.controls.description.valid || (messageForm.controls.description.pristine && !msgSent)"
+                               class="text-danger">
                             Description required.
                         </small>
 
@@ -215,7 +251,8 @@
 </div>
 
 
-<div bsModal #feedbackModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+<div bsModal #feedbackModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
@@ -225,21 +262,33 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="feedback-form" [formGroup]="feedbackForm" novalidate (ngSubmit)="saveFeedback(feedbackForm.value, feedbackForm.valid)" role="form">
+                <form id="feedback-form" [formGroup]="feedbackForm" novalidate
+                      (ngSubmit)="saveFeedback(feedbackForm.value, feedbackForm.valid)" role="form">
                     <div class="form-group">
                         <div data-toggle="buttons-radio" class="btn-group">
-                            <button (click)="ratting=1" [ngClass]="{'active' : ratting==1}" class="btn btn-white">1</button>
-                            <button (click)="ratting=2" [ngClass]="{'active' : ratting==2}" class="btn btn-white">2</button>
-                            <button (click)="ratting=3" [ngClass]="{'active' : ratting==3}" class="btn btn-white">3</button>
-                            <button (click)="ratting=4" [ngClass]="{'active' : ratting==4}" class="btn btn-white">4</button>
-                            <button (click)="ratting=5" [ngClass]="{'active' : ratting==5}" class="btn btn-white">5</button>
+                            <button (click)="ratting=1" [ngClass]="{'btn-primary' : ratting==1}" class="btn btn-white">
+                                1
+                            </button>
+                            <button (click)="ratting=2" [ngClass]="{'btn-primary' : ratting==2}" class="btn btn-white">
+                                2
+                            </button>
+                            <button (click)="ratting=3" [ngClass]="{'btn-primary' : ratting==3}" class="btn btn-white">
+                                3
+                            </button>
+                            <button (click)="ratting=4" [ngClass]="{'btn-primary' : ratting==4}" class="btn btn-white">
+                                4
+                            </button>
+                            <button (click)="ratting=5" [ngClass]="{'btn-primary' : ratting==5}" class="btn btn-white">
+                                5
+                            </button>
                         </div>
                     </div>
-                    {{ratting}}
                     <div class="form-group">
-                        <textarea tabindex="9" name="content" id="content" formControlName="content" class="form-control"
+                        <textarea tabindex="9" name="content" id="content" formControlName="content"
+                                  class="form-control"
                                   placeholder="Your feedback"></textarea>
-                        <small [hidden]="feedbackForm.controls.content.valid || (feedbackForm.controls.content.pristine && !feedbackSubmitted)" class="text-danger">
+                        <small [hidden]="feedbackForm.controls.content.valid || (feedbackForm.controls.content.pristine && !feedbackSubmitted)"
+                               class="text-danger">
                             Content required.
                         </small>
                     </div>
@@ -252,6 +301,141 @@
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #addSportModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Add New Sport</h4>
+                <button type="button" class="close pull-right" (click)="this.addSportModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="panel" *ngIf="currentUserData.type=='trainer'">
+                    <div class="panel-heading">
+                        <div class="panel-title">Add Sports</div>
+                    </div>
+                    <div class="panel-body">
+                        <form id="sport-form" [formGroup]="addSportForm" novalidate
+                              (ngSubmit)="saveSport(addSportForm.value, addSportForm.valid)" role="form">
+                            <div class="form-group">
+                                <input type="text" name="sportName" id="sportName" formControlName="sportName"
+                                       tabindex="21" class="form-control"
+                                       placeholder="Sport's name. For e.g Baseball" value="">
+                                <small [hidden]="addSportForm.controls.sportName.valid || (addSportForm.controls.sportName.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Message title required.
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <textarea tabindex="22" name="sportDescription" id="sportDescription"
+                                          formControlName="sportDescription" class="form-control"
+                                          placeholder="Sport's description"></textarea>
+                                <small [hidden]="addSportForm.controls.sportDescription.valid || (addSportForm.controls.sportDescription.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Description required.
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="sportAge" id="sportAge" formControlName="sportAge"
+                                       tabindex="23"
+                                       class="form-control"
+                                       placeholder="Age group for the class" value="">
+                                <small [hidden]="addSportForm.controls.sportAge.valid || (addSportForm.controls.sportAge.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Message title required.
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="sportPrice" id="sportPrice" formControlName="sportPrice"
+                                       tabindex="24" class="form-control"
+                                       placeholder="Sport class price" value="">
+                                <small [hidden]="addSportForm.controls.sportPrice.valid || (addSportForm.controls.sportPrice.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Message title required.
+                                </small>
+                            </div>
+                            <div class="form-group" formGroupName="address">
+                                <input type="text" name="address1" id="address1" formControlName="address1"
+                                       tabindex="25"
+                                       class="form-control"
+                                       placeholder="Sport class address line 1" value="">
+                                <small [hidden]="addSportForm.controls.address.controls.address1.valid || (addSportForm.controls.address.controls.address1.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Address line 1 required.
+                                </small>
+                            </div>
+                            <div class="form-group" formGroupName="address">
+                                <input type="text" name="address2" id="address2" formControlName="address2"
+                                       tabindex="26"
+                                       class="form-control"
+                                       placeholder="Sport class address line 2" value="">
+                                <small [hidden]="addSportForm.controls.address.controls.address2.valid || (addSportForm.controls.address.controls.address2.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Address line 2 required.
+                                </small>
+                            </div>
+                            <div class="form-group" formGroupName="address">
+                                <input type="text" name="address1" id="sportCity" formControlName="sportCity"
+                                       tabindex="27" class="form-control"
+                                       placeholder="City.." value="">
+                                <small [hidden]="addSportForm.controls.address.controls.sportCity.valid || (addSportForm.controls.address.controls.sportCity.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    City required.
+                                </small>
+                            </div>
+                            <div class="form-group" formGroupName="address">
+                                <input type="text" name="sportState" id="sportState" formControlName="sportState"
+                                       tabindex="28" class="form-control"
+                                       placeholder="State.." value="">
+                                <small [hidden]="addSportForm.controls.address.controls.sportState.valid || (addSportForm.controls.address.controls.sportState.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    State required.
+                                </small>
+                            </div>
+                            <div class="form-group" formGroupName="address">
+                                <input type="text" name="sportCountry" id="sportCountry" formControlName="sportCountry"
+                                       tabindex="29" class="form-control"
+                                       placeholder="Country.." value="">
+                                <small [hidden]="addSportForm.controls.address.controls.sportCountry.valid || (addSportForm.controls.address.controls.sportCountry.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Country required.
+                                </small>
+                            </div>
+                            <div class="form-group" formGroupName="address">
+                                <input type="text" name="zipcode" id="zipcode" formControlName="zipcode" tabindex="30"
+                                       class="form-control"
+                                       placeholder="Zipcode.." value="">
+                                <small [hidden]="addSportForm.controls.address.controls.zipcode.valid || (addSportForm.controls.address.zipcode.pristine && !sportSubmitted)"
+                                       class="text-danger">
+                                    Zipcode required.
+                                </small>
+                            </div>
+                            <div class="form-group">
+                                <div class="row-fluid">
+                                    <div class="fallback" class="dropzone no-margin">
+                                        <input name="file" type="file" multiple/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-6 col-sm-offset-6">
+                                        <input type="submit" name="sport-submit" id="sport-submit" tabindex="31"
+                                               class="form-control btn btn-register" value="Save">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -7,6 +7,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import {NotificationService} from '../../common/notification.service';
 import { ModalDirective } from 'ng2-bootstrap';
 import {MessageService} from "../message/message.service";
+import {FeedbackService} from "./feedback.service";
 @Component({
     selector:'dashboard',
     template: require('./dashboard.html'),
@@ -23,9 +24,12 @@ export class DashboardComponent implements OnInit{
     public searchForm: FormGroup;
     public messageForm: FormGroup;
     public feedbackForm: FormGroup;
+    public addSportForm: FormGroup;
+
     public feedbackSubmitted: boolean;
     public msgSent: boolean;
     public submitted: boolean;
+    public sportSubmitted: boolean;
     public ratting: number;
 
     filter: any = {};
@@ -33,11 +37,13 @@ export class DashboardComponent implements OnInit{
 
     @ViewChild('feedbackModal') public feedbackModal:ModalDirective;
 
+    @ViewChild('addSportModal') public addSportModal:ModalDirective;
+
     lastMessages: any[];
     trainer: any = {};
     currentUserData: any = {};
 
-    constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private sportService: SportService,private pagerService: PagerService,private _fb: FormBuilder,public notificationService:NotificationService,private messageService:MessageService) {
+    constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private feedbackService: FeedbackService,private sportService: SportService,private pagerService: PagerService,private _fb: FormBuilder,public notificationService:NotificationService,private messageService:MessageService) {
         overlay.defaultViewContainer = vcRef;
     }
 
@@ -64,6 +70,22 @@ export class DashboardComponent implements OnInit{
 
         this.feedbackForm = this._fb.group({
             content: ['', [<any>Validators.required]]
+        });
+
+
+        this.addSportForm = this._fb.group({
+            sportName: ['', [<any>Validators.required]],
+            sportDescription: ['', [<any>Validators.required]],
+            sportPrice: ['', [<any>Validators.required]],
+            sportAge: ['', [<any>Validators.required]],
+            address: this._fb.group({
+                address1: ['', <any>Validators.required],
+                address2: ['', <any>Validators.required],
+                sportCity: ['', <any>Validators.required],
+                sportState: ['', <any>Validators.required],
+                sportCountry: ['', <any>Validators.required],
+                zipcode: ['8000']
+            })
         });
 
     }
@@ -176,23 +198,36 @@ export class DashboardComponent implements OnInit{
         if(isValid){
             feedbackData["userId"] = this.currentUserData._id;
             feedbackData["trainerId"] = this.trainer._id;
-            console.log(feedbackData,ratting);
-            // this.messageService.createMessage(feedbackData).then(res =>{
-            //     if(res.error){
-            //         throw res.error;
-            //     }
-            //     if(res.json().Status=="success") {
-            //         this.notificationService.notifyMsg('Your feedback saved.','success');
-            //         this.trainer = {};
-            //         this.feedbackModal.hide();
-            this.feedbackSubmitted = false;
-            // }
-            this.feedbackForm = this._fb.group({
-                content: ['', [<any>Validators.required]],
+            console.log(feedbackData,this.ratting);
+            this.feedbackService.createFeedback(feedbackData).then(res =>{
+                if(res.error){
+                    throw res.error;
+                }
+                if(res.json().Status=="success") {
+                    this.notificationService.notifyMsg('Your feedback saved.','success');
+                    this.trainer = {};
+                    this.feedbackModal.hide();
+                    this.feedbackSubmitted = false;
+                }
+                this.ratting = 0;
+                this.feedbackForm = this._fb.group({
+                    content: ['', [<any>Validators.required]],
+                });
+            }).catch(e =>{
+                this.notificationService.notifyMsg(e,'error');
             });
-            // }).catch(e =>{
-            //     this.notificationService.notifyMsg(e,'error');
-            // });
         }
     }
+
+    public showAddSportModal():void {
+        console.log('showAddSportModal')
+        this.addSportModal.show();
+
+    }
+
+    saveSport(sportData:any,isValid):void{
+
+        console.log(sportData,isValid);
+    }
+
 }

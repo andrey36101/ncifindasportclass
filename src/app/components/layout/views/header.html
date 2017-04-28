@@ -1,4 +1,4 @@
-<!-- START HEADER -->
+
 <div class="header">
     <div class="pull-left">
         <div class="header-inner">
@@ -15,7 +15,7 @@
               </a>
               <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
                 <li>
-                  <a class="dropdown-item" href="javascript:void(0);">My Profile</a>
+                  <a class="dropdown-item" [routerLink]="['/profile']" href="javascript:void(0);">My Profile</a>
                 </li>
                   <li class="divider dropdown-divider"></li>
                   <li role="menuitem"><a class="dropdown-item" (click)="logOut()" href="javascript:void(0);">Logout</a></li>
@@ -24,4 +24,3 @@
         </div>
     </div>
 </div>
-<!-- END HEADER -->
