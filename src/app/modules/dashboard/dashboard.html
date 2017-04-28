@@ -13,11 +13,11 @@
                     </button>
 
                     <button class="btn btn-default btn-sm btn-block" name="all-sport" id="all-sport"
-                            (click)="showAddSportModal()"> All Sports
+                            (click)="search({},true)"> All Sports
                     </button>
 
                     <button class="btn btn-default btn-sm btn-block" name="my-sport" id="my-sport"
-                            (click)="showAddSportModal()"> My Sports
+                            (click)="showMySports()"> My Sports
                     </button>
                 </div>
             </div>
@@ -123,14 +123,18 @@
                                 <tbody>
                                 <tr *ngFor="let sport of sports">
                                     <td style="width: 250px;">
-                                        <img class="placeholder-thumbnail"
-                                             src="{{prompPicture || 'assets/images/placeholder.png'}}"/>
+                                        <img *ngIf="sport.prompPicture" class="placeholder-thumbnail"
+                                             src="{{'/uploads/' + sport.prompPicture}}"/>
+                                        <img *ngIf="sport.prompPicture==undefined" class="placeholder-thumbnail"
+                                             src="{{'assets/images/placeholder.png'}}"/>
                                     </td>
                                     <td>
                                         <div class="grid simple ">
                                             <div class="grid-title">
                                                 <h4>{{sport.name}}</h4>
                                                 <div class="tools">
+                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id" (click)="editSportModal(sport)"><i
+                                                            class="fa fa-edit"></i></button>
                                                     <button (click)="showFeedbackModal(sport.ownerId)"><i
                                                             class="fa fa-star-half-full"></i></button>
                                                     <button (click)="showMessagedModal(sport.ownerId)"><i
@@ -312,7 +316,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title pull-left">Add New Sport</h4>
+                <h4 class="modal-title pull-left">Manage Sport Class</h4>
                 <button type="button" class="close pull-right" (click)="this.addSportModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -320,18 +324,19 @@
             <div class="modal-body">
                 <div class="panel" *ngIf="currentUserData.type=='trainer'">
                     <div class="panel-heading">
-                        <div class="panel-title">Add Sports</div>
+                        <div class="panel-title">{{sportModalTitle}}</div>
                     </div>
                     <div class="panel-body">
                         <form id="sport-form" [formGroup]="addSportForm" novalidate
                               (ngSubmit)="saveSport(addSportForm.value, addSportForm.valid)" role="form">
+
                             <div class="form-group">
                                 <input type="text" name="sportName" id="sportName" formControlName="sportName"
                                        tabindex="21" class="form-control"
                                        placeholder="Sport's name. For e.g Baseball" value="">
                                 <small [hidden]="addSportForm.controls.sportName.valid || (addSportForm.controls.sportName.pristine && !sportSubmitted)"
                                        class="text-danger">
-                                    Message title required.
+                                    Sport name required.
                                 </small>
                             </div>
                             <div class="form-group">
@@ -350,7 +355,7 @@
                                        placeholder="Age group for the class" value="">
                                 <small [hidden]="addSportForm.controls.sportAge.valid || (addSportForm.controls.sportAge.pristine && !sportSubmitted)"
                                        class="text-danger">
-                                    Message title required.
+                                    Age required.
                                 </small>
                             </div>
                             <div class="form-group">
@@ -359,7 +364,7 @@
                                        placeholder="Sport class price" value="">
                                 <small [hidden]="addSportForm.controls.sportPrice.valid || (addSportForm.controls.sportPrice.pristine && !sportSubmitted)"
                                        class="text-danger">
-                                    Message title required.
+                                    Price required.
                                 </small>
                             </div>
                             <div class="form-group" formGroupName="address">
@@ -419,11 +424,8 @@
                                 </small>
                             </div>
                             <div class="form-group">
-                                <div class="row-fluid">
-                                    <div class="fallback" class="dropzone no-margin">
-                                        <input name="file" type="file" multiple/>
-                                    </div>
-                                </div>
+                                <dropzone *ngIf="selectedSport.prompPicture"  [placeholder]="selectedSport.prompPicture" class="upload-area" [config]="config" [message]="'Click or drag image here to change'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
+                                <dropzone *ngIf="selectedSport.prompPicture==undefined" class="upload-area" [config]="config" [message]="'Click or drag images here to upload'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
                             </div>
                             <div class="form-group">
                                 <div class="row">

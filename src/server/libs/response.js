@@ -1,3 +1,4 @@
+var jwt    = require('jsonwebtoken');
 function Response() {
     this.handler = function () {
         return function (req, res, next) {
@@ -10,31 +11,47 @@ function Response() {
     };
     this.authHandler = function (bypassed_paths) {
         return function (req, res, next) {
-	        var authAccessKey = req.headers.appkey;
-	        next();
-	        // var path=__lodash.find(bypassed_paths,function(path){
-		       //  var regex=new RegExp(path,'i');
-		       //  console.log(path,req.path,req.path.match(regex));
-		       //  return req.path.match(regex);
-	        // });
-	        // if(path === undefined){
-		       //  // Verify Access Key & Secret Key is passed
-		       //  if(authAccessKey === '' || authAccessKey === undefined){
-			      //   var exception=new Exception('InvalidAuthRequest','Application Key missing');
-			      //   res.sendError(exception);
-			      //   return;
-		       //  }
-	        // }
-	        // let promise = global.MongoORM.Client.findOne({clientKey:authAccessKey},{password:false});
-	        // promise.then(function(client){
-	        // 	let appTenant = JSON.parse(JSON.stringify(client));
-	        //     req.appTenant = appTenant;
-		       //  req.defaultGateway = __lodash.find(appTenant.paymentGateways,{isDefault:true});
-		       //  next();
-         //    }).catch(function(error){
-		       //  req.appTenant = {};
-		       //  next();
-         //    });
+            var authAccessKey = req.headers.appkey;
+
+            // var path=__lodash.find(bypassed_paths,function(path){
+            //  var regex=new RegExp(path,'i');
+            //  console.log(path,req.path,req.path.match(regex));
+            //  return req.path.match(regex);
+            // });
+            // if(path === undefined){
+            //  // Verify Access Key & Secret Key is passed
+            //  if(authAccessKey === '' || authAccessKey === undefined){
+            //   var exception=new Exception('InvalidAuthRequest','Application Key missing');
+            //   res.sendError(exception);
+            //   return;
+            //  }
+            // }
+            req.isLoggedIn = false;
+            var token = req.body.token || req.params.token || req.headers['token'];
+            if(token){
+                jwt.verify(token, global.config.secret, function(err, decoded) {
+                    if (err) {
+                        next();
+                    } else {
+                        req.user = decoded;
+                        req.isLoggedIn = true;
+                        next();
+                    }
+                });
+            } else {
+                next();
+            }
+
+            // let promise = global.MongoORM.Client.findOne({clientKey:authAccessKey},{password:false});
+            // promise.then(function(client){
+            // 	let appTenant = JSON.parse(JSON.stringify(client));
+            //     req.appTenant = appTenant;
+            //  req.defaultGateway = __lodash.find(appTenant.paymentGateways,{isDefault:true});
+            //  next();
+            //    }).catch(function(error){
+            //  req.appTenant = {};
+            //  next();
+            //    });
         };
     }
 }

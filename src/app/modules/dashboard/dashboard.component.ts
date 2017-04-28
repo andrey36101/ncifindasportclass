@@ -8,6 +8,9 @@ import {NotificationService} from '../../common/notification.service';
 import { ModalDirective } from 'ng2-bootstrap';
 import {MessageService} from "../message/message.service";
 import {FeedbackService} from "./feedback.service";
+
+import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+
 @Component({
     selector:'dashboard',
     template: require('./dashboard.html'),
@@ -31,7 +34,8 @@ export class DashboardComponent implements OnInit{
     public submitted: boolean;
     public sportSubmitted: boolean;
     public ratting: number;
-
+    attachedFiles: any[];
+    selectedSport: any = {};
     filter: any = {};
     @ViewChild('messageModal') public messageModal:ModalDirective;
 
@@ -42,6 +46,7 @@ export class DashboardComponent implements OnInit{
     lastMessages: any[];
     trainer: any = {};
     currentUserData: any = {};
+    sportModalTitle: string = "Add Sport";
 
     constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private feedbackService: FeedbackService,private sportService: SportService,private pagerService: PagerService,private _fb: FormBuilder,public notificationService:NotificationService,private messageService:MessageService) {
         overlay.defaultViewContainer = vcRef;
@@ -52,7 +57,7 @@ export class DashboardComponent implements OnInit{
     ngOnInit(): void {
         this.getSports(0);
         this.currentUserData = JSON.parse(localStorage.getItem('userProfile'));
-        console.log(this.currentUserData,'currentUserData');
+
         this.searchForm = this._fb.group({
             tags: [''],
             name: [''],
@@ -71,6 +76,7 @@ export class DashboardComponent implements OnInit{
         this.feedbackForm = this._fb.group({
             content: ['', [<any>Validators.required]]
         });
+        this.attachedFiles = [];
 
 
         this.addSportForm = this._fb.group({
@@ -84,7 +90,7 @@ export class DashboardComponent implements OnInit{
                 sportCity: ['', <any>Validators.required],
                 sportState: ['', <any>Validators.required],
                 sportCountry: ['', <any>Validators.required],
-                zipcode: ['8000']
+                zipcode: ['']
             })
         });
 
@@ -133,7 +139,7 @@ export class DashboardComponent implements OnInit{
     }
 
     public showMessagedModal(trainer):void {
-        console.log(trainer);
+
 
         if(trainer == undefined){
             this.notificationService.notifyMsg("Trainer profile not available",'error');
@@ -148,7 +154,7 @@ export class DashboardComponent implements OnInit{
         let filter = {senderId:this.currentUserData._id,recipientId:trainer._id};
         this.messageService.getMessages(options,filter).then(message =>{
             this.lastMessages = message.json().messages;
-            console.log(this.lastMessages);
+
             this.messageModal.show();
         });
 
@@ -181,7 +187,7 @@ export class DashboardComponent implements OnInit{
     }
 
     public showFeedbackModal(trainer):void {
-        console.log(trainer);
+
 
         if(trainer == undefined){
             this.notificationService.notifyMsg("Trainer profile not available",'error');
@@ -198,7 +204,7 @@ export class DashboardComponent implements OnInit{
         if(isValid){
             feedbackData["userId"] = this.currentUserData._id;
             feedbackData["trainerId"] = this.trainer._id;
-            console.log(feedbackData,this.ratting);
+
             this.feedbackService.createFeedback(feedbackData).then(res =>{
                 if(res.error){
                     throw res.error;
@@ -220,14 +226,124 @@ export class DashboardComponent implements OnInit{
     }
 
     public showAddSportModal():void {
-        console.log('showAddSportModal')
+        this.sportModalTitle = "Add Sport";
         this.addSportModal.show();
 
     }
 
     saveSport(sportData:any,isValid):void{
 
-        console.log(sportData,isValid);
+
+        let sport = {};
+
+        if(this.attachedFiles.length){
+            sport["prompPicture"] = this.attachedFiles[0].fileName;
+        }
+
+        if(sportData.sportName != undefined)
+            sport["name"] = sportData.sportName;
+        if(sportData.sportDescription != undefined)
+            sport["description"] = sportData.sportDescription;
+        if(sportData.sportPrice != undefined)
+            sport["price"] = sportData.sportPrice;
+        if(sportData.sportAge != undefined)
+            sport["age"] = sportData.sportAge;
+
+        let addressData = {};
+        if(sportData.address){
+            let address = sportData.address;
+
+
+            if(address.address1 != undefined)
+                addressData["address1"] = address.address1;
+            if(address.address2 != undefined)
+                addressData["address2"] = address.address2;
+            if(address.sportCity != undefined)
+                addressData["city"] = address.sportCity;
+            if(address.sportState != undefined)
+                addressData["state"] = address.sportState;
+            if(address.sportCountry != undefined)
+                addressData["country"] = address.sportCountry;
+            if(address.zipcode != undefined)
+                addressData["zipcode"] = address.zipcode;
+
+            sport["address"] = addressData;
+        }
+
+
+        if(this.sportModalTitle=="Edit Sport"){
+            this.sportService.updateSport(sport,this.selectedSport._id).then(sports =>{
+                this.sportService.updateSportAddress(addressData,this.selectedSport._id).then(sports =>{
+                    this.addSportModal.hide();
+                    this.sportSubmitted = false;
+                    this.getSports(0);
+                    this.attachedFiles = [];
+                    this.notificationService.notifyMsg('Sport class updated successfully.','success');
+                });
+            });
+        } else {
+            this.sportService.createSport(sport).then(sports =>{
+                this.addSportModal.hide();
+                this.sportSubmitted = false;
+                this.getSports(0);
+                this.attachedFiles = [];
+                this.notificationService.notifyMsg('Sport class successfully added.','success');
+            });
+        }
+
+    }
+
+    editSportModal(sport){
+
+        this.sportModalTitle = "Edit Sport";
+        this.selectedSport = sport;
+        if(sport.prompPicture)
+            this.selectedSport["prompPicture"] = '/uploads/' + sport.prompPicture;
+
+        let address = sport.address || {};
+        this.addSportForm = this._fb.group({
+            sportName: [sport.name, [<any>Validators.required]],
+            sportDescription: [sport.description, [<any>Validators.required]],
+            sportPrice: [sport.price, [<any>Validators.required]],
+            sportAge: [sport.age, [<any>Validators.required]],
+            address: this._fb.group({
+                address1: [address.address1, <any>Validators.required],
+                address2: [address.address2, <any>Validators.required],
+                sportCity: [address.city, <any>Validators.required],
+                sportState: [address.state, <any>Validators.required],
+                sportCountry: [address.country, <any>Validators.required],
+                zipcode: [address.zipcode]
+            })
+        });
+        this.addSportModal.show();
+    }
+
+    showMySports(){
+        this.filter = {};
+        this.filter["ownerId"] = this.currentUserData._id;
+        this.getSports(0);
+
+    }
+
+    onUploadError(args: any) {
+        console.log('onUploadError:', args);
+    }
+
+    onUploadSuccess(args: any) {
+
+        let response = args[1].Data;
+
+
+        this.attachedFiles.push({
+            path:response[0].path,
+            contentType:response[0].contentType,
+            fileName:response[0].fileName
+        });
+    }
+
+    onCancelFileUpload(args: any){
+        this.attachedFiles = [];
+
     }
 
 }

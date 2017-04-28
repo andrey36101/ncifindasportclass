@@ -38,7 +38,7 @@ module.exports = (app)=>{
         app.use(express.static(getAppPath(app)));
     }
     app.use('/public', express.static(path.join(config.root, 'public')));
-
+    app.use('/uploads', express.static(path.join(config.root, 'uploads')));
     // setup error handler
     app.use(errorHandler());
 };

@@ -1,3 +1,4 @@
+let ObjectId = require('mongodb').ObjectID;
 module.exports = class SportController {
 
     constructor(app) {
@@ -28,6 +29,8 @@ module.exports = class SportController {
             address = req.body.address,
             prompPicture = req.body.prompPicture;
 
+        if(req.user)
+            ownerId = req.user._id;
 
         let addressSchema = {},
             sport = new global.MongoORM.Sport();
@@ -135,7 +138,7 @@ module.exports = class SportController {
         if(description!=undefined)
             filter['description'] = new RegExp(description.trim(), 'gi');
         if(ownerId !=undefined)
-            filter['ownerId '] = ownerId ;
+            filter['ownerId'] = ObjectId(ownerId) ;
         if(startDate!=undefined)
             filter['startDate'] = startDate;
         if(age!=undefined)

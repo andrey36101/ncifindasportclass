@@ -63,9 +63,12 @@
                                     <!--TODO: Password confirm password validation to be implemented-->
                                 </div>
                                 <div class="form-group">
-                                    <select class="form-control" id="type" formControlName="type">
-                                        <option *ngFor="let t of types" [value]="t">{{t}}</option>
-                                    </select>
+                                    <div class="radio">
+                                        <input id="customer" type="radio" name="type" formControlName="type" value="customer" checked="checked">
+                                        <label for="customer">Customer</label>
+                                        <input id="trainer" type="radio" name="type" formControlName="type" value="trainer">
+                                        <label for="trainer">Female</label>
+                                    </div>
                                     <small [hidden]="regForm.controls.type.valid || (regForm.controls.type.pristine && !submitted)" class="text-danger">
                                         User type required.
                                     </small>

@@ -17,10 +17,12 @@ export class HeaderComponent implements OnInit{
         });
     }
     userName:string;
+    user:any = {};
     ngOnInit() :void {
         let currentUserData = JSON.parse(localStorage.getItem('userProfile'));
 
-        console.log(currentUserData);
+
         this.userName=currentUserData.name;
+        this.user = currentUserData;
     }
 }

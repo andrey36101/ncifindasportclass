@@ -14,30 +14,13 @@ app.set('superSecret', config.secret);
 require('./config/mongo');
 require('./config/express')(app);
 
-//Configure api routes authentication
-app.use((req, res, next)=>{
-        if(req.path.indexOf('/apis') === 0){ // If request is starting with /apis, then apply authentication check
-            if(req.session.isLoggedIn === 'Y'){
-                next();
-            } else{
-                let secretKey    = req.headers['X-SECRET-KEY'];
-                let accessKey    = req.headers['X-ACCESS-KEY'];
-                let sessionToken = req.headers['X-SESSION-TOKEN'];
-
-                // IMPLEMENT APP SPECIFIC AUTHENTICATION LOGIC
-                next();
-            }
-        } else{
-            next();
-        }
-    }
-);
 
 app.post('/uploadfiles', global.upload.array('file'), function(req, res){
 
     let attachedFiles = [];
     __lodash.forEach(req.files, function(value, key){
         try{
+            fs.renameSync(value.path, path.join(path.join(config.root, 'uploads'), value.originalname));
             attachedFiles.push({
                 'path':value.path,
                 'fileName':value.originalname,

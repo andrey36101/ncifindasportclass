@@ -11,7 +11,10 @@
         <div class="visible-lg visible-md m-t-20">
             <span dropdown>
               <a href id="simple-dropdown" dropdownToggle>
-                Welcome, {{userName}}
+                  Welcome, {{user.name}}
+                  <div class="profile-pic">
+                      <img src="{{user.profilePic==undefined?'assets/images/a0.jpg':'/uploads/'+user.profilePic}}" alt="" width="35" height="35">
+                  </div>
               </a>
               <ul class="dropdown-menu" dropdownMenu aria-labelledby="simple-dropdown">
                 <li>

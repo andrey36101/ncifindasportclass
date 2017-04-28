@@ -15,9 +15,19 @@ export class ProfileService {
         this.headers.append('token',localStorage.token);
     }
 
-    updateProfile(postArray): Promise<profile[]> {
+    updateProfile(postArray,profileId): Promise<profile[]> {
+        let apiRequestUrl=this.profileUrl+'/'+profileId;
         return this.http
-            .put(this.profileUrl, JSON.stringify(postArray), {headers: this.headers})
+            .put(apiRequestUrl, JSON.stringify(postArray), {headers: this.headers})
+            .toPromise()
+            .then(res => res as profile[])
+            .catch(this.handleError);
+    }
+
+    updateProfileAddress(postArray,profileId): Promise<profile[]> {
+        let apiRequestUrl=this.profileUrl+'/'+profileId+'/address';
+        return this.http
+            .put(apiRequestUrl, JSON.stringify(postArray), {headers: this.headers})
             .toPromise()
             .then(res => res as profile[])
             .catch(this.handleError);

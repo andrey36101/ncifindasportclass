@@ -45,10 +45,12 @@ export class LoginComponent implements OnInit {
         this.submitted = true; // set form submit to true
 
         console.log(model, isValid);
-        if(model.regPassowrd !== model.regConfirmPassword)
+        if(model.regPassword !== model.regConfirmPassword)
             isValid = false;
+
         if(isValid){
             let user = {email:model.regEmail,name:model.regName,password:model.regPassword,type:model.type};
+            console.log(user);
             this.authService.doRegister(user).then(res =>{
                 if(res.error){
                     throw res.error;
@@ -68,7 +70,7 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         this.tab = 'login';
-        this.types = ['Customer','Trainer'];
+        this.types = ['customer','trainer'];
         this.submitted = false;
         this.regForm = this._fb.group({
             regName: ['', [<any>Validators.required]],

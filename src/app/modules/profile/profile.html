@@ -21,6 +21,14 @@
                             <form id="profile-form" [formGroup]="profileForm" novalidate
                                   (ngSubmit)="saveProfile(profileForm.value, profileForm.valid)" role="form">
                                 <div class="form-group">
+                                    <div *ngIf="profile.profilePic" class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex>
+                                        <dropzone class="upload-area" [config]="config" [placeholder]="profile.profilePic" [message]="'Click or drag profile picture here to upload'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
+                                    </div>
+                                    <div *ngIf="profile.profilePic==undefined" class="content-container" fxLayout="column" fxLayoutAlign="stretch" fxFlex>
+                                        <dropzone class="upload-area" [config]="config" [message]="'Click or drag profile picture here to upload'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <input type="text" name="name" id="name" formControlName="name"
                                            tabindex="1" class="form-control"
                                            placeholder="Your name." value="">
@@ -28,6 +36,14 @@
                                            class="text-danger">
                                         Message title required.
                                     </small>
+                                </div>
+                                <div class="form-group">
+                                    <div class="radio">
+                                        <input id="male" type="radio" name="gender" formControlName="gender" value="male" checked="checked">
+                                        <label for="male">Male</label>
+                                        <input id="female" type="radio" name="gender" formControlName="gender" value="female">
+                                        <label for="female">Female</label>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <input type="email" name="name" id="email" formControlName="email"
@@ -38,33 +54,17 @@
                                         Email address required.
                                     </small>
                                 </div>
+
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" formControlName="password" tabindex="3" class="form-control" placeholder="Password">
-                                    <small [hidden]="profileForm.controls.password.valid || (profileForm.controls.password.pristine && !formSubmitted)" class="text-danger">
-                                        Password required.
-                                    </small>
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" name="confirmPassword" id="confirmPassword" formControlName="confirmPassword" tabindex="4" class="form-control" placeholder="Confirm Password">
-                                    <small [hidden]="profileForm.controls.confirmPassword.valid || (profileForm.controls.confirmPassword.pristine && !formSubmitted)" class="text-danger">
-                                        Confirm password required.
-                                    </small>
-                                </div>
-                                <div class="form-group">
-                                    <select class="form-control" id="type" formControlName="type">
-                                        <option *ngFor="let t of types" [value]="t">{{t}}</option>
-                                    </select>
+                                    <div class="radio">
+                                        <input id="customer" type="radio" name="type" formControlName="type" value="customer" checked="checked">
+                                        <label for="customer">Customer</label>
+                                        <input id="trainer" type="radio" name="type" formControlName="type" value="trainer">
+                                        <label for="trainer">Trainer</label>
+                                    </div>
                                     <small [hidden]="profileForm.controls.type.valid || (profileForm.controls.type.pristine && !submitted)" class="text-danger">
                                         User type required.
                                     </small>
-                                </div>
-                                <div class="form-group">
-                                    <div class="radio">
-                                        <input id="male" type="radio" name="gender" value="male" checked="checked">
-                                        <label for="male">Male</label>
-                                        <input id="female" type="radio" name="gender" value="female">
-                                        <label for="female">Female</label>
-                                    </div>
                                 </div>
                                 <div class="form-group" formGroupName="address">
                                     <input type="text" name="address1" id="address1" formControlName="address1"
@@ -87,29 +87,29 @@
                                     </small>
                                 </div>
                                 <div class="form-group" formGroupName="address">
-                                    <input type="text" name="address1" id="sportCity" formControlName="sportCity"
+                                    <input type="text" name="city" id="city" formControlName="city"
                                            tabindex="27" class="form-control"
                                            placeholder="City.." value="">
-                                    <small [hidden]="profileForm.controls.address.controls.sportCity.valid || (profileForm.controls.address.controls.sportCity.pristine && !formSubmitted)"
+                                    <small [hidden]="profileForm.controls.address.controls.city.valid || (profileForm.controls.address.controls.city.pristine && !formSubmitted)"
                                            class="text-danger">
                                         City required.
                                     </small>
                                 </div>
                                 <div class="form-group" formGroupName="address">
-                                    <input type="text" name="sportState" id="sportState" formControlName="sportState"
+                                    <input type="text" name="state" id="state" formControlName="state"
                                            tabindex="28" class="form-control"
                                            placeholder="State.." value="">
-                                    <small [hidden]="profileForm.controls.address.controls.sportState.valid || (profileForm.controls.address.controls.sportState.pristine && !formSubmitted)"
+                                    <small [hidden]="profileForm.controls.address.controls.state.valid || (profileForm.controls.address.controls.state.pristine && !formSubmitted)"
                                            class="text-danger">
                                         State required.
                                     </small>
                                 </div>
                                 <div class="form-group" formGroupName="address">
-                                    <input type="text" name="sportCountry" id="sportCountry"
-                                           formControlName="sportCountry"
+                                    <input type="text" name="country" id="country"
+                                           formControlName="country"
                                            tabindex="29" class="form-control"
                                            placeholder="Country.." value="">
-                                    <small [hidden]="profileForm.controls.address.controls.sportCountry.valid || (profileForm.controls.address.controls.sportCountry.pristine && !formSubmitted)"
+                                    <small [hidden]="profileForm.controls.address.controls.country.valid || (profileForm.controls.address.controls.country.pristine && !formSubmitted)"
                                            class="text-danger">
                                         Country required.
                                     </small>
@@ -123,13 +123,6 @@
                                            class="text-danger">
                                         Zipcode required.
                                     </small>
-                                </div>
-                                <div class="form-group">
-                                    <div class="row-fluid">
-                                        <div class="fallback" class="dropzone no-margin">
-                                            <input name="file" type="file" multiple/>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="row">

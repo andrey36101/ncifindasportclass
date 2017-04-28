@@ -2,24 +2,29 @@
  Endpoints which don't require authentication
  */
 let byPassedEndpoints = [
-    '/checkLogin',
-    '^/user',
-    '^/sports',
-    '^/messages',
-    '^/feedback',
-    '^/login'
+    '/api/checkLogin',
+    '^/api/user',
+    '^/api/sports',
+    '^/api/messages',
+    '^/api/feedback',
+    '^/api/login'
 ];
 let fs = require('fs');
 module.exports = class Modules {
     constructor(app) {
         // Configure local auth check
         app.use((req, res, next)=> {
-            byPassedEndpoints.forEach(function (path) {
-                let regex = new RegExp(path, 'i');
-                if (req.path.match(regex)) {
-                    next();
-                }
-            });
+            if(req.isLoggedIn){
+                next();
+            } else {
+                byPassedEndpoints.forEach(function (path) {
+                    let regex = new RegExp(path, 'i');
+                    console.log(req.isLoggedIn,'req.isLoggedIn');
+                    if (req.path.match(regex)) {
+                        next();
+                    }
+                });
+            }
         });
         this.setupRoutes(app);
     }

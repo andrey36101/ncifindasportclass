@@ -54,6 +54,24 @@ export class SportService {
             .catch(this.handleError);
     }
 
+    updateSport(postArray,sportId): Promise<profile[]> {
+        let apiRequestUrl=this.sportUrl+'/'+sportId;
+        return this.http
+            .put(apiRequestUrl, JSON.stringify(postArray), {headers: this.headers})
+            .toPromise()
+            .then(res => res as profile[])
+            .catch(this.handleError);
+    }
+
+    updateSportAddress(postArray,sportId): Promise<profile[]> {
+        let apiRequestUrl=this.sportUrl+'/'+sportId+'/address';
+        return this.http
+            .put(apiRequestUrl, JSON.stringify(postArray), {headers: this.headers})
+            .toPromise()
+            .then(res => res as profile[])
+            .catch(this.handleError);
+    }
+
 
     private handleError (error: Response | any) {
         return error;
