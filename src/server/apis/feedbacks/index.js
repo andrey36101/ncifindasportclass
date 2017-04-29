@@ -1,3 +1,4 @@
+let _  = require('lodash');
 module.exports = class FeedbackController {
 
     constructor(app) {
@@ -53,16 +54,25 @@ module.exports = class FeedbackController {
         let sortOrder = req.query.sortOrder ? req.query.sortOrder : 'desc';
         let sort = {};
 
+        let filter = {};
+        if(req.query.trainerId)
+            filter['trainerId'] = req.query.trainerId;
+
         sort[sortBy] = sortOrder;
-        global.MongoORM.Feedback.find({})
+        global.MongoORM.Feedback.find(filter)
             .limit(row)
             .skip(row * pageNo)
             .sort(sort)
             .exec(function (err, feedbacks) {
-                global.MongoORM.Feedback.count({}).exec(function (error, count) {
+                global.MongoORM.Feedback.count(filter).exec(function (error, count) {
                     if (!error) {
+
+
+                        let average = _.meanBy(feedbacks, (p) => p.rating);
+
                         res.sendResponse({
                             feedbacks: feedbacks,
+                            average : average.toFixed(1),
                             page: pageNo,
                             pages: Math.round(count / row),
                             totalCount: count

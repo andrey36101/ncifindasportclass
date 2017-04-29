@@ -35,6 +35,7 @@ export class DashboardComponent implements OnInit{
     public sportSubmitted: boolean;
     public isLoggedIn: boolean = false;
     public rating: number;
+    public avgRating: number;
     attachedFiles: any[];
     selectedSport: any = {};
     filter: any = {};
@@ -45,6 +46,8 @@ export class DashboardComponent implements OnInit{
     @ViewChild('addSportModal') public addSportModal:ModalDirective;
 
     @ViewChild('rattingModal') public rattingModal:ModalDirective;
+
+    @ViewChild('sportDetailModal') public sportDetailModal:ModalDirective;
 
     lastMessages: any[];
     feedbackList: any[];
@@ -89,25 +92,49 @@ export class DashboardComponent implements OnInit{
         this.attachedFiles = [];
 
 
-        this.addSportForm = this._fb.group({
-            sportName: ['', [<any>Validators.required]],
-            sportDescription: ['', [<any>Validators.required]],
-            sportPrice: ['', [<any>Validators.required]],
-            sportMinAge: ['', [<any>Validators.required]],
-            sportMaxAge:['', [<any>Validators.required]],
-            address: this._fb.group({
-                address1: ['', <any>Validators.required],
-                address2: ['', <any>Validators.required],
-                sportCity: ['', <any>Validators.required],
-                sportState: ['', <any>Validators.required],
-                sportCountry: ['', <any>Validators.required],
-                zipcode: ['']
-            })
-        });
+        this.initAddSportForm();
 
     }
 
+    initAddSportForm(sport:any=null){
 
+        if(sport==null){
+            this.addSportForm = this._fb.group({
+                sportName: ['', [<any>Validators.required]],
+                sportDescription: ['', [<any>Validators.required]],
+                sportPrice: ['', [<any>Validators.required]],
+                sportMinAge: ['', [<any>Validators.required]],
+                sportMaxAge:['', [<any>Validators.required]],
+                address: this._fb.group({
+                    address1: ['', <any>Validators.required],
+                    address2: ['', <any>Validators.required],
+                    sportCity: ['', <any>Validators.required],
+                    sportState: ['', <any>Validators.required],
+                    sportCountry: ['', <any>Validators.required],
+                    zipcode: ['']
+                })
+            });
+        } else {
+            let address = sport.address || {};
+            this.addSportForm = this._fb.group({
+                sportName: [sport.name, [<any>Validators.required]],
+                sportDescription: [sport.description, [<any>Validators.required]],
+                sportPrice: [sport.price, [<any>Validators.required]],
+                sportMinAge: [sport.minAge, [<any>Validators.required]],
+                sportMaxAge:[sport.maxAge, [<any>Validators.required]],
+                address: this._fb.group({
+                    address1: [address.address1, <any>Validators.required],
+                    address2: [address.address2, <any>Validators.required],
+                    sportCity: [address.city, <any>Validators.required],
+                    sportState: [address.state, <any>Validators.required],
+                    sportCountry: [address.country, <any>Validators.required],
+                    zipcode: [address.zipcode]
+                })
+            });
+
+        }
+
+    }
 
     getSports(pageNo):void{
         let options={"pageno":pageNo};
@@ -209,6 +236,7 @@ export class DashboardComponent implements OnInit{
         this.feedbackModal.show();
 
     }
+
     saveFeedback(feedbackData:any,isValid):void{
 
         this.feedbackSubmitted = true;
@@ -239,16 +267,22 @@ export class DashboardComponent implements OnInit{
 
     public showAddSportModal():void {
         this.sportModalTitle = "Add Sport";
+        this.selectedSport = {};
+        this.initAddSportForm();
         this.addSportModal.show();
+
 
     }
 
     public showRattingModal(trainer):void {
-        console.log(trainer);
+        console.log(trainer._id);
+
         let options={"pageno":0,"rows":10,'sortOrder':'asc'};
-        this.feedbackService.getFeedbacks(options).then(feedbacks =>{
+        let filter = {trainerId:trainer._id};
+        this.feedbackService.getFeedbacks(options,filter).then(feedbacks =>{
             console.log(feedbacks.Data.feedbacks);
             this.feedbackList = feedbacks.Data.feedbacks;
+            this.avgRating = feedbacks.Data.average;
             this.rattingModal.show();
         });
 
@@ -295,6 +329,9 @@ export class DashboardComponent implements OnInit{
             sport["address"] = addressData;
         }
 
+        console.log(sport)
+        console.log(addressData);
+
 
         if(this.sportModalTitle=="Edit Sport"){
             this.sportService.updateSport(sport,this.selectedSport._id).then(sports =>{
@@ -324,24 +361,14 @@ export class DashboardComponent implements OnInit{
         this.selectedSport = sport;
         if(sport.prompPicture)
             this.selectedSport["prompPicture"] = '/uploads/' + sport.prompPicture;
-
-        let address = sport.address || {};
-        this.addSportForm = this._fb.group({
-            sportName: [sport.name, [<any>Validators.required]],
-            sportDescription: [sport.description, [<any>Validators.required]],
-            sportPrice: [sport.price, [<any>Validators.required]],
-            sportMinAge: [sport.minAge, [<any>Validators.required]],
-            sportMaxAge:[sport.maxAge, [<any>Validators.required]],
-            address: this._fb.group({
-                address1: [address.address1, <any>Validators.required],
-                address2: [address.address2, <any>Validators.required],
-                sportCity: [address.city, <any>Validators.required],
-                sportState: [address.state, <any>Validators.required],
-                sportCountry: [address.country, <any>Validators.required],
-                zipcode: [address.zipcode]
-            })
-        });
+        this.initAddSportForm(sport);
         this.addSportModal.show();
+    }
+
+    sportDetail(sport){
+        console.log(sport);
+
+        this.sportDetailModal.show();
     }
 
     showMySports(){

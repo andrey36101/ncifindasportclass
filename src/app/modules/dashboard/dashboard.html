@@ -133,9 +133,9 @@
                                             <div class="grid-title">
                                                 <h4>{{sport.name}}</h4>
                                                 <div class="tools" *ngIf="isLoggedIn==true">
-                                                    <button (click)="showRattingModal(sport)"><i
-                                                            class="fa fa-star-half-full"></i></button>
-                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id" (click)="editSportModal(sport.ownerId)"><i
+                                                    <button (click)="showRattingModal(sport.ownerId)"><i
+                                                            class="fa fa-smile-o"></i></button>
+                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id" (click)="editSportModal(sport)"><i
                                                             class="fa fa-edit"></i></button>
                                                     <button (click)="showFeedbackModal(sport.ownerId)"><i
                                                             class="fa fa-star-half-full"></i></button>
@@ -153,7 +153,8 @@
                                                     <span *ngIf="sport.address.zipcode">{{sport.address.zipcode}}</span>
                                                 </p>
                                                 <p>{{sport.description | slice:0:250}}</p>
-                                                <h5><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd, yyyy'}}</h5>
+                                                <p><i class="fa fa-calendar-o"></i> {{sport.createdDt|date:'MMM dd, yyyy'}}</p>
+                                                <a (click)="sportDetail(sport)">Detail</a>
                                             </div>
                                         </div>
                                     </td>
@@ -330,106 +331,138 @@
                         <form id="sport-form" [formGroup]="addSportForm" novalidate
                               (ngSubmit)="saveSport(addSportForm.value, addSportForm.valid)" role="form">
 
-                            <div class="form-group">
-                                <input type="text" name="sportName" id="sportName" formControlName="sportName"
-                                       tabindex="21" class="form-control"
-                                       placeholder="Sport's name. For e.g Baseball" value="">
-                                <small [hidden]="addSportForm.controls.sportName.valid || (addSportForm.controls.sportName.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Sport name required.
-                                </small>
+                            <div class="form-group row">
+                                <label for="sportName" class="col-sm-2 control-label">Sport's Name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="sportName" id="sportName" formControlName="sportName"
+                                           tabindex="21" class="form-control"
+                                           placeholder="Sport's name. For e.g Baseball" value="">
+                                    <small [hidden]="addSportForm.controls.sportName.valid || (addSportForm.controls.sportName.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Sport name required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group row">
+                                <label for="sportDescription" class="col-sm-2 control-label">Description</label>
+                                <div class="col-sm-10">
                                 <textarea tabindex="22" name="sportDescription" id="sportDescription"
                                           formControlName="sportDescription" class="form-control"
                                           placeholder="Sport's description"></textarea>
-                                <small [hidden]="addSportForm.controls.sportDescription.valid || (addSportForm.controls.sportDescription.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Description required.
-                                </small>
+                                    <small [hidden]="addSportForm.controls.sportDescription.valid || (addSportForm.controls.sportDescription.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Description required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="sportMinAge" id="sportMinAge" formControlName="sportMinAge"
-                                       tabindex="23"
-                                       class="col-sm-5 form-control"
-                                       placeholder="Minumum age group for the class" value="">
-                                <small [hidden]="addSportForm.controls.sportMinAge.valid || (addSportForm.controls.sportMinAge.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Age required.
-                                </small>
-                                <input type="text" name="sportMaxAge" id="sportMaxAge" formControlName="sportMaxAge"
-                                       tabindex="24"
-                                       class="col-sm-5 form-control"
-                                       placeholder="Maximum in age group" value="">
-                                <small [hidden]="addSportForm.controls.sportMaxAge.valid || (addSportForm.controls.sportMaxAge.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Maximum for age group required.
-                                </small>
+                            <div class="form-group row">
+                                <label for="sportMinAge" class="col-sm-2 control-label">Age Group</label>
+                                <div class="col-sm-5">
+                                    <input type="text" name="sportMinAge" id="sportMinAge" formControlName="sportMinAge"
+                                           tabindex="23"
+                                           class="form-control"
+                                           placeholder="Minumum age group for the class" value="">
+                                    <small [hidden]="addSportForm.controls.sportMinAge.valid || (addSportForm.controls.sportMinAge.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Age required.
+                                    </small>
+                                </div>
+                                <div class="col-sm-5">
+                                    <input type="text" name="sportMaxAge" id="sportMaxAge" formControlName="sportMaxAge"
+                                           tabindex="24"
+                                           class="form-control"
+                                           placeholder="Maximum age group for the class" value="">
+                                    <small [hidden]="addSportForm.controls.sportMaxAge.valid || (addSportForm.controls.sportMaxAge.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Maximum for age group required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <input type="text" name="sportPrice" id="sportPrice" formControlName="sportPrice"
-                                       tabindex="25" class="form-control"
-                                       placeholder="Sport class price" value="">
-                                <small [hidden]="addSportForm.controls.sportPrice.valid || (addSportForm.controls.sportPrice.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Price required.
-                                </small>
+                            <div class="form-group row">
+                                <label for="sportPrice" class="col-sm-2 control-label">Price</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="sportPrice" id="sportPrice" formControlName="sportPrice"
+                                           tabindex="25" class="form-control"
+                                           placeholder="Sport class price" value="">
+                                    <small [hidden]="addSportForm.controls.sportPrice.valid || (addSportForm.controls.sportPrice.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Price required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group" formGroupName="address">
-                                <input type="text" name="address1" id="address1" formControlName="address1"
-                                       tabindex="26"
-                                       class="form-control"
-                                       placeholder="Sport class address line 1" value="">
-                                <small [hidden]="addSportForm.controls.address.controls.address1.valid || (addSportForm.controls.address.controls.address1.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Address line 1 required.
-                                </small>
+                            <div class="form-group row" formGroupName="address">
+                                <label for="address1" class="col-sm-2 control-label">Address Line 1</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="address1" id="address1" formControlName="address1"
+                                           tabindex="26"
+                                           class="form-control"
+                                           placeholder="Sport class address line 1" value="">
+                                    <small [hidden]="addSportForm.controls.address.controls.address1.valid || (addSportForm.controls.address.controls.address1.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Address line 1 required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group" formGroupName="address">
-                                <input type="text" name="address2" id="address2" formControlName="address2"
-                                       tabindex="27"
-                                       class="form-control"
-                                       placeholder="Sport class address line 2" value="">
-                                <small [hidden]="addSportForm.controls.address.controls.address2.valid || (addSportForm.controls.address.controls.address2.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Address line 2 required.
-                                </small>
+                            <div class="form-group row" formGroupName="address">
+                                <label for="address2" class="col-sm-2 control-label">Address Line 2</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="address2" id="address2" formControlName="address2"
+                                           tabindex="27"
+                                           class="form-control"
+                                           placeholder="Sport class address line 2" value="">
+                                    <small [hidden]="addSportForm.controls.address.controls.address2.valid || (addSportForm.controls.address.controls.address2.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Address line 2 required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group" formGroupName="address">
-                                <input type="text" name="address1" id="sportCity" formControlName="sportCity"
-                                       tabindex="28" class="form-control"
-                                       placeholder="City.." value="">
-                                <small [hidden]="addSportForm.controls.address.controls.sportCity.valid || (addSportForm.controls.address.controls.sportCity.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    City required.
-                                </small>
+                            <div class="form-group row" formGroupName="address">
+                                <label for="sportCity" class="col-sm-2 control-label">City</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="sportCity" id="sportCity" formControlName="sportCity"
+                                           tabindex="28" class="form-control"
+                                           placeholder="City.." value="">
+                                    <small [hidden]="addSportForm.controls.address.controls.sportCity.valid || (addSportForm.controls.address.controls.sportCity.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        City required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group" formGroupName="address">
-                                <input type="text" name="sportState" id="sportState" formControlName="sportState"
-                                       tabindex="29" class="form-control"
-                                       placeholder="State.." value="">
-                                <small [hidden]="addSportForm.controls.address.controls.sportState.valid || (addSportForm.controls.address.controls.sportState.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    State required.
-                                </small>
+                            <div class="form-group row" formGroupName="address">
+                                <label for="sportState" class="col-sm-2 control-label">State</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="sportState" id="sportState" formControlName="sportState"
+                                           tabindex="29" class="form-control"
+                                           placeholder="State.." value="">
+                                    <small [hidden]="addSportForm.controls.address.controls.sportState.valid || (addSportForm.controls.address.controls.sportState.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        State required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group" formGroupName="address">
-                                <input type="text" name="sportCountry" id="sportCountry" formControlName="sportCountry"
-                                       tabindex="30" class="form-control"
-                                       placeholder="Country.." value="">
-                                <small [hidden]="addSportForm.controls.address.controls.sportCountry.valid || (addSportForm.controls.address.controls.sportCountry.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Country required.
-                                </small>
+                            <div class="form-group row" formGroupName="address">
+                                <label for="sportCountry" class="col-sm-2 control-label">Country</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="sportCountry" id="sportCountry" formControlName="sportCountry"
+                                           tabindex="30" class="form-control"
+                                           placeholder="Country.." value="">
+                                    <small [hidden]="addSportForm.controls.address.controls.sportCountry.valid || (addSportForm.controls.address.controls.sportCountry.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Country required.
+                                    </small>
+                                </div>
                             </div>
-                            <div class="form-group" formGroupName="address">
-                                <input type="text" name="zipcode" id="zipcode" formControlName="zipcode" tabindex="30"
-                                       class="form-control"
-                                       placeholder="Zipcode.." value="">
-                                <small [hidden]="addSportForm.controls.address.controls.zipcode.valid || (addSportForm.controls.address.zipcode.pristine && !sportSubmitted)"
-                                       class="text-danger">
-                                    Zipcode required.
-                                </small>
+                            <div class="form-group row" formGroupName="address">
+                                <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
+                                <div class="col-sm-10">
+                                    <input type="text" name="zipcode" id="zipcode" formControlName="zipcode" tabindex="30"
+                                           class="form-control"
+                                           placeholder="Zipcode.." value="">
+                                    <small [hidden]="addSportForm.controls.address.controls.zipcode.valid || (addSportForm.controls.address.zipcode.pristine && !sportSubmitted)"
+                                           class="text-danger">
+                                        Zipcode required.
+                                    </small>
+                                </div>
                             </div>
                             <div class="form-group">
                                 <dropzone *ngIf="selectedSport.prompPicture"  [placeholder]="selectedSport.prompPicture" class="upload-area" [config]="config" [message]="'Click or drag image here to change'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
@@ -456,7 +489,7 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title pull-left">Average rating </h4>
+                <h4 class="modal-title pull-left">Average rating {{avgRating}} / 5 from {{feedbackList?.length}} feedbacks</h4>
                 <button type="button" class="close pull-right" (click)="this.rattingModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -472,8 +505,7 @@
                         <tbody>
                         <tr *ngFor="let feedback of feedbackList">
                             <td>
-                                <h4>{{feedback.content}}</h4>
-                                <p>{{feedback.rating}}</p>
+                                {{feedback.content}} ({{feedback.rating || 0}} / 5)
                                 <p *ngIf="feedback.userId"><i class="fa fa-user"></i>{{feedback.userId.name}}</p>
                             </td>
                         </tr>
@@ -486,6 +518,22 @@
                         </h4>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div bsModal #sportDetailModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title pull-left">Sport Class Detail</h4>
+                <button type="button" class="close pull-right" (click)="this.sportDetailModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
             </div>
         </div>
     </div>

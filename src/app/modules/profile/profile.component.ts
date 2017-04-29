@@ -65,7 +65,7 @@ export class ProfileComponent implements OnInit{
         if(this.currentUserData.profilePic)
             this.profile['profilePic'] = '/uploads/' + this.currentUserData.profilePic;
         else
-            this.profile['profilePic'] = 'assets/images/placeholder.png';
+            this.profile['profilePic'] = 'assets/images/profile-pic.png';
 
         this.profileForm = this._fb.group({
             name: ['', [<any>Validators.required]],
