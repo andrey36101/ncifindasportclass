@@ -9,7 +9,9 @@ import { ModalDirective } from 'ng2-bootstrap';
 import {MessageService} from "../message/message.service";
 import {FeedbackService} from "./feedback.service";
 
-import { DropzoneConfigInterface } from 'ngx-dropzone-wrapper';
+import {GMapsService} from "./geocode.service";
+import { NguiMapComponent } from '@ngui/map';
+
 
 @Component({
     selector:'dashboard',
@@ -39,6 +41,10 @@ export class DashboardComponent implements OnInit{
     attachedFiles: any[];
     selectedSport: any = {};
     filter: any = {};
+    tab: any = "sportDetailsTab";
+    zoom: number = 8;
+    marker: any[];
+
     @ViewChild('messageModal') public messageModal:ModalDirective;
 
     @ViewChild('feedbackModal') public feedbackModal:ModalDirective;
@@ -55,7 +61,7 @@ export class DashboardComponent implements OnInit{
     currentUserData: any = {};
     sportModalTitle: string = "Add Sport";
 
-    constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private feedbackService: FeedbackService,private sportService: SportService,private pagerService: PagerService,private _fb: FormBuilder,public notificationService:NotificationService,private messageService:MessageService) {
+    constructor(overlay: Overlay, vcRef: ViewContainerRef, public modal: Modal, private feedbackService: FeedbackService,private sportService: SportService,private gMapService: GMapsService,private pagerService: PagerService,private _fb: FormBuilder,public notificationService:NotificationService,private messageService:MessageService) {
         overlay.defaultViewContainer = vcRef;
     }
 
@@ -368,8 +374,19 @@ export class DashboardComponent implements OnInit{
     sportDetail(sport){
         console.log(sport);
 
+        this.gMapService.getLatLan('ahmedabad, gujarat, india').then((geocode) => {
+            this.marker = [];
+            this.selectedSport['map'] = geocode.results[0].geometry.location;
+            this.marker.push([parseFloat(geocode.results[0].geometry.location.lat), parseFloat(geocode.results[0].geometry.location.lng)]);
+
+
+        });
+
+        this.selectedSport = sport;
         this.sportDetailModal.show();
     }
+
+
 
     showMySports(){
         this.filter = {};

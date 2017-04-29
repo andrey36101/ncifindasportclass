@@ -135,7 +135,8 @@
                                                 <div class="tools" *ngIf="isLoggedIn==true">
                                                     <button (click)="showRattingModal(sport.ownerId)"><i
                                                             class="fa fa-smile-o"></i></button>
-                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id" (click)="editSportModal(sport)"><i
+                                                    <button *ngIf="sport.ownerId && sport.ownerId._id==currentUserData._id"
+                                                            (click)="editSportModal(sport)"><i
                                                             class="fa fa-edit"></i></button>
                                                     <button (click)="showFeedbackModal(sport.ownerId)"><i
                                                             class="fa fa-star-half-full"></i></button>
@@ -443,7 +444,8 @@
                             <div class="form-group row" formGroupName="address">
                                 <label for="sportCountry" class="col-sm-2 control-label">Country</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="sportCountry" id="sportCountry" formControlName="sportCountry"
+                                    <input type="text" name="sportCountry" id="sportCountry"
+                                           formControlName="sportCountry"
                                            tabindex="30" class="form-control"
                                            placeholder="Country.." value="">
                                     <small [hidden]="addSportForm.controls.address.controls.sportCountry.valid || (addSportForm.controls.address.controls.sportCountry.pristine && !sportSubmitted)"
@@ -455,7 +457,8 @@
                             <div class="form-group row" formGroupName="address">
                                 <label for="zipcode" class="col-sm-2 control-label">Zip Code</label>
                                 <div class="col-sm-10">
-                                    <input type="text" name="zipcode" id="zipcode" formControlName="zipcode" tabindex="30"
+                                    <input type="text" name="zipcode" id="zipcode" formControlName="zipcode"
+                                           tabindex="30"
                                            class="form-control"
                                            placeholder="Zipcode.." value="">
                                     <small [hidden]="addSportForm.controls.address.controls.zipcode.valid || (addSportForm.controls.address.zipcode.pristine && !sportSubmitted)"
@@ -465,8 +468,15 @@
                                 </div>
                             </div>
                             <div class="form-group">
-                                <dropzone *ngIf="selectedSport.prompPicture"  [placeholder]="selectedSport.prompPicture" class="upload-area" [config]="config" [message]="'Click or drag image here to change'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
-                                <dropzone *ngIf="selectedSport.prompPicture==undefined" class="upload-area" [config]="config" [message]="'Click or drag images here to upload'" (error)="onUploadError($event)" (success)="onUploadSuccess($event)" (removedfile)="onCancelFileUpload($event)"></dropzone>
+                                <dropzone *ngIf="selectedSport.prompPicture" [placeholder]="selectedSport.prompPicture"
+                                          class="upload-area" [config]="config"
+                                          [message]="'Click or drag image here to change'"
+                                          (error)="onUploadError($event)" (success)="onUploadSuccess($event)"
+                                          (removedfile)="onCancelFileUpload($event)"></dropzone>
+                                <dropzone *ngIf="selectedSport.prompPicture==undefined" class="upload-area"
+                                          [config]="config" [message]="'Click or drag images here to upload'"
+                                          (error)="onUploadError($event)" (success)="onUploadSuccess($event)"
+                                          (removedfile)="onCancelFileUpload($event)"></dropzone>
                             </div>
                             <div class="form-group">
                                 <div class="row">
@@ -489,7 +499,8 @@
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title pull-left">Average rating {{avgRating}} / 5 from {{feedbackList?.length}} feedbacks</h4>
+                <h4 class="modal-title pull-left">Average rating {{avgRating}} / 5 from {{feedbackList?.length}}
+                    feedbacks</h4>
                 <button type="button" class="close pull-right" (click)="this.rattingModal.hide()" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -523,17 +534,73 @@
     </div>
 </div>
 
-<div bsModal #sportDetailModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+<div bsModal #sportDetailModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+     aria-labelledby="myLargeModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title pull-left">Sport Class Detail</h4>
-                <button type="button" class="close pull-right" (click)="this.sportDetailModal.hide()" aria-label="Close">
+                <button type="button" class="close pull-right" (click)="this.sportDetailModal.hide()"
+                        aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
+                <ul class="nav nav-tabs" id="tab-01">
+                    <li class='{{tab=="sportDetailsTab" ? "active": ""}}'>
+                        <a (click)='tab="sportDetailsTab"'   href="javascript:void(0);">Details</a>
+                    </li>
+                    <li class='{{tab=="mapTab" ? "active": ""}}'>
+                        <a (click)='tab="mapTab"' href="javascript:void(0)">Map</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class='tab-pane {{tab=="sportDetailsTab" ? "active": ""}}' id="sportDetailsTab">
+                        <div class="row column-seperation">
+                            <div class="col-md-6">
+                                <h3><span class="semi-bold">{{selectedSport.name}}</span></h3>
+                                <img *ngIf="selectedSport.prompPicture" class="placeholder-thumbnail"
+                                     src="{{'/uploads/' + selectedSport.prompPicture}}"/>
+                                <img *ngIf="selectedSport.prompPicture==undefined" class="placeholder-thumbnail"
+                                     src="{{'assets/images/placeholder.png'}}"/>
+                            </div>
+                            <div class="col-md-6">
+                                <p class="light">{{selectedSport.description}}</p>
+                            </div>
+                        </div>
+                        <div class="row column-seperation">
+                            <div class="col-md-6">
+                                <h3><span class="semi-bold">Sport's Class Owner</span></h3>
+                                {{selectedSport.ownerId?.name}}
+                                ({{selectedSport.ownerId?.email}})
+                            </div>
+                            <div class="col-md-6">
+                                <h3><span class="semi-bold">Address</span></h3>
+                                <p *ngIf="selectedSport.address"><i class="fa fa-map-marker"></i> <span
+                                        *ngIf="selectedSport.address.address1">{{selectedSport.address.address1}}, </span><span
+                                        *ngIf="selectedSport.address.address2">{{selectedSport.address.address2}}, </span><span
+                                        *ngIf="selectedSport.address.city">{{selectedSport.address.city}}, </span><span
+                                        *ngIf="selectedSport.address.state">{{selectedSport.address.state}}, </span><span
+                                        *ngIf="selectedSport.address.country">{{selectedSport.address.country}} </span>
+                                    <span *ngIf="selectedSport.address.zipcode">{{selectedSport.address.zipcode}}</span>
+                                </p>
+                                <p><i class="fa fa-calendar-o"></i> {{selectedSport.createdDt|date:'MMM dd, yyyy'}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='tab-pane {{tab=="mapTab" ? "active": ""}}' id="mapTab">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ngui-map zoom="14" center="{{selectedSport?.address?.city}},{{selectedSport?.address?.state}},{{selectedSport?.address?.country}}">
+                                    <marker *ngFor="let pos of marker"
+                                            (click)="showInfoWindow($event)"
+                                            [position]="pos"></marker>
+                                </ngui-map>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
