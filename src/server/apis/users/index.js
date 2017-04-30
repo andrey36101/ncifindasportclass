@@ -11,7 +11,7 @@ module.exports = class UserController {
         app.put('/api/user/:userId', this.updateUser);
         app.get('/api/user/:userId', this.userDetail);
         app.put('/api/user/:userId/address', this.updateUserAddress);
-        app.put('/api/user/:userId', this.deleteUser);
+        app.delete('/api/user/:userId', this.deleteUser);
         app.post('/api/checkLogin',this.checkLogin);
 
     }
@@ -89,7 +89,6 @@ module.exports = class UserController {
             .catch(function (error) {
                 let errors = [];
                 if (error.name == 'ValidationError') {
-                    console.log(error);
                     Object.keys(error.errors).forEach(function (field) {
                         let eObj = error.errors[field];
                         if (eObj.hasOwnProperty("message"))
@@ -115,7 +114,6 @@ module.exports = class UserController {
         var token = req.body.token || req.params.token || req.headers['x-access-token'];
         jwt.verify(token, global.config.secret, function(err, decoded) {
             if (err) {
-                console.log(err);
                 return res.sendError(new Exception('SessionExpired'));
             } else {
                 req.user = decoded;
@@ -141,7 +139,6 @@ module.exports = class UserController {
                     return res.sendError({message: "Login failed"});
             })
             .catch(function (error) {
-                console.log(error);
                 return res.sendError({ message: "Login failed"});
             });
     }

@@ -1,0 +1,44 @@
+<testsuite name="Mocha Tests" tests="42" failures="0" errors="0" skipped="0" timestamp="Sat, 29 Apr 2017 10:10:29 GMT" time="9.056">
+    <testcase classname="POST /api/user" name="should create trainer user and respond with json and 200 status" time="3.666"/>
+    <testcase classname="POST /api/user" name="should create customer user and respond with json and 200 status" time="0.021"/>
+    <testcase classname="POST /api/user" name="should not create user without password" time="0.01"/>
+    <testcase classname="POST /api/login" name="should login user and respond with 200 status" time="0.028"/>
+    <testcase classname="POST /api/login" name="should not login user and respond with 400 status" time="0.01"/>
+    <testcase classname="GET /api/user" name="should respond with json" time="0.017"/>
+    <testcase classname="GET /api/user" name="should respond with 200 status" time="0.011"/>
+    <testcase classname="GET /api/user" name="should respond with 204, record not found" time="0.006"/>
+    <testcase classname="PUT /api/user" name="should update user and respond with json and 201 status" time="0.029"/>
+    <testcase classname="PUT /api/user" name="should update address of user and respond with json and 200 status" time="0.011"/>
+    <testcase classname="PUT /api/user" name="should update address of user and respond with json and 200 status" time="0.014"/>
+    <testcase classname="PUT /api/user" name="should return no user found" time="0.006"/>
+    <testcase classname="DELETE /api/user" name="should delete user and respond with json and 200 status" time="0.009"/>
+    <testcase classname="DELETE /api/user" name="should return no user found" time="0.006"/>
+    <testcase classname="POST /api/feedback" name="should create feedback and respond 200 status" time="1.626"/>
+    <testcase classname="GET /api/feedback" name="should respond with json" time="0.014"/>
+    <testcase classname="GET /api/feedback" name="should respond with 200 status" time="0.03"/>
+    <testcase classname="GET /api/feedback" name="should respond with 400, record not found" time="0.006"/>
+    <testcase classname="PUT /api/feedback" name="should update feedback and respond with 200 status" time="0.015"/>
+    <testcase classname="PUT /api/feedback" name="should return no user found" time="0.007"/>
+    <testcase classname="DELETE /api/feedback" name="login" time="0.01"/>
+    <testcase classname="DELETE /api/feedback" name="should delete feedback and respond with 200 status" time="0.011"/>
+    <testcase classname="DELETE /api/feedback" name="should return no feedback found" time="0.005"/>
+    <testcase classname="POST /api/messages" name="should create message and respond 200 status" time="1.586"/>
+    <testcase classname="GET /api/messages" name="should respond with json" time="0.017"/>
+    <testcase classname="GET /api/messages" name="should respond with 200 status" time="0.009"/>
+    <testcase classname="GET /api/messages" name="should respond with 400, record not found" time="0.005"/>
+    <testcase classname="PUT /api/messages" name="should update message and respond with 200 status" time="0.012"/>
+    <testcase classname="PUT /api/messages" name="should return no user found" time="0.007"/>
+    <testcase classname="DELETE /api/messages" name="login" time="0.011"/>
+    <testcase classname="DELETE /api/messages" name="should delete message and respond with 200 status" time="0.013"/>
+    <testcase classname="DELETE /api/messages" name="should return no message found" time="0.008"/>
+    <testcase classname="POST /api/sports" name="should create sport and respond 200 status" time="1.536"/>
+    <testcase classname="GET /api/sports" name="should respond with json" time="0.016"/>
+    <testcase classname="GET /api/sports" name="should respond with 200 status" time="0.013"/>
+    <testcase classname="GET /api/sports" name="should respond with 400, record not found" time="0.013"/>
+    <testcase classname="PUT /api/sports" name="should update sport and respond with 200 status" time="0.013"/>
+    <testcase classname="PUT /api/sports" name="should update address of sport and respond with 200 status" time="0.022"/>
+    <testcase classname="PUT /api/sports" name="should return no user found" time="0.006"/>
+    <testcase classname="DELETE /api/sports" name="login" time="0.009"/>
+    <testcase classname="DELETE /api/sports" name="should delete sport and respond with 200 status" time="0.008"/>
+    <testcase classname="DELETE /api/sports" name="should return no sport found" time="0.006"/>
+</testsuite>

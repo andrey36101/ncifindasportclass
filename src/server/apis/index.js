@@ -21,7 +21,6 @@ module.exports = class Modules {
             } else {
                 byPassedEndpoints.forEach(function (path) {
                     let regex = new RegExp(path, 'i');
-                    console.log(req.isLoggedIn,'req.isLoggedIn');
                     if (req.path.match(regex)) {
                         next();
                     }

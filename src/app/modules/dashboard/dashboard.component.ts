@@ -373,13 +373,21 @@ export class DashboardComponent implements OnInit{
 
     sportDetail(sport){
         console.log(sport);
+        let address = (sport.address.address1 + ',' || '');
+        address += (sport.address.address2 + ',' || '');
+        address += (sport.address.city + ',' || '');
+        address += (sport.address.state + ',' || '');
+        address += (sport.address.country + ' ' || '');
+        address += (sport.address.zipcode || '');
+        console.log(address);
 
-        this.gMapService.getLatLan('ahmedabad, gujarat, india').then((geocode) => {
-            this.marker = [];
-            this.selectedSport['map'] = geocode.results[0].geometry.location;
-            this.marker.push([parseFloat(geocode.results[0].geometry.location.lat), parseFloat(geocode.results[0].geometry.location.lng)]);
-
-
+        this.gMapService.getLatLan(address).then((geocode) => {
+            console.log(geocode);
+            if(geocode.results.length>0){
+                this.marker = [];
+                this.selectedSport['map'] = geocode.results[0].geometry.location;
+                this.marker.push([parseFloat(geocode.results[0].geometry.location.lat), parseFloat(geocode.results[0].geometry.location.lng)]);
+            }
         });
 
         this.selectedSport = sport;
